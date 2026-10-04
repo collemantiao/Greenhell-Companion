@@ -48,6 +48,24 @@ namespace GreenHellCompanion
             catch (System.Exception e) { Plugin.Erro("tema do jogo", e); proximaBusca = float.MaxValue; }
         }
 
+        /// <summary>
+        /// Onde termina (em y de tela) o aviso "Caderno: Nova entrada" do jogo, no canto superior direito,
+        /// quando ele está visível; 0 quando não está. Os cartões da direita começam abaixo dele.
+        /// </summary>
+        public static float FimAvisoDoJogo()
+        {
+            try
+            {
+                var info = HUDInfoLog.Get();
+                if (info == null || info.m_BG == null || !info.m_BG.gameObject.activeInHierarchy) return 0;
+                var cantos = new Vector3[4];
+                info.m_BG.rectTransform.GetWorldCorners(cantos);   // canvas de overlay: coordenadas já em pixels, y de baixo para cima
+                float fim = Screen.height - Mathf.Min(cantos[0].y, cantos[3].y) + 6;
+                return fim > 0 && fim < Screen.height * 0.45f ? fim : Screen.height * 0.17f;
+            }
+            catch { return 0; }
+        }
+
         public enum Lado { Esquerda, Direita, Centro }
 
         /// <summary>

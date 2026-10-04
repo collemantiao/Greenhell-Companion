@@ -414,7 +414,8 @@ namespace GreenHellCompanion
         public static float X => 25 * Screen.height / 1080f;                      // alinhado à HUD do jogo
         /// <summary>Base da pilha: um pouco acima da linha de cima dos macroelementos (HUD em 1080p: y ≈ 949).</summary>
         public static float Base => (Plugin.MostrarMacros.Value ? 826f : 980f) * Screen.height / 1080f;
-        static float Topo => Screen.height * 0.30f;
+        // abaixo da lista de jogadores do multiplayer (à esquerda, até ~y 650 em 1080p)
+        static float Topo => Screen.height * 0.61f;
 
         public void Desenhar()
         {
@@ -430,7 +431,7 @@ namespace GreenHellCompanion
             {
                 resumo = Resumo(ativos.Values.Except(completos).OrderBy(a => a.chave).ToList());
                 float total = blocos.Sum(b => b.Altura(b.LarguraIdeal(Largura)) + gap) + (resumo != null ? resumo.Altura(resumo.LarguraIdeal(Largura)) + gap : 0);
-                if (total <= Base - Topo || completos.Count == 0) break;
+                if (total <= Base - Topo || completos.Count <= 1) break;   // o aviso mais novo sempre aparece inteiro
                 completos.RemoveAt(completos.Count - 1);
                 blocos.RemoveAt(blocos.Count - 1);
             }

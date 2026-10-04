@@ -225,13 +225,16 @@ namespace GreenHellCompanion
             float pad = Estilo.Px(10), faixa = Faixa != null && !Plugin.CartoesPincel.Value ? Estilo.Px(5) : 0, w = 0;
             foreach (var l in linhas)
                 if (!l.barra) w = Mathf.Max(w, l.s.CalcSize(new GUIContent(l.t)).x + Estilo.Px(l.rec));
-            if (Imagem != null) w += Estilo.Px(40);   // espaço para a silhueta não cobrir o texto
+            w += ColunaImagem;   // a silhueta fica numa coluna própria, sem cobrir o texto
             return Mathf.Clamp(w + pad * 2 + faixa + 2, Estilo.Px(200), maximo);
         }
+
+        float ColunaImagem => Imagem != null ? Estilo.Px(64) : 0;
 
         public float Altura(float largura)
         {
             float pad = Estilo.Px(10), h = pad * 2;
+            largura -= ColunaImagem;
             foreach (var l in linhas)
                 h += Estilo.Px(l.esp) + (l.barra ? Estilo.Px(4) : l.s.CalcHeight(new GUIContent(l.t), largura - pad * 2 - Estilo.Px(l.rec) - (Faixa != null ? Estilo.Px(5) : 0)));
             return h;
@@ -244,8 +247,9 @@ namespace GreenHellCompanion
             else Estilo.Caixa(r, fundo);
             float pad = Estilo.Px(10), faixa = Faixa != null ? Estilo.Px(5) : 0;
             if (Faixa != null && !pincel) GUI.DrawTexture(new Rect(r.x, r.y, faixa, r.height), Estilo.Tex(Estilo.Cor(Faixa)));
-            if (Imagem != null) Imagens.Desenhar(Imagem, new Rect(r.xMax - pad - r.width * 0.42f, r.y + pad * 0.6f, r.width * 0.42f, Estilo.Px(64)), Plugin.OpacidadeImagem.Value);
-            float x = r.x + pad + faixa, y = r.y + pad, w = r.width - pad * 2 - faixa;
+            float col = ColunaImagem;
+            if (Imagem != null) Imagens.Desenhar(Imagem, new Rect(r.xMax - pad - col, r.y + pad, col, Mathf.Min(Estilo.Px(64), r.height - pad * 2)), Mathf.Max(Plugin.OpacidadeImagem.Value, 0.25f));
+            float x = r.x + pad + faixa, y = r.y + pad, w = r.width - pad * 2 - faixa - col;
             foreach (var l in linhas)
             {
                 y += Estilo.Px(l.esp);

@@ -103,7 +103,7 @@ namespace GreenHellCompanion
             Estilo.Preparar();
             bool hud = Jogo.PodeUsarHud();
             // Construção no canto superior direito; avisos de saúde no canto inferior esquerdo, acima dos macroelementos.
-            float yDireita = Screen.height * 0.022f;
+            float yDireita = Mathf.Max(Screen.height * 0.022f, Tema.FimAvisoDoJogo());   // abaixo do "Caderno: Nova entrada", se estiver na tela
             if (hud)
             {
                 Proteger(() => marcadores.DesenharHud(), "hud marcadores");
