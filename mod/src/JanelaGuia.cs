@@ -33,13 +33,44 @@ namespace GreenHellCompanion
             Abrir();
         }
 
+        // Ordem dos grupos quando nada está digitado (a mesma do site).
+        static readonly string[] OrdemCategorias =
+        {
+            "Predadores", "Animais de caça", "Peixes e água", "Venenosos e insetos", "Inimigos",
+            "Ferimentos", "Doenças e condições", "Nutrição e sanidade", "Plantas e remédios",
+            "Armas", "Ferramentas", "Comida e água", "Fogo e abrigo", "Armadilhas", "Materiais", "Dicas gerais",
+        };
+        List<object> linhasLista = new List<object>();   // string = título do grupo, Ficha = item
+
         void Buscar()
         {
             if (busca == buscaFeita) return;
             buscaFeita = busca;
-            resultados = Guia.Buscar(busca).Take(80).ToList();
             rolLista = Vector2.zero;
-            if (resultados.Count > 0 && (atual == null || !resultados.Contains(atual)) && busca.Trim().Length > 0)
+            bool vazia = string.IsNullOrWhiteSpace(busca);
+
+            // Sem busca: tudo, por categoria. Com busca: os resultados continuam agrupados,
+            // com os grupos na ordem do melhor resultado de cada um.
+            resultados = Guia.Buscar(busca);
+            var posicao = new Dictionary<Ficha, int>();
+            for (int i = 0; i < resultados.Count; i++) posicao[resultados[i]] = i;
+            var grupos = resultados.GroupBy(f => f.categoria);
+            grupos = vazia
+                ? grupos.OrderBy(g => { int i = System.Array.IndexOf(OrdemCategorias, g.Key); return i < 0 ? 99 : i; })
+                : grupos.OrderBy(g => g.Min(f => posicao[f]));
+
+            linhasLista = new List<object>();
+            var ordem = new List<Ficha>();
+            foreach (var g in grupos)
+            {
+                linhasLista.Add(g.Key);
+                var itens = vazia ? g.OrderBy(f => f.nome) : g.OrderBy(f => posicao[f]);
+                foreach (var f in itens) { linhasLista.Add(f); ordem.Add(f); }
+            }
+            resultados = ordem;
+
+            // Ao digitar, abre o melhor resultado; sem busca, mantém a ficha aberta (ex.: a do aviso de saúde).
+            if (resultados.Count > 0 && (!vazia || atual == null || !resultados.Contains(atual)))
             {
                 atual = resultados[0];
                 rolFicha = Vector2.zero;
@@ -80,19 +111,32 @@ namespace GreenHellCompanion
                 GUI.Label(area, "Nada encontrado. Tente outra palavra ou o nome em inglês.", Pequeno);
                 return;
             }
-            float lh = Px(26);
-            var conteudo = new Rect(0, 0, area.width - Px(16), resultados.Count * lh);
+            float lh = Px(26), th = Px(26);
+            float altura = linhasLista.Sum(l => l is string ? th : lh);
+            var conteudo = new Rect(0, 0, area.width - Px(16), altura);
             rolLista = GUI.BeginScrollView(area, rolLista, conteudo);
-            for (int i = 0; i < resultados.Count; i++)
+            float y = 0;
+            foreach (var l in linhasLista)
             {
-                var f = resultados[i];
-                string rot = $"{Esc(f.nome)}  {C(Apagado, "<size=" + Px(10) + ">" + Esc(f.categoria.ToUpperInvariant()) + "</size>")}";
-                bool sel = f == atual;
-                if (GUI.Toggle(new Rect(0, i * lh, conteudo.width, lh), sel, rot, BotaoLista) && !sel)
+                if (l is string grupo)
                 {
-                    atual = f;
-                    rolFicha = Vector2.zero;
+                    int n = 0;
+                    for (int k = linhasLista.IndexOf(l) + 1; k < linhasLista.Count && linhasLista[k] is Ficha; k++) n++;
+                    GUI.Label(new Rect(Px(4), y + Px(8), conteudo.width, Px(16)), $"{Esc(grupo.ToUpperInvariant())}  {C(Apagado, n.ToString())}", Rotulo);
+                    y += th;
+                    continue;
                 }
+                var f = (Ficha)l;
+                if (y + lh >= rolLista.y && y <= rolLista.y + area.height)   // só o que está visível
+                {
+                    bool sel = f == atual;
+                    if (GUI.Toggle(new Rect(0, y, conteudo.width, lh), sel, Esc(f.nome), BotaoLista) && !sel)
+                    {
+                        atual = f;
+                        rolFicha = Vector2.zero;
+                    }
+                }
+                y += lh;
             }
             GUI.EndScrollView();
         }

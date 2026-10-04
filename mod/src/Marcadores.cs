@@ -8,7 +8,6 @@ using static GreenHellCompanion.Estilo;
 namespace GreenHellCompanion
 {
     [Serializable] public class Marcador { public string nome; public float x, y, z; public bool ativo; public Vector3 Pos => new Vector3(x, y, z); }
-    [Serializable] class ArquivoMarcadores { public List<Marcador> lista = new List<Marcador>(); }
 
     /// <summary>Pontos marcados pelo jogador, salvos por partida.</summary>
     public class Marcadores
@@ -40,7 +39,14 @@ namespace GreenHellCompanion
             lista = new List<Marcador>();
             try
             {
-                if (File.Exists(Arquivo)) lista = JsonUtility.FromJson<ArquivoMarcadores>(File.ReadAllText(Arquivo)).lista ?? lista;
+                if (File.Exists(Arquivo))
+                {
+                    var raiz = (Dictionary<string, object>)Json.Ler(File.ReadAllText(Arquivo));
+                    lista = raiz.L("lista").OfType<Dictionary<string, object>>().Select(o => new Marcador
+                    {
+                        nome = o.S("nome") ?? "Marcador", x = (float)o.N("x"), y = (float)o.N("y"), z = (float)o.N("z"), ativo = o.B("ativo"),
+                    }).ToList();
+                }
                 Plugin.Log($"Marcadores da partida {chave}: {lista.Count}");
             }
             catch (Exception e) { Plugin.Erro("ler marcadores", e); }
@@ -54,7 +60,11 @@ namespace GreenHellCompanion
             try
             {
                 Directory.CreateDirectory(pasta);
-                File.WriteAllText(Arquivo, JsonUtility.ToJson(new ArquivoMarcadores { lista = lista }, true));
+                var dados = new Dictionary<string, object>
+                {
+                    ["lista"] = lista.Select(m => (object)new Dictionary<string, object> { ["nome"] = m.nome, ["x"] = m.x, ["y"] = m.y, ["z"] = m.z, ["ativo"] = m.ativo }).ToList(),
+                };
+                File.WriteAllText(Arquivo, Json.Escrever(dados));
             }
             catch (Exception e) { Plugin.Erro("salvar marcadores", e); }
         }

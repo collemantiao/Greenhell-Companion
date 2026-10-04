@@ -409,36 +409,70 @@ namespace GreenHellCompanion
         }
 
         // ---------------- Desenho ----------------
+        // ---------- Posição: canto inferior esquerdo, empilhando para cima a partir dos macroelementos ----------
+        public static float Largura => Mathf.Max(Screen.width * 0.22f, Px(300));
+        public static float X => 25 * Screen.height / 1080f;                      // alinhado à HUD do jogo
+        /// <summary>Base da pilha: um pouco acima da linha de cima dos macroelementos (HUD em 1080p: y ≈ 949).</summary>
+        public static float Base => (Plugin.MostrarMacros.Value ? 930f : 980f) * Screen.height / 1080f;
+        static float Topo => Screen.height * 0.30f;
+
         public void Desenhar()
         {
             if (ativos.Count == 0) return;
-            float largura = Mathf.Max(Screen.width * 0.22f, Px(300));
-            float x = Screen.width - largura - Screen.width * 0.016f;
-            float y = Screen.height * 0.022f;
+            float largura = Largura, x = X, gap = Px(8);
             float limite = Time.time - Plugin.SegundosAlerta.Value;
 
+            // mais novo primeiro; os que não couberem entre a base e o topo viram linha em "Condições ativas"
             var completos = ativos.Values.Where(a => a.criado >= limite && !a.tratando).OrderByDescending(a => a.criado).Take(3).ToList();
-            foreach (var a in completos)
+            var blocos = completos.Select(Cartao).ToList();
+            Bloco resumo;
+            while (true)
             {
-                var b = new Bloco { Faixa = a.corRotulo, Imagem = Imagens.Get(a.imagem) };
-                b.Add(Rotulo, C(a.corRotulo, a.rotulo));
-                b.Add(Titulo, Esc(a.titulo), 0, 2);
-                if (!string.IsNullOrEmpty(a.onde)) b.Add(Pequeno, a.onde, 0, 1);
-                for (int i = 0; i < a.linhas.Count; i++) b.Add(Texto, a.linhas[i], 0, i == 0 ? 6 : 2);
-                string tecla = Plugin.TeclaGuia.Value.MainKey.ToString();
-                b.Add(Pequeno, $"{a.rodape} Ficha completa: {C(Tinta, tecla)}", 0, 6);
-                float h = b.Altura(largura);
-                b.Desenhar(new Rect(x, y, largura, h), Painel);
-                y += h + Px(8);
+                resumo = Resumo(ativos.Values.Except(completos).OrderBy(a => a.chave).ToList());
+                float total = blocos.Sum(b => b.Altura(largura) + gap) + (resumo != null ? resumo.Altura(largura) + gap : 0);
+                if (total <= Base - Topo || completos.Count == 0) break;
+                completos.RemoveAt(completos.Count - 1);
+                blocos.RemoveAt(blocos.Count - 1);
             }
 
-            var resto = ativos.Values.Except(completos).OrderBy(a => a.chave).ToList();
-            if (resto.Count == 0) return;
+            // de baixo para cima: resumo encostado na HUD, depois o aviso mais novo, depois os mais antigos
+            float y = Base;
+            if (resumo != null)
+            {
+                float h = resumo.Altura(largura);
+                y -= h;
+                resumo.Desenhar(new Rect(x, y, largura, h), Painel);
+                y -= gap;
+            }
+            foreach (var b in blocos)
+            {
+                float h = b.Altura(largura);
+                y -= h;
+                b.Desenhar(new Rect(x, y, largura, h), Painel);
+                y -= gap;
+            }
+        }
+
+        static Bloco Cartao(Alerta a)
+        {
+            var b = new Bloco { Faixa = a.corRotulo, Imagem = Imagens.Get(a.imagem) };
+            b.Add(Rotulo, C(a.corRotulo, a.rotulo));
+            b.Add(Titulo, Esc(a.titulo), 0, 2);
+            if (!string.IsNullOrEmpty(a.onde)) b.Add(Pequeno, a.onde, 0, 1);
+            for (int i = 0; i < a.linhas.Count; i++) b.Add(Texto, a.linhas[i], 0, i == 0 ? 6 : 2);
+            string tecla = Plugin.TeclaGuia.Value.MainKey.ToString();
+            b.Add(Pequeno, $"{a.rodape} Ficha completa: {C(Tinta, tecla)}", 0, 6);
+            return b;
+        }
+
+        static Bloco Resumo(List<Alerta> resto)
+        {
+            if (resto.Count == 0) return null;
             var r = new Bloco();
             r.Add(Rotulo, "CONDIÇÕES ATIVAS");
             foreach (var a in resto)
                 r.Add(Pequeno, $"{C(a.corRotulo, "•")}  {C(Tinta, Esc(a.titulo))}{(a.tratando ? "  " + C(Ok, "tratando") : "")}", 0, 3);
-            r.Desenhar(new Rect(x, y, largura, r.Altura(largura)), Painel);
+            return r;
         }
     }
 }

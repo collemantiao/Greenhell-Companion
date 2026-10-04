@@ -13,8 +13,8 @@ Mod para Green Hell (BepInEx 5) que ajuda sem trapacear: só mostra informação
 
 Sem tecla:
 - **Macroelementos:** duas linhas no estilo da HUD, acima da vida e da energia (proteína, gordura, carboidrato e água). A barra pisca em vermelho quando o nível está crítico.
-- **Avisos de saúde:** ferimentos, infecções, doenças e status baixos aparecem no canto superior direito, com os tratamentos que o jogo aceita e quantos você tem na mochila.
-- **Construção:** ao posicionar uma construção, ou perto de uma já colocada, mostra cada material, quanto você tem (mochila, mãos e baús a até 20 m) e o que falta.
+- **Avisos de saúde:** ferimentos, infecções, doenças e status baixos aparecem no canto inferior esquerdo, acima dos macroelementos, com os tratamentos que o jogo aceita e quantos você tem na mochila.
+- **Construção:** no canto superior direito, ao posicionar uma construção, ou perto de uma já colocada, mostra cada material, quanto você tem (mochila, mãos e baús a até 20 m) e o que falta.
 
 ## Configuração
 

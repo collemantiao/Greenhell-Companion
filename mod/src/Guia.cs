@@ -19,7 +19,6 @@ namespace GreenHellCompanion
         public List<Secao> secoes = new List<Secao>();
         public List<string> relacionados = new List<string>();
     }
-    [Serializable] class ArquivoGuia { public List<Ficha> fichas = new List<Ficha>(); }
 
     /// <summary>Base de fichas e busca (porta da busca do site).</summary>
     public static class Guia
@@ -41,8 +40,19 @@ namespace GreenHellCompanion
 
         public static void Carregar(string arquivo)
         {
-            var dados = JsonUtility.FromJson<ArquivoGuia>(File.ReadAllText(arquivo, Encoding.UTF8));
-            Fichas = dados.fichas ?? new List<Ficha>();
+            var raiz = (Dictionary<string, object>)Json.Ler(File.ReadAllText(arquivo, Encoding.UTF8));
+            Fichas = raiz.L("fichas").OfType<Dictionary<string, object>>().Select(o => new Ficha
+            {
+                id = o.S("id"), nome = o.S("nome"), nomeEn = o.S("nomeEn"), categoria = o.S("categoria") ?? "", resumo = o.S("resumo") ?? "",
+                perigo = (int)o.N("perigo"),
+                aliases = o.L("aliases").Select(a => a?.ToString()).Where(a => a != null).ToList(),
+                relacionados = o.L("relacionados").Select(a => a?.ToString()).Where(a => a != null).ToList(),
+                secoes = o.L("secoes").OfType<Dictionary<string, object>>().Select(s => new Secao
+                {
+                    titulo = s.S("titulo") ?? "", tipo = s.S("tipo") ?? "dicas",
+                    itens = s.L("itens").OfType<Dictionary<string, object>>().Select(i => new Item { t = i.S("t") ?? "", d = i.S("d"), nota = i.S("nota") }).ToList(),
+                }).ToList(),
+            }).Where(f => f.id != null && f.nome != null).ToList();
             porId.Clear();
             indice.Clear();
             foreach (var f in Fichas)

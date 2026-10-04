@@ -95,11 +95,13 @@ namespace GreenHellCompanion
             if (!Jogo.EmJogo()) return;
             Estilo.Preparar();
             bool hud = Jogo.PodeUsarHud();
+            // Construção no canto superior direito; avisos de saúde no canto inferior esquerdo, acima dos macroelementos.
+            float yDireita = Screen.height * 0.022f;
             if (hud)
             {
                 Proteger(() => marcadores.DesenharHud(), "hud marcadores");
                 Proteger(() => macros.Desenhar(), "hud macros");
-                if (AjudaConstrucao.Value) Proteger(() => construcao.Desenhar(), "hud construcao");
+                if (AjudaConstrucao.Value) Proteger(() => yDireita = construcao.Desenhar(yDireita), "hud construcao");
             }
             if (hud || Jogo.InspecionandoCorpo())
                 if (AvisosSaude.Value) Proteger(() => saude.Desenhar(), "hud saude");

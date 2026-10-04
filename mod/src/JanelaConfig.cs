@@ -18,13 +18,14 @@ namespace GreenHellCompanion
         {
             if (EscPressionado()) { Fechar(); return; }
             float pad = Px(16), w = Mathf.Max(Screen.width * 0.24f, Px(330));
-            var r = new Rect(Screen.width * 0.016f, Screen.height * 0.12f, w, Px(498));
+            float alt = Px(498);
+            var r = new Rect((Screen.width - w) / 2, (Screen.height - alt) / 2, w, alt);
             CaixaArredondada(r, PainelForte, RaioJanela);
             float x = r.x + pad, iw = w - pad * 2, y = r.y + pad;
 
             GUI.Label(new Rect(x, y, iw, Px(30)), "<b>Configurações</b>", TituloGrande);
             y += Px(36);
-            GUI.Label(new Rect(x, y, iw, Px(34)), "As mudanças aparecem na hora. O cartão de exemplo ao lado mostra o resultado.", Pequeno);
+            GUI.Label(new Rect(x, y, iw, Px(34)), "As mudanças aparecem na hora. O cartão de exemplo, no canto inferior esquerdo, mostra o resultado.", Pequeno);
             y += Px(38);
 
             y = Deslizante(x, y, iw, "TAMANHO DO TEXTO", Plugin.Escala, 0.6f, 1.6f, v => $"{v * 100:0}%");
@@ -47,7 +48,7 @@ namespace GreenHellCompanion
             }
             if (GUI.Button(new Rect(x + bw + Px(8), y, bw, Px(30)), C(Destaque, "<b>Fechar</b>"), Botao)) { Fechar(); return; }
 
-            Exemplo(new Rect(r.xMax + Px(16), r.y, Mathf.Max(Screen.width * 0.22f, Px(300)), 0));
+            Exemplo();
         }
 
         static float Deslizante(float x, float y, float w, string rotulo, BepInEx.Configuration.ConfigEntry<float> cfg, float min, float max, System.Func<float, string> fmt)
@@ -69,7 +70,7 @@ namespace GreenHellCompanion
         }
 
         /// <summary>Cartão de aviso de mentira, desenhado sobre o jogo, para ver o efeito dos ajustes.</summary>
-        static void Exemplo(Rect r)
+        static void Exemplo()
         {
             var b = new Bloco { Faixa = Perigo, Imagem = Imagens.Get("onca-pintada") };
             b.Add(Rotulo, C(Perigo, "EXEMPLO DE AVISO"));
@@ -78,8 +79,9 @@ namespace GreenHellCompanion
             b.Add(Texto, $"{C(Ok, "✓")}  Formigas  {C(Apagado, "3 na mochila")}", 0, 6);
             b.Add(Texto, $"{C(Apagado, "✕")}  Curativo de cinzas  {C(Apagado, "não tem")}", 0, 2);
             b.Add(Texto, $"{C(Aviso, "!")}  Bandagem de folha  {C(Apagado, "2 na mochila")}", 0, 2);
-            r.height = b.Altura(r.width);
-            b.Desenhar(r, Painel);
+            // no mesmo lugar dos avisos de verdade: canto inferior esquerdo, acima dos macroelementos
+            float h = b.Altura(Saude.Largura);
+            b.Desenhar(new Rect(Saude.X, Saude.Base - h, Saude.Largura, h), Painel);
         }
     }
 }

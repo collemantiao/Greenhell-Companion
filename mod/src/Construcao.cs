@@ -104,9 +104,10 @@ namespace GreenHellCompanion
             return lista;
         }
 
-        public void Desenhar()
+        /// <summary>Desenha no canto superior direito a partir de y e devolve onde o próximo cartão pode começar.</summary>
+        public float Desenhar(float y)
         {
-            if (ghost == null || materiais.Count == 0) return;
+            if (ghost == null || materiais.Count == 0) return y;
             float largura = Mathf.Max(Screen.width * 0.22f, Px(300));
             var b = new Bloco();
             b.Add(Rotulo, "CONSTRUÇÃO · " + situacao.ToUpperInvariant());
@@ -129,8 +130,8 @@ namespace GreenHellCompanion
 
             float h = b.Altura(largura);
             float x = Screen.width - largura - Screen.width * 0.016f;
-            float y = Screen.height - h - Screen.height * 0.03f;
             b.Desenhar(new Rect(x, y, largura, h), Painel);
+            return y + h + Px(8);
         }
     }
 }
