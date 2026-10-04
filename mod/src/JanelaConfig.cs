@@ -18,7 +18,7 @@ namespace GreenHellCompanion
         {
             if (EscPressionado()) { Fechar(); return; }
             float pad = Px(16), w = Mathf.Max(Screen.width * 0.24f, Px(330));
-            float alt = Px(568);
+            float alt = Px(596);
             var r = new Rect((Screen.width - w) / 2, (Screen.height - alt) / 2, w, alt);
             CaixaArredondada(r, PainelForte, RaioJanela);
             float x = r.x + pad, iw = w - pad * 2, y = r.y + pad;
@@ -36,6 +36,7 @@ namespace GreenHellCompanion
             y = Chave(x, y, iw, "Macroelementos acima da vida", Plugin.MostrarMacros);
             y = Chave(x, y, iw, "Avisos de saúde", Plugin.AvisosSaude);
             y = Chave(x, y, iw, "Ajuda de construção", Plugin.AjudaConstrucao);
+            y = Chave(x, y, iw, "Dicas do que você está olhando", Plugin.Dicas);
             y = Chave(x, y, iw, "Todos os marcadores no mundo", Plugin.TodosMarcadoresNoMundo);
             y = Chave(x, y, iw, "Animações", Plugin.Animacoes);
 
