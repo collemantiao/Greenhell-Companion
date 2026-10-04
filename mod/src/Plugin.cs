@@ -15,7 +15,7 @@ namespace GreenHellCompanion
         public static ConfigEntry<KeyboardShortcut> TeclaGuia, TeclaMarcar, TeclaMarcadores, TeclaConfig, TeclaConstrucao;
         public static ConfigEntry<float> Escala, Opacidade, OpacidadeImagem;
         public static ConfigEntry<float> SegundosAlerta;
-        public static ConfigEntry<bool> AvisosSaude, AjudaConstrucao, TodosMarcadoresNoMundo, MostrarMacros;
+        public static ConfigEntry<bool> AvisosSaude, AjudaConstrucao, TodosMarcadoresNoMundo, MostrarMacros, Animacoes;
 
         Saude saude;
         Construcao construcao;
@@ -38,6 +38,7 @@ namespace GreenHellCompanion
             OpacidadeImagem = Config.Bind("Tela", "OpacidadeIlustracoes", 0.16f, new ConfigDescription("Opacidade das silhuetas de animais (0 esconde).", new AcceptableValueRange<float>(0f, 0.5f)));
             SegundosAlerta = Config.Bind("Saúde", "SegundosAlerta", 20f, "Quanto tempo o aviso completo fica na tela antes de virar uma linha.");
             AvisosSaude = Config.Bind("Saúde", "Ativo", true, "Mostra avisos de ferimentos, doenças e status baixos.");
+            Animacoes = Config.Bind("Tela", "Animacoes", true, "Anima a abertura das janelas, a entrada dos avisos e as barras.");
             AjudaConstrucao = Config.Bind("Construção", "Ativo", true, "Mostra os materiais que faltam ao construir.");
             MostrarMacros = Config.Bind("Tela", "MostrarMacroelementos", true, "Mostra proteínas, gorduras, carboidratos e água acima da vida, no canto inferior esquerdo.");
             TodosMarcadoresNoMundo = Config.Bind("Marcadores", "MostrarTodosNoMundo", false, "Mostra todos os marcadores na tela, não só o ativo.");
@@ -105,7 +106,7 @@ namespace GreenHellCompanion
             }
             if (hud || Jogo.InspecionandoCorpo())
                 if (AvisosSaude.Value) Proteger(() => saude.Desenhar(), "hud saude");
-            if (Janela.Aberta != null) Proteger(() => Janela.Aberta.Desenhar(), "janela");
+            if (Janela.Aberta != null) Proteger(Janela.DesenharAnimada, "janela");
         }
 
         void OnDestroy() { if (Janela.Aberta != null) Janela.Fechar(); }

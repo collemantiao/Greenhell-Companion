@@ -13,6 +13,8 @@ namespace GreenHellCompanion
         Ficha atual;
         Vector2 rolLista, rolFicha;
         bool focar;
+        Ficha fichaAnimada;
+        float trocouEm;
 
         static readonly Dictionary<string, string> Notas = new Dictionary<string, string>
         {
@@ -101,7 +103,9 @@ namespace GreenHellCompanion
             float wl = w * 0.33f;
             DesenharLista(new Rect(x, y, wl, alturaCorpo));
             GUI.DrawTexture(new Rect(x + wl + Px(10), y, 1, alturaCorpo), Tex(Linha));
-            DesenharFicha(new Rect(x + wl + Px(22), y, w - wl - Px(22), alturaCorpo));
+            if (atual != fichaAnimada) { fichaAnimada = atual; trocouEm = Time.unscaledTime; }
+            var areaFicha = new Rect(x + wl + Px(22), y, w - wl - Px(22), alturaCorpo);
+            ComOpacidade(Entrada(trocouEm, 0.16f), () => DesenharFicha(areaFicha));
         }
 
         void DesenharLista(Rect area)

@@ -444,11 +444,15 @@ namespace GreenHellCompanion
                 resumo.Desenhar(new Rect(x, y, largura, h), Painel);
                 y -= gap;
             }
-            foreach (var b in blocos)
+            for (int i = 0; i < blocos.Count; i++)
             {
+                var b = blocos[i];
                 float h = b.Altura(largura);
                 y -= h;
-                b.Desenhar(new Rect(x, y, largura, h), Painel);
+                // aviso novo entra deslizando da esquerda com fade (0,3 s)
+                float e = Plugin.Animacoes.Value ? 1 - Mathf.Pow(1 - Mathf.Clamp01((Time.time - completos[i].criado) / 0.3f), 3) : 1;
+                var rect = new Rect(x - (1 - e) * Px(40), y, largura, h);
+                ComOpacidade(e, () => b.Desenhar(rect, Painel));
                 y -= gap;
             }
         }

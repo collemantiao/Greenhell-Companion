@@ -32,6 +32,31 @@ namespace GreenHellCompanion
 
         public static int Px(float v) => Mathf.RoundToInt(v * E);
 
+        // ---------- Animação ----------
+        /// <summary>Progresso 0→1 com desaceleração (ease-out cúbico) desde 'inicio'. Sem animações, sempre 1.</summary>
+        public static float Entrada(float inicio, float duracao)
+        {
+            if (!Plugin.Animacoes.Value || duracao <= 0) return 1;
+            float t = Mathf.Clamp01((Time.unscaledTime - inicio) / duracao);
+            return 1 - Mathf.Pow(1 - t, 3);
+        }
+
+        /// <summary>Aproxima 'atual' de 'alvo' suavemente, independente do FPS.</summary>
+        public static float Suavizar(float atual, float alvo, float velocidade = 6f)
+        {
+            if (!Plugin.Animacoes.Value) return alvo;
+            return Mathf.Lerp(atual, alvo, 1 - Mathf.Exp(-velocidade * Time.unscaledDeltaTime));
+        }
+
+        /// <summary>Desenha algo com opacidade multiplicada (as cores e texturas respeitam GUI.color).</summary>
+        public static void ComOpacidade(float alfa, System.Action desenhar)
+        {
+            if (alfa >= 0.999f) { desenhar(); return; }
+            var antes = GUI.color;
+            GUI.color = new Color(antes.r, antes.g, antes.b, antes.a * alfa);
+            try { desenhar(); } finally { GUI.color = antes; }
+        }
+
         public static void Preparar()
         {
             float e = Screen.height / 1080f * Plugin.Escala.Value;
@@ -164,7 +189,7 @@ namespace GreenHellCompanion
             }
             catch { uv = new Rect(0, 0, 1, 1); }
             var antes = GUI.color;
-            GUI.color = cor;
+            GUI.color = new Color(cor.r, cor.g, cor.b, cor.a * antes.a);
             GUI.DrawTextureWithTexCoords(r, t, uv, true);
             GUI.color = antes;
         }
@@ -228,6 +253,23 @@ namespace GreenHellCompanion
         public static Janela Aberta { get; private set; }
         public static int QuadroFechamento = -1;
         static bool textoAntes;
+        float abertaEm;
+
+        /// <summary>Desenha a janela aberta com a entrada animada: fade e leve crescimento a partir do centro.</summary>
+        public static void DesenharAnimada()
+        {
+            var j = Aberta;
+            if (j == null) return;
+            float e = Estilo.Entrada(j.abertaEm, 0.18f);
+            var m = GUI.matrix;
+            if (e < 1)
+            {
+                float esc = 0.96f + 0.04f * e;
+                GUIUtility.ScaleAroundPivot(new Vector2(esc, esc), new Vector2(Screen.width / 2f, Screen.height / 2f));
+            }
+            try { Estilo.ComOpacidade(e, j.Desenhar); }
+            finally { GUI.matrix = m; }
+        }
 
         public abstract void Desenhar();
         protected virtual void AoFechar() { }
@@ -237,6 +279,7 @@ namespace GreenHellCompanion
             if (Aberta == this) return;
             if (Aberta != null) Fechar();
             Aberta = this;
+            abertaEm = Time.unscaledTime;
             var p = Player.Get();
             p.BlockMoves();
             p.BlockRotation();
@@ -271,7 +314,8 @@ namespace GreenHellCompanion
 
         protected static void Fundo(Rect r)
         {
-            GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Estilo.Tex(Estilo.Escurece));
+            // um pouco maior que a tela para continuar cobrindo tudo durante a animação de escala
+            GUI.DrawTexture(new Rect(-Screen.width * 0.05f, -Screen.height * 0.05f, Screen.width * 1.1f, Screen.height * 1.1f), Estilo.Tex(Estilo.Escurece));
             Estilo.CaixaArredondada(r, Estilo.PainelForte, Estilo.RaioJanela);
         }
 

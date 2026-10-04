@@ -43,7 +43,7 @@ namespace GreenHellCompanion
             float w = t.width * esc, h = t.height * esc;
             var r = new Rect(area.xMax - w, area.y + (area.height - h) / 2, w, h);
             var antes = GUI.color;
-            GUI.color = new Color(0.93f, 0.95f, 0.92f, opacidade);
+            GUI.color = new Color(0.93f, 0.95f, 0.92f, opacidade * antes.a);   // respeita fades em andamento
             GUI.DrawTexture(r, t, ScaleMode.StretchToFill, true);
             GUI.color = antes;
         }

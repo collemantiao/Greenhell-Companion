@@ -25,7 +25,7 @@
 | **Ajuda de construção** | No canto superior direito: ao posicionar uma construção, ou perto de uma já colocada, mostra cada material, quanto você tem (mochila, mãos e baús a até 20 m) e o que ainda falta. |
 | **Marcadores** | Marque o lugar para onde você está olhando e dê um nome. O marcador ativo fica no topo da tela com distância, direção e coordenadas no mesmo formato do relógio do jogo (ex.: `21'W 34'S`). Cada partida tem seus próprios marcadores. |
 | **Guia dentro do jogo** | 230 fichas pesquisáveis sobre animais, ferimentos, doenças, plantas, armas, ferramentas, comida, abrigo e armadilhas, com as soluções em ordem do melhor ao de emergência. |
-| **Configurações** | Tamanho do texto, transparência dos cartões e das ilustrações, e liga/desliga de cada parte (inclusive o mostrador de macroelementos). |
+| **Configurações** | Tamanho do texto, transparência dos cartões e das ilustrações, animações e liga/desliga de cada parte (inclusive os macroelementos). |
 
 ### Teclas
 

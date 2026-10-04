@@ -16,6 +16,7 @@ namespace GreenHellCompanion
         static readonly Color[] CoresPadrao = { new Color32(229, 100, 60, 255), new Color32(230, 194, 30, 255), new Color32(61, 190, 78, 255), new Color32(91, 192, 224, 255) };
 
         readonly float[] frac = new float[4];
+        readonly float[] fracVisivel = { -1, -1, -1, -1 };   // o que a barra mostra; corre suavemente até frac
         readonly bool[] critico = new bool[4];
         Color[] cores;
         float proxima;
@@ -100,8 +101,11 @@ namespace GreenHellCompanion
             var vermelho = Cor(Perigo);
             var sombra = new Color(0, 0, 0, 0.45f);
 
+            bool repintar = Event.current.type == EventType.Repaint;
             for (int i = 0; i < 4; i++)
             {
+                if (fracVisivel[i] < 0) fracVisivel[i] = frac[i];
+                else if (repintar) fracVisivel[i] = Suavizar(fracVisivel[i], frac[i], 4f);
                 int coluna = i % 2, linha = i / 2;                       // proteína/gordura em cima, carbo/água embaixo
                 float x0 = (IconeX + coluna * (larguraColuna + Coluna)) * h;
                 float cy = (LinhaVida - Passo * (2 - linha)) * h;        // duas linhas acima da vida
@@ -128,7 +132,7 @@ namespace GreenHellCompanion
                 GUI.DrawTexture(new Rect(rb.x + 1, rb.y + 1, rb.width, rb.height), Tex(sombra));
                 GUI.DrawTexture(rb, Tex(new Color(1, 1, 1, 0.18f)));
                 var corBarra = critico[i] ? new Color(vermelho.r, vermelho.g, vermelho.b, pulso) : cor;
-                GUI.DrawTexture(new Rect(rb.x, rb.y, rb.width * frac[i], rb.height), Tex(corBarra));
+                GUI.DrawTexture(new Rect(rb.x, rb.y, rb.width * fracVisivel[i], rb.height), Tex(corBarra));
             }
         }
     }

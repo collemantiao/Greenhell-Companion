@@ -16,17 +16,19 @@ namespace GreenHellCompanion
         ConstructionGhost ghost;
         string situacao;
         List<Material> materiais = new List<Material>();
-        float proxima;
+        float proxima, apareceuEm;
 
         public void Atualizar()
         {
             if (!Plugin.AjudaConstrucao.Value || Time.time < proxima) return;
             proxima = Time.time + 0.25f;
             materiais.Clear();
+            var ghostAnterior = ghost;
             ghost = null;
 
             var lista = GhostsAtuais(out situacao);
             if (lista.Count == 0) return;
+            if (ghostAnterior == null) apareceuEm = Time.unscaledTime;   // card acabou de aparecer: anima a entrada
             ghost = lista[0];
 
             var porId = new Dictionary<ItemID, Material>();
@@ -130,7 +132,9 @@ namespace GreenHellCompanion
 
             float h = b.Altura(largura);
             float x = Screen.width - largura - Screen.width * 0.016f;
-            b.Desenhar(new Rect(x, y, largura, h), Painel);
+            float e = Entrada(apareceuEm, 0.22f);
+            var rect = new Rect(x + (1 - e) * Px(30), y, largura, h);
+            ComOpacidade(e, () => b.Desenhar(rect, Painel));
             return y + h + Px(8);
         }
     }
