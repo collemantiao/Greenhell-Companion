@@ -11,6 +11,7 @@ Mod para Green Hell (BepInEx 5) que ajuda sem trapacear: só mostra informação
 | Esc | Fecha a janela do mod. |
 
 Sem tecla:
+- **Macroelementos:** acima da vida e da energia, o mostrador do relógio (proteína, gordura, carboidrato e água) com as porcentagens. Fica vermelho quando o nível está crítico.
 - **Avisos de saúde:** ferimentos, infecções, doenças e status baixos aparecem no canto superior direito, com os tratamentos que o jogo aceita e quantos você tem na mochila.
 - **Construção:** ao posicionar uma construção, ou perto de uma já colocada, mostra cada material, quanto você tem (mochila, mãos e baús a até 20 m) e o que falta.
 

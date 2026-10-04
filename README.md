@@ -19,11 +19,12 @@
 
 | | |
 |---|---|
+| **Macroelementos** | Acima da vida e da energia, no canto inferior esquerdo, o mesmo mostrador do relógio: proteína, gordura, carboidrato e água, com as cores e os ícones do jogo e a porcentagem de cada um. Fica vermelho quando o nível está crítico. Assim você não precisa olhar o relógio. |
 | **Avisos de saúde** | Quando aparece um ferimento, infecção, doença ou status baixo, um cartão no canto da tela diz o que é, onde está, o que causou e quais tratamentos o jogo aceita. Os itens que você já tem na mochila aparecem marcados. Exemplo: *"Laceração de felino · braço esquerdo · sangrando · causado por onça"*, com Formigas ✓ 3 na mochila, Curativo de cinzas ✕ não tem. |
 | **Ajuda de construção** | Ao posicionar uma construção, ou perto de uma já colocada, mostra cada material, quanto você tem (mochila, mãos e baús a até 20 m) e o que ainda falta. |
 | **Marcadores** | Marque o lugar para onde você está olhando e dê um nome. O marcador ativo fica no topo da tela com distância, direção e coordenadas no mesmo formato do relógio do jogo (ex.: `21'W 34'S`). Cada partida tem seus próprios marcadores. |
 | **Guia dentro do jogo** | 230 fichas pesquisáveis sobre animais, ferimentos, doenças, plantas, armas, ferramentas, comida, abrigo e armadilhas, com as soluções em ordem do melhor ao de emergência. |
-| **Configurações** | Tamanho do texto, transparência dos cartões e das ilustrações, e liga/desliga de cada parte. |
+| **Configurações** | Tamanho do texto, transparência dos cartões e das ilustrações, e liga/desliga de cada parte (inclusive o mostrador de macroelementos). |
 
 ### Teclas
 

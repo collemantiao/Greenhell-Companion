@@ -15,10 +15,11 @@ namespace GreenHellCompanion
         public static ConfigEntry<KeyboardShortcut> TeclaGuia, TeclaMarcar, TeclaMarcadores, TeclaConfig;
         public static ConfigEntry<float> Escala, Opacidade, OpacidadeImagem;
         public static ConfigEntry<float> SegundosAlerta;
-        public static ConfigEntry<bool> AvisosSaude, AjudaConstrucao, TodosMarcadoresNoMundo;
+        public static ConfigEntry<bool> AvisosSaude, AjudaConstrucao, TodosMarcadoresNoMundo, MostrarMacros;
 
         Saude saude;
         Construcao construcao;
+        Macros macros;
         Marcadores marcadores;
         JanelaGuia guia;
         public static JanelaConfig Configuracoes { get; private set; }
@@ -36,6 +37,7 @@ namespace GreenHellCompanion
             SegundosAlerta = Config.Bind("Saúde", "SegundosAlerta", 20f, "Quanto tempo o aviso completo fica na tela antes de virar uma linha.");
             AvisosSaude = Config.Bind("Saúde", "Ativo", true, "Mostra avisos de ferimentos, doenças e status baixos.");
             AjudaConstrucao = Config.Bind("Construção", "Ativo", true, "Mostra os materiais que faltam ao construir.");
+            MostrarMacros = Config.Bind("Tela", "MostrarMacroelementos", true, "Mostra proteínas, gorduras, carboidratos e água acima da vida, no canto inferior esquerdo.");
             TodosMarcadoresNoMundo = Config.Bind("Marcadores", "MostrarTodosNoMundo", false, "Mostra todos os marcadores na tela, não só o ativo.");
 
             Config.SaveOnConfigSet = false;   // os deslizantes mudam o valor a cada quadro; salva ao fechar a janela
@@ -47,6 +49,7 @@ namespace GreenHellCompanion
             Imagens.Iniciar(Path.Combine(Path.GetDirectoryName(Info.Location), "Data", "img"));
             saude = new Saude();
             construcao = new Construcao();
+            macros = new Macros();
             marcadores = new Marcadores(Path.Combine(Paths.ConfigPath, "GreenHellCompanion"));
             guia = new JanelaGuia();
             Configuracoes = new JanelaConfig();
@@ -77,6 +80,7 @@ namespace GreenHellCompanion
 
             Proteger(() => saude.Atualizar(), "saude");
             Proteger(() => construcao.Atualizar(), "construcao");
+            Proteger(() => macros.Atualizar(), "macros");
             Proteger(() => marcadores.Atualizar(), "marcadores");
         }
 
@@ -88,6 +92,7 @@ namespace GreenHellCompanion
             if (hud)
             {
                 Proteger(() => marcadores.DesenharHud(), "hud marcadores");
+                Proteger(() => macros.Desenhar(), "hud macros");
                 if (AjudaConstrucao.Value) Proteger(() => construcao.Desenhar(), "hud construcao");
             }
             if (hud || Jogo.InspecionandoCorpo())
