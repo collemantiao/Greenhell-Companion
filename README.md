@@ -26,6 +26,7 @@
 | **Ajuda de construção** | No canto superior direito: ao posicionar uma construção, ou perto de uma já colocada, mostra cada material, quanto você tem (mochila, mãos e baús a até 20 m) e o que ainda falta. |
 | **Marcadores** | Marque o lugar para onde você está olhando e dê um nome. O marcador ativo fica no topo da tela com distância, direção e coordenadas no mesmo formato do relógio do jogo (ex.: `21'W 34'S`). Cada partida tem seus próprios marcadores. Quando você morre, o mod cria sozinho o marcador vermelho **Seu loot**, com o símbolo de uma caveira, onde você caiu e o deixa ativo: no multiplayer a mochila fica nesse lugar, então é só seguir a distância e a direção para recuperar tudo. |
 | **Guia dentro do jogo** | 230 fichas pesquisáveis sobre animais, ferimentos, doenças, plantas, armas, ferramentas, comida, abrigo e armadilhas, com as soluções em ordem do melhor ao de emergência. |
+| **Visual do jogo** | Os cartões usam a mesma faixa de pincel e a mesma fonte do aviso "Caderno: Nova entrada" do jogo, com texto branco e sombra, sem caixas. Dá para voltar às caixas no F4. |
 | **Configurações** | Tamanho do texto, transparência dos cartões e das ilustrações, animações e liga/desliga de cada parte (inclusive os macroelementos). |
 
 ### Teclas

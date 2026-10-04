@@ -19,6 +19,7 @@ namespace GreenHellCompanion
 
         static readonly Dictionary<Color, Texture2D> texturas = new Dictionary<Color, Texture2D>();
         static float escalaFeita = -1;
+        static Font fonteFeita;
 
         public static Texture2D Tex(Color c)
         {
@@ -60,8 +61,10 @@ namespace GreenHellCompanion
         public static void Preparar()
         {
             float e = Screen.height / 1080f * Plugin.Escala.Value;
-            if (Mathf.Approximately(e, escalaFeita) && Texto != null) return;
+            var fonte = Tema.Fonte;   // fonte do HUD do jogo (fica disponível depois que o HUD carrega)
+            if (Mathf.Approximately(e, escalaFeita) && fonte == fonteFeita && Texto != null) return;
             escalaFeita = E = e;
+            fonteFeita = fonte;
 
             GUIStyle Base(float tam, FontStyle fs = FontStyle.Normal, string cor = Tinta)
             {
@@ -70,6 +73,7 @@ namespace GreenHellCompanion
                     fontSize = Px(tam), fontStyle = fs, richText = true, wordWrap = true,
                     padding = new RectOffset(0, 0, 0, 0), margin = new RectOffset(0, 0, 0, 0),
                 };
+                if (fonte != null) s.font = fonte;
                 s.normal.textColor = Cor(cor);
                 return s;
             }
@@ -87,6 +91,7 @@ namespace GreenHellCompanion
             Botao.hover.background = Arredondada(new Color32(232, 169, 60, 60), null, rb);
             Botao.active.background = Arredondada(new Color32(232, 169, 60, 110), null, rb);
             Botao.normal.textColor = Botao.hover.textColor = Botao.active.textColor = Cor(Tinta);
+            if (fonte != null) Botao.font = fonte;
 
             BotaoLista = new GUIStyle(Botao) { alignment = TextAnchor.MiddleLeft, wordWrap = false, fontSize = Px(13) };
             BotaoLista.normal.background = Tex(Color.clear);
@@ -98,6 +103,7 @@ namespace GreenHellCompanion
             Campo.normal.background = Campo.hover.background = Arredondada(new Color32(255, 255, 255, 14), Linha, rc);
             Campo.focused.background = Arredondada(new Color32(255, 255, 255, 18), new Color32(232, 169, 60, 150), rc);
             Campo.normal.textColor = Campo.focused.textColor = Campo.hover.textColor = Cor(Tinta);
+            if (fonte != null) Campo.font = fonte;
 
             estilosCaixa.Clear();
         }
@@ -205,6 +211,7 @@ namespace GreenHellCompanion
         readonly List<L> linhas = new List<L>();
         public string Faixa;      // cor da tarja à esquerda (opcional)
         public Texture2D Imagem;  // silhueta no canto superior direito (opcional)
+        public Tema.Lado Lado = Tema.Lado.Esquerda;   // lado da tela em que o cartão encosta (para a pincelada)
 
         public Bloco Add(GUIStyle s, string t, float recuo = 0, float espacoAntes = 0)
         { linhas.Add(new L { s = s, t = t, rec = recuo, esp = espacoAntes }); return this; }
@@ -222,9 +229,11 @@ namespace GreenHellCompanion
 
         public void Desenhar(Rect r, Color fundo)
         {
-            Estilo.Caixa(r, fundo);
+            bool pincel = Plugin.CartoesPincel.Value;
+            if (pincel) Tema.Pincelada(r, Lado);   // faixa de pincel como nos avisos do jogo
+            else Estilo.Caixa(r, fundo);
             float pad = Estilo.Px(10), faixa = Faixa != null ? Estilo.Px(5) : 0;
-            if (Faixa != null) GUI.DrawTexture(new Rect(r.x, r.y, faixa, r.height), Estilo.Tex(Estilo.Cor(Faixa)));
+            if (Faixa != null && !pincel) GUI.DrawTexture(new Rect(r.x, r.y, faixa, r.height), Estilo.Tex(Estilo.Cor(Faixa)));
             if (Imagem != null) Imagens.Desenhar(Imagem, new Rect(r.xMax - pad - r.width * 0.42f, r.y + pad * 0.6f, r.width * 0.42f, Estilo.Px(64)), Plugin.OpacidadeImagem.Value);
             float x = r.x + pad + faixa, y = r.y + pad, w = r.width - pad * 2 - faixa;
             foreach (var l in linhas)
@@ -241,7 +250,8 @@ namespace GreenHellCompanion
                 float rec = Estilo.Px(l.rec);
                 var c = new GUIContent(l.t);
                 float h = l.s.CalcHeight(c, w - rec);
-                GUI.Label(new Rect(x + rec, y, w - rec, h), c, l.s);
+                if (pincel) Tema.TextoComSombra(new Rect(x + rec, y, w - rec, h), l.t, l.s);
+                else GUI.Label(new Rect(x + rec, y, w - rec, h), c, l.s);
                 y += h;
             }
         }

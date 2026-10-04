@@ -305,7 +305,7 @@ namespace GreenHellCompanion
             float desde = Time.unscaledTime - vistoEm;
             if (desde >= Permanencia) return y;
 
-            var b = new Bloco { Faixa = Info, Imagem = Imagens.Get(mostrando.imagem) };
+            var b = new Bloco { Faixa = Info, Imagem = Imagens.Get(mostrando.imagem), Lado = Tema.Lado.Direita };
             b.Add(Rotulo, C(Info, mostrando.rotulo));
             b.Add(Titulo, Esc(mostrando.titulo), 0, 2);
             for (int i = 0; i < mostrando.linhas.Count; i++) b.Add(Texto, mostrando.linhas[i], 0, i == 0 ? 6 : 3);

@@ -90,7 +90,8 @@ namespace GreenHellCompanion
 
         // Medidas da HUD do jogo em 1080p (ela escala com a altura da tela):
         // ícones pequenos centrados em x ≈ 80, barras de x ≈ 95 até 330, linhas a cada 27 px, vida em y ≈ 1003.
-        const float IconeX = 70, Fim = 330, LinhaVida = 1003, Passo = 27, TamIcone = 20, Espessura = 4;
+        // Afastamento: espaço livre acima da vida, onde o jogo às vezes mostra a lupa de inspeção.
+        const float IconeX = 70, Fim = 330, LinhaVida = 1003, Passo = 27, Afastamento = 30, TamIcone = 20, Espessura = 6;
 
         public void Desenhar()
         {
@@ -107,7 +108,7 @@ namespace GreenHellCompanion
                 if (fracVisivel[i] < 0) fracVisivel[i] = frac[i];
                 else if (repintar) fracVisivel[i] = Suavizar(fracVisivel[i], frac[i], 4f);
                 float x0 = IconeX * h;
-                float cy = (LinhaVida - Passo * (4 - i)) * h;            // quatro linhas acima da vida, uma por macroelemento
+                float cy = (LinhaVida - Afastamento - Passo * (4 - i)) * h;   // quatro linhas acima da vida, uma por macroelemento
                 float ic = TamIcone * h;
 
                 var cor = CorDe(i);
@@ -128,6 +129,8 @@ namespace GreenHellCompanion
                 // barra fina com sombra, trilho claro e preenchimento na cor do macroelemento
                 float bx = x0 + ic + 4 * h, bw = (x0 + larguraColuna * h) - bx, bh = Mathf.Max(2, Espessura * h);
                 var rb = new Rect(bx, cy - bh / 2, bw, bh);
+                // sombra em pincelada, como a borda escura e áspera das barras da HUD do jogo
+                Tema.SombraPincel(new Rect(rb.x - 6 * h, rb.y - bh * 0.9f, rb.width + 12 * h, bh * 2.8f), 0.6f);
                 GUI.DrawTexture(new Rect(rb.x + 1, rb.y + 1, rb.width, rb.height), Tex(sombra));
                 GUI.DrawTexture(rb, Tex(new Color(1, 1, 1, 0.18f)));
                 var corBarra = critico[i] ? new Color(vermelho.r, vermelho.g, vermelho.b, pulso) : cor;

@@ -15,7 +15,7 @@ namespace GreenHellCompanion
         public static ConfigEntry<KeyboardShortcut> TeclaGuia, TeclaMarcar, TeclaMarcadores, TeclaConfig, TeclaConstrucao;
         public static ConfigEntry<float> Escala, Opacidade, OpacidadeImagem;
         public static ConfigEntry<float> SegundosAlerta;
-        public static ConfigEntry<bool> AvisosSaude, AjudaConstrucao, TodosMarcadoresNoMundo, MostrarMacros, Animacoes, Dicas;
+        public static ConfigEntry<bool> AvisosSaude, AjudaConstrucao, TodosMarcadoresNoMundo, MostrarMacros, Animacoes, Dicas, CartoesPincel;
 
         Saude saude;
         Construcao construcao;
@@ -41,6 +41,7 @@ namespace GreenHellCompanion
             SegundosAlerta = Config.Bind("Saúde", "SegundosAlerta", 20f, "Quanto tempo o aviso completo fica na tela antes de virar uma linha.");
             AvisosSaude = Config.Bind("Saúde", "Ativo", true, "Mostra avisos de ferimentos, doenças e status baixos.");
             Dicas = Config.Bind("Dicas", "Ativo", true, "Mostra uma dica sobre o que você está olhando (água, frutas, larvas, animais).");
+            CartoesPincel = Config.Bind("Tela", "CartoesEstiloDoJogo", true, "Cartões com a faixa de pincel e a fonte do jogo, em vez de caixas.");
             Animacoes = Config.Bind("Tela", "Animacoes", true, "Anima a abertura das janelas, a entrada dos avisos e as barras.");
             AjudaConstrucao = Config.Bind("Construção", "Ativo", true, "Mostra os materiais que faltam ao construir.");
             MostrarMacros = Config.Bind("Tela", "MostrarMacroelementos", true, "Mostra proteínas, gorduras, carboidratos e água acima da vida, no canto inferior esquerdo.");

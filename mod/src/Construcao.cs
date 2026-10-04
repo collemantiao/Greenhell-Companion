@@ -111,7 +111,7 @@ namespace GreenHellCompanion
         {
             if (ghost == null || materiais.Count == 0) return y;
             float largura = Mathf.Max(Screen.width * 0.22f, Px(300));
-            var b = new Bloco();
+            var b = new Bloco { Lado = Tema.Lado.Direita };
             b.Add(Rotulo, "CONSTRUÇÃO · " + situacao.ToUpperInvariant());
             string nome = ghost.m_ResultItemID != ItemID.None ? Jogo.NomeItem(ghost.m_ResultItemID) : "Construção";
             b.Add(Titulo, Esc(nome), 0, 2);

@@ -18,7 +18,7 @@ namespace GreenHellCompanion
         {
             if (EscPressionado()) { Fechar(); return; }
             float pad = Px(16), w = Mathf.Max(Screen.width * 0.24f, Px(330));
-            float alt = Px(596);
+            float alt = Px(624);
             var r = new Rect((Screen.width - w) / 2, (Screen.height - alt) / 2, w, alt);
             CaixaArredondada(r, PainelForte, RaioJanela);
             float x = r.x + pad, iw = w - pad * 2, y = r.y + pad;
@@ -39,6 +39,7 @@ namespace GreenHellCompanion
             y = Chave(x, y, iw, "Dicas do que você está olhando", Plugin.Dicas);
             y = Chave(x, y, iw, "Todos os marcadores no mundo", Plugin.TodosMarcadoresNoMundo);
             y = Chave(x, y, iw, "Animações", Plugin.Animacoes);
+            y = Chave(x, y, iw, "Cartões no estilo do jogo (pincelada)", Plugin.CartoesPincel);
 
             y += Px(10);
             float bw = (iw - Px(8)) / 2;

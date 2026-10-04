@@ -211,9 +211,9 @@ namespace GreenHellCompanion
             float icone = Px(14), pad = Px(10), h = tam.y + Px(12);
             float w = tam.x + icone + pad * 3;
             var r = new Rect((Screen.width - w) / 2, Screen.height * 0.022f, w, h);
-            Caixa(r, Painel);
+            if (Plugin.CartoesPincel.Value) Tema.Pincelada(r, Tema.Lado.Centro); else Caixa(r, Painel);
             Icone(ativo, new Vector2(r.x + pad + icone / 2, r.center.y), icone * 0.7f, ativo.Cor);
-            GUI.Label(new Rect(r.x + pad * 2 + icone, r.y + Px(6), tam.x, tam.y), cont, Texto);
+            Tema.TextoComSombra(new Rect(r.x + pad * 2 + icone, r.y + Px(6), tam.x, tam.y), texto, Texto);
 
             // seta relativa, logo antes da direção cardeal
             var antes = Texto.CalcSize(new GUIContent($"<b>{Esc(ativo.nome)}</b>    {TextoDistancia(dist)}    "));
