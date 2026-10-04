@@ -19,7 +19,7 @@ namespace GreenHellCompanion
             if (EscPressionado()) { Fechar(); return; }
             float pad = Px(16), w = Mathf.Max(Screen.width * 0.24f, Px(330));
             var r = new Rect(Screen.width * 0.016f, Screen.height * 0.12f, w, Px(498));
-            Caixa(r, PainelForte);
+            CaixaArredondada(r, PainelForte, RaioJanela);
             float x = r.x + pad, iw = w - pad * 2, y = r.y + pad;
 
             GUI.Label(new Rect(x, y, iw, Px(30)), "<b>Configurações</b>", TituloGrande);

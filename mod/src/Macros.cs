@@ -146,14 +146,14 @@ namespace GreenHellCompanion
         {
             if (!Plugin.MostrarMacros.Value) return;
             float h = Screen.height / 1080f;          // o HUD do jogo escala com a altura da tela
-            float d = Px(78);                          // diâmetro do anel
-            float pad = Px(8);
-            float colW = Px(118);
-            float w = pad + d + Px(12) + colW * 2 + pad;
+            float d = Px(56);                          // diâmetro do anel
+            float pad = Px(6);
+            float colW = Px(86);
+            float w = pad + d + Px(10) + colW * 2 + pad;
             float alt = d + pad * 2;
             // a vida/energia do jogo ocupa ~ y 990–1045 (em 1080p), começando em x ≈ 22
             float x = 22 * h;
-            float yBase = Screen.height - (1080 - 982) * h;   // logo acima das barras do jogo
+            float yBase = Screen.height - (1080 - 989) * h;   // encostado nas barras do jogo
             var r = new Rect(x, yBase - alt, w, alt);
             Caixa(r, Painel);
 
@@ -173,7 +173,7 @@ namespace GreenHellCompanion
             }
 
             // valores em 2x2, na mesma ordem dos quadrantes
-            float gx = ra.xMax + Px(12), gy = r.y + pad;
+            float gx = ra.xMax + Px(10), gy = r.y + pad;
             float linha = d / 2;
             for (int i = 0; i < 4; i++)
             {
@@ -181,8 +181,8 @@ namespace GreenHellCompanion
                 string hex = "#" + ColorUtility.ToHtmlStringRGB(CorDe(i));
                 string pct = $"{Mathf.RoundToInt(frac[i] * 100)}%";
                 string valor = critico[i] ? C(Perigo, $"<b>{pct}</b>") : $"<b>{pct}</b>";
-                GUI.Label(new Rect(cx, cy + linha * 0.12f, colW, linha * 0.45f), C(hex, Nomes[i].ToUpperInvariant()), Rotulo);
-                GUI.Label(new Rect(cx, cy + linha * 0.42f, colW, linha * 0.55f), valor, Titulo);
+                GUI.Label(new Rect(cx, cy + linha * 0.02f, colW, linha * 0.5f), C(hex, Nomes[i].ToUpperInvariant()), Rotulo);
+                GUI.Label(new Rect(cx, cy + linha * 0.42f, colW, linha * 0.6f), valor, Texto);
             }
         }
     }

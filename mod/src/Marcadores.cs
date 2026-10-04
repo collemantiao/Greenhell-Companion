@@ -277,7 +277,7 @@ namespace GreenHellCompanion
                 foreach (var m in lista)
                 {
                     var lr = new Rect(0, ly, conteudo.width, linha);
-                    Caixa(lr, m.ativo ? new Color32(232, 169, 60, 30) : new Color32(255, 255, 255, 8));
+                    CaixaArredondada(lr, m.ativo ? new Color32(232, 169, 60, 30) : new Color32(255, 255, 255, 8), RaioLinha);
                     Losango(new Vector2(lr.x + Px(16), lr.y + Px(18)), Px(9), m.ativo ? Cor(Destaque) : Cor(Apagado));
                     float tx = lr.x + Px(30), bw = Px(84), bx = lr.xMax - Px(8) - bw * 3 - Px(8);
 

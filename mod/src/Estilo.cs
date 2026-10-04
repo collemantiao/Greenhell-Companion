@@ -56,20 +56,89 @@ namespace GreenHellCompanion
             Mono = Base(11.5f, FontStyle.Normal, Apagado);
             Mono.wordWrap = false;
 
-            Botao = new GUIStyle(GUI.skin.button) { fontSize = Px(12.5f), richText = true, padding = new RectOffset(Px(10), Px(10), Px(4), Px(4)) };
-            Botao.normal.background = Tex(new Color32(255, 255, 255, 18));
-            Botao.hover.background = Tex(new Color32(232, 169, 60, 60));
-            Botao.active.background = Tex(new Color32(232, 169, 60, 110));
+            int rb = Px(RaioBotao);
+            Botao = new GUIStyle(GUI.skin.button) { fontSize = Px(12.5f), richText = true, padding = new RectOffset(Px(10), Px(10), Px(4), Px(4)), border = new RectOffset(rb, rb, rb, rb) };
+            Botao.normal.background = Arredondada(new Color32(255, 255, 255, 18), null, rb);
+            Botao.hover.background = Arredondada(new Color32(232, 169, 60, 60), null, rb);
+            Botao.active.background = Arredondada(new Color32(232, 169, 60, 110), null, rb);
             Botao.normal.textColor = Botao.hover.textColor = Botao.active.textColor = Cor(Tinta);
 
             BotaoLista = new GUIStyle(Botao) { alignment = TextAnchor.MiddleLeft, wordWrap = false, fontSize = Px(13) };
             BotaoLista.normal.background = Tex(Color.clear);
-            BotaoLista.onNormal.background = Tex(new Color32(232, 169, 60, 45));
+            BotaoLista.onNormal.background = Arredondada(new Color32(232, 169, 60, 45), null, rb);
             BotaoLista.onNormal.textColor = Cor(Tinta);
 
-            Campo = new GUIStyle(GUI.skin.textField) { fontSize = Px(15), padding = new RectOffset(Px(8), Px(8), Px(6), Px(6)) };
-            Campo.normal.background = Campo.focused.background = Campo.hover.background = Tex(new Color32(255, 255, 255, 14));
+            int rc = Px(RaioCampo);
+            Campo = new GUIStyle(GUI.skin.textField) { fontSize = Px(15), padding = new RectOffset(Px(10), Px(10), Px(6), Px(6)), border = new RectOffset(rc, rc, rc, rc) };
+            Campo.normal.background = Campo.hover.background = Arredondada(new Color32(255, 255, 255, 14), Linha, rc);
+            Campo.focused.background = Arredondada(new Color32(255, 255, 255, 18), new Color32(232, 169, 60, 150), rc);
             Campo.normal.textColor = Campo.focused.textColor = Campo.hover.textColor = Cor(Tinta);
+
+            estilosCaixa.Clear();
+        }
+
+        // ---------- Cantos arredondados ----------
+        public const float RaioJanela = 14, RaioLinha = 8, RaioBotao = 6, RaioCampo = 8;
+
+        static readonly Dictionary<string, Texture2D> arredondadas = new Dictionary<string, Texture2D>();
+        static readonly Dictionary<Texture2D, GUIStyle> estilosCaixa = new Dictionary<Texture2D, GUIStyle>();
+
+        /// <summary>
+        /// Textura pequena com cantos arredondados e borda de 1 px opcional, para ser esticada em 9 partes
+        /// (os cantos ficam do mesmo tamanho em qualquer largura).
+        /// </summary>
+        public static Texture2D Arredondada(Color fundo, Color? borda, int raio)
+        {
+            raio = Mathf.Max(2, raio);
+            string chave = $"{(Color32)fundo}|{(borda.HasValue ? ((Color32)borda.Value).ToString() : "-")}|{raio}";
+            if (arredondadas.TryGetValue(chave, out var t) && t != null) return t;
+
+            int s = raio * 2 + 3;
+            t = new Texture2D(s, s, TextureFormat.RGBA32, false) { hideFlags = HideFlags.HideAndDontSave, filterMode = FilterMode.Bilinear, wrapMode = TextureWrapMode.Clamp };
+            var px = new Color[s * s];
+            float meio = s / 2f, metadeInterna = meio - raio;
+            for (int y = 0; y < s; y++)
+                for (int x = 0; x < s; x++)
+                {
+                    // distância com sinal até a borda do retângulo arredondado (negativa = dentro)
+                    float qx = Mathf.Abs(x + 0.5f - meio) - metadeInterna;
+                    float qy = Mathf.Abs(y + 0.5f - meio) - metadeInterna;
+                    float fora = new Vector2(Mathf.Max(qx, 0), Mathf.Max(qy, 0)).magnitude;
+                    float d = fora + Mathf.Min(Mathf.Max(qx, qy), 0) - raio;
+                    float cobertura = Mathf.Clamp01(0.5f - d);
+                    var c = fundo;
+                    if (borda.HasValue)
+                    {
+                        float naBorda = Mathf.Clamp01(1f - Mathf.Abs(d + 0.5f)) * borda.Value.a;
+                        c = new Color(
+                            Mathf.Lerp(fundo.r, borda.Value.r, naBorda),
+                            Mathf.Lerp(fundo.g, borda.Value.g, naBorda),
+                            Mathf.Lerp(fundo.b, borda.Value.b, naBorda),
+                            Mathf.Max(fundo.a, naBorda));
+                    }
+                    c.a *= cobertura;
+                    px[y * s + x] = c;
+                }
+            t.SetPixels(px);
+            t.Apply();
+            arredondadas[chave] = t;
+            return t;
+        }
+
+        /// <summary>Caixa com cantos arredondados e borda clara, como as janelas do mod.</summary>
+        public static void CaixaArredondada(Rect r, Color fundo, float raio, bool borda = true)
+        {
+            if (Event.current.type != EventType.Repaint) return;
+            int rp = Mathf.Min(Px(raio), Mathf.FloorToInt(Mathf.Min(r.width, r.height) / 2) - 1);
+            var tex = Arredondada(fundo, borda ? Linha : (Color?)null, rp);
+            if (!estilosCaixa.TryGetValue(tex, out var st))
+            {
+                int b = (tex.width - 1) / 2;
+                st = new GUIStyle { border = new RectOffset(b, b, b, b) };
+                st.normal.background = tex;
+                estilosCaixa[tex] = st;
+            }
+            st.Draw(r, false, false, false, false);
         }
 
         public static void Caixa(Rect r, Color fundo)
@@ -185,7 +254,7 @@ namespace GreenHellCompanion
         protected static void Fundo(Rect r)
         {
             GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Estilo.Tex(Estilo.Escurece));
-            Estilo.Caixa(r, Estilo.PainelForte);
+            Estilo.CaixaArredondada(r, Estilo.PainelForte, Estilo.RaioJanela);
         }
 
         /// <summary>Esc dentro de um campo de texto chega pelo OnGUI, não pelo Update.</summary>
