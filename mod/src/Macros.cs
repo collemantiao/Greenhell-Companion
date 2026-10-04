@@ -4,25 +4,22 @@ using static GreenHellCompanion.Estilo;
 namespace GreenHellCompanion
 {
     /// <summary>
-    /// Mostrador de macroelementos no canto inferior esquerdo, acima da vida/energia do jogo.
-    /// Mesmo desenho do relógio: proteínas (cima-esq.), gorduras (cima-dir.), carboidratos (baixo-esq.), água (baixo-dir.),
-    /// com as cores e os ícones do próprio jogo.
+    /// Macroelementos no estilo da HUD do jogo: ícone num círculo + barra fina, sem cartão de fundo,
+    /// em duas linhas logo acima da vida e da energia. Mesma ordem do relógio:
+    /// proteína | gordura (em cima) e carboidrato | água (embaixo). Cores e ícones do próprio jogo.
     /// </summary>
     public class Macros
     {
         enum Q { Proteina, Gordura, Carbo, Agua }
-        static readonly string[] Nomes = { "Proteína", "Gordura", "Carboidrato", "Água" };
         static readonly IconColors.Icon[] Icones = { IconColors.Icon.Proteins, IconColors.Icon.Fat, IconColors.Icon.Carbo, IconColors.Icon.Hydration };
         // Cores do relógio, caso o IconColors do jogo ainda não esteja pronto.
         static readonly Color[] CoresPadrao = { new Color32(229, 100, 60, 255), new Color32(230, 194, 30, 255), new Color32(61, 190, 78, 255), new Color32(91, 192, 224, 255) };
 
         readonly float[] frac = new float[4];
-        readonly float[] fracDesenhada = { -1, -1, -1, -1 };
         readonly bool[] critico = new bool[4];
         Color[] cores;
-        Texture2D anel;
         float proxima;
-        const int N = 192;   // resolução da textura do anel
+        static Texture2D circulo;
 
         public void Atualizar()
         {
@@ -57,59 +54,25 @@ namespace GreenHellCompanion
             return cores[i];
         }
 
-        // ---------- Anel (textura gerada quando os valores mudam) ----------
-        Texture2D Anel()
+        /// <summary>Contorno de círculo branco com antisserrilhado, como os ícones da HUD.</summary>
+        static Texture2D Circulo()
         {
-            bool mudou = anel == null;
-            for (int i = 0; i < 4; i++) if (Mathf.Abs(frac[i] - fracDesenhada[i]) > 0.004f) mudou = true;
-            if (!mudou) return anel;
-
-            if (anel == null) anel = new Texture2D(N, N, TextureFormat.RGBA32, false) { hideFlags = HideFlags.HideAndDontSave, filterMode = FilterMode.Bilinear, wrapMode = TextureWrapMode.Clamp };
-            var px = new Color32[N * N];
-            float c = (N - 1) / 2f, rExt = N * 0.49f, rInt = N * 0.36f, rFundo = N * 0.35f;
-            const float vao = 5f;   // graus de espaço entre os quadrantes
-            for (int y = 0; y < N; y++)
-                for (int x = 0; x < N; x++)
+            if (circulo != null) return circulo;
+            const int n = 64;
+            circulo = new Texture2D(n, n, TextureFormat.RGBA32, false) { hideFlags = HideFlags.HideAndDontSave, filterMode = FilterMode.Bilinear };
+            float c = (n - 1) / 2f, r = n / 2f - 2f, esp = 3.2f;
+            var px = new Color[n * n];
+            for (int y = 0; y < n; y++)
+                for (int x = 0; x < n; x++)
                 {
-                    float dx = x - c, dy = y - c;   // y da textura cresce para cima
-                    float r = Mathf.Sqrt(dx * dx + dy * dy);
-                    Color cor = Color.clear;
-                    if (r <= rFundo + 0.5f)
-                    {
-                        cor = new Color(0.04f, 0.07f, 0.05f, 0.88f * Borda(rFundo - r));
-                    }
-                    else if (r >= rInt - 0.5f && r <= rExt + 0.5f)
-                    {
-                        float ang = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;   // 0 = direita, anti-horário
-                        if (ang < 0) ang += 360;
-                        // quadrante e progresso no sentido horário a partir do início dele
-                        int q; float inicio;
-                        if (ang >= 90 && ang < 180) { q = (int)Q.Proteina; inicio = 180; }
-                        else if (ang < 90) { q = (int)Q.Gordura; inicio = 90; }
-                        else if (ang >= 270) { q = (int)Q.Agua; inicio = 360; }
-                        else { q = (int)Q.Carbo; inicio = 270; }
-                        float andou = inicio - ang;                     // 0..90, horário
-                        if (andou >= vao / 2 && andou <= 90 - vao / 2)
-                        {
-                            float prog = (andou - vao / 2) / (90 - vao);
-                            float alfaBorda = Borda(Mathf.Min(r - rInt, rExt - r));
-                            var baseCor = CorDe(q);
-                            cor = prog <= frac[q]
-                                ? new Color(baseCor.r, baseCor.g, baseCor.b, alfaBorda)
-                                : new Color(baseCor.r, baseCor.g, baseCor.b, 0.2f * alfaBorda);
-                        }
-                    }
-                    px[y * N + x] = cor;
+                    float d = Mathf.Abs(new Vector2(x - c, y - c).magnitude - r);
+                    px[y * n + x] = new Color(1, 1, 1, Mathf.Clamp01(esp / 2 - d + 0.5f));
                 }
-            anel.SetPixels32(px);
-            anel.Apply();
-            for (int i = 0; i < 4; i++) fracDesenhada[i] = frac[i];
-            return anel;
+            circulo.SetPixels(px);
+            circulo.Apply();
+            return circulo;
         }
 
-        static float Borda(float d) => Mathf.Clamp01(d + 0.5f);   // antisserrilhado de 1 px
-
-        // ---------- Ícones do jogo ----------
         static Sprite Icone(int i)
         {
             HUDMessages h = null;
@@ -124,48 +87,48 @@ namespace GreenHellCompanion
             }
         }
 
-        // ---------- Desenho ----------
+        // Medidas da HUD do jogo em 1080p (ela escala com a altura da tela):
+        // ícones pequenos centrados em x ≈ 80, barras de x ≈ 95 até 330, linhas a cada 27 px, vida em y ≈ 1003.
+        const float IconeX = 70, Fim = 330, Coluna = 10, LinhaVida = 1003, Passo = 27, TamIcone = 20, Espessura = 4;
+
         public void Desenhar()
         {
             if (!Plugin.MostrarMacros.Value) return;
-            float h = Screen.height / 1080f;          // o HUD do jogo escala com a altura da tela
-            float d = Px(56);                          // diâmetro do anel
-            float pad = Px(6);
-            float colW = Px(86);
-            float w = pad + d + Px(10) + colW * 2 + pad;
-            float alt = d + pad * 2;
-            // a vida/energia do jogo ocupa ~ y 990–1045 (em 1080p), começando em x ≈ 22
-            float x = 22 * h;
-            float yBase = Screen.height - (1080 - 989) * h;   // encostado nas barras do jogo
-            var r = new Rect(x, yBase - alt, w, alt);
-            Caixa(r, Painel);
+            float h = Screen.height / 1080f;
+            float larguraColuna = (Fim - IconeX - Coluna) / 2f;
+            float pulso = 0.55f + 0.45f * Mathf.Abs(Mathf.Sin(Time.time * 3f));
+            var vermelho = Cor(Perigo);
+            var sombra = new Color(0, 0, 0, 0.45f);
 
-            var ra = new Rect(r.x + pad, r.y + pad, d, d);
-            GUI.DrawTexture(ra, Anel(), ScaleMode.StretchToFill, true);
-
-            // ícones dentro do anel, um por quadrante
-            float ic = d * 0.2f, off = d * 0.17f;
-            var centro = ra.center;
-            Vector2[] pos = { new Vector2(-off, -off), new Vector2(off, -off), new Vector2(-off, off), new Vector2(off, off) };
             for (int i = 0; i < 4; i++)
             {
+                int coluna = i % 2, linha = i / 2;                       // proteína/gordura em cima, carbo/água embaixo
+                float x0 = (IconeX + coluna * (larguraColuna + Coluna)) * h;
+                float cy = (LinhaVida - Passo * (2 - linha)) * h;        // duas linhas acima da vida
+                float ic = TamIcone * h;
+
+                var cor = CorDe(i);
+                var corAnel = critico[i] ? new Color(vermelho.r, vermelho.g, vermelho.b, pulso) : new Color(1, 1, 1, 0.9f);
+
+                // círculo + ícone do jogo
+                var ri = new Rect(x0, cy - ic / 2, ic, ic);
+                var antes = GUI.color;
+                GUI.color = sombra;
+                GUI.DrawTexture(new Rect(ri.x + 1, ri.y + 1, ri.width, ri.height), Circulo());
+                GUI.color = corAnel;
+                GUI.DrawTexture(ri, Circulo());
+                GUI.color = antes;
                 var s = Icone(i);
-                var cr = new Rect(centro.x + pos[i].x - ic / 2, centro.y + pos[i].y - ic / 2, ic, ic);
-                if (s != null) DesenharSprite(s, cr, CorDe(i));
-                else GUI.Label(cr, C("#" + ColorUtility.ToHtmlStringRGB(CorDe(i)), "●"), new GUIStyle(Pequeno) { alignment = TextAnchor.MiddleCenter });
-            }
+                float m = ic * 0.22f;
+                if (s != null) DesenharSprite(s, new Rect(ri.x + m, ri.y + m, ic - 2 * m, ic - 2 * m), critico[i] ? corAnel : cor);
 
-            // valores em 2x2, na mesma ordem dos quadrantes
-            float gx = ra.xMax + Px(10), gy = r.y + pad;
-            float linha = d / 2;
-            for (int i = 0; i < 4; i++)
-            {
-                float cx = gx + (i % 2) * colW, cy = gy + (i / 2) * linha;
-                string hex = "#" + ColorUtility.ToHtmlStringRGB(CorDe(i));
-                string pct = $"{Mathf.RoundToInt(frac[i] * 100)}%";
-                string valor = critico[i] ? C(Perigo, $"<b>{pct}</b>") : $"<b>{pct}</b>";
-                GUI.Label(new Rect(cx, cy + linha * 0.02f, colW, linha * 0.5f), C(hex, Nomes[i].ToUpperInvariant()), Rotulo);
-                GUI.Label(new Rect(cx, cy + linha * 0.42f, colW, linha * 0.6f), valor, Texto);
+                // barra fina com sombra, trilho claro e preenchimento na cor do macroelemento
+                float bx = x0 + ic + 4 * h, bw = (x0 + larguraColuna * h) - bx, bh = Mathf.Max(2, Espessura * h);
+                var rb = new Rect(bx, cy - bh / 2, bw, bh);
+                GUI.DrawTexture(new Rect(rb.x + 1, rb.y + 1, rb.width, rb.height), Tex(sombra));
+                GUI.DrawTexture(rb, Tex(new Color(1, 1, 1, 0.18f)));
+                var corBarra = critico[i] ? new Color(vermelho.r, vermelho.g, vermelho.b, pulso) : cor;
+                GUI.DrawTexture(new Rect(rb.x, rb.y, rb.width * frac[i], rb.height), Tex(corBarra));
             }
         }
     }

@@ -19,7 +19,7 @@
 
 | | |
 |---|---|
-| **Macroelementos** | Acima da vida e da energia, no canto inferior esquerdo, o mesmo mostrador do relógio: proteína, gordura, carboidrato e água, com as cores e os ícones do jogo e a porcentagem de cada um. Fica vermelho quando o nível está crítico. Assim você não precisa olhar o relógio. |
+| **Macroelementos** | Duas linhas no mesmo estilo da vida e da energia, logo acima delas: proteína e gordura, carboidrato e água, com as cores e os ícones do jogo. A barra pisca em vermelho quando o nível está crítico. Assim você não precisa olhar o relógio. |
 | **Avisos de saúde** | Quando aparece um ferimento, infecção, doença ou status baixo, um cartão no canto da tela diz o que é, onde está, o que causou e quais tratamentos o jogo aceita. Os itens que você já tem na mochila aparecem marcados. Exemplo: *"Laceração de felino · braço esquerdo · sangrando · causado por onça"*, com Formigas ✓ 3 na mochila, Curativo de cinzas ✕ não tem. |
 | **Menu de construção** | Tecla F5. Todas as construções e receitas de criação que você conhece, por grupo (abrigos, fogo, água, armadilhas, ferramentas, armas, curativos…), no formato `Galho 13 (8)`: o necessário e, entre parênteses, quanto você tem na mochila. O número fica **verde** quando dá e **vermelho** quando falta. Tem busca por nome ou material, filtro "só o que dá para fazer agora" e botão **Posicionar** para começar a construir. |
 | **Ajuda de construção** | Ao posicionar uma construção, ou perto de uma já colocada, mostra cada material, quanto você tem (mochila, mãos e baús a até 20 m) e o que ainda falta. |
