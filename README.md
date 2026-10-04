@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/carvalhoofelipe/Greenhell-Companion/releases/latest"><b>Baixar a versão mais recente</b></a>
+  <a href="https://github.com/collemantiao/Greenhell-Companion/releases/latest"><b>Baixar a versão mais recente</b></a>
 </p>
 
 ---
@@ -46,7 +46,7 @@ As teclas F1 a F4 não são usadas pelo jogo. Dá para trocá-las nas configura�
 
 ## Como instalar
 
-Baixe na página de [**Releases**](https://github.com/carvalhoofelipe/Greenhell-Companion/releases/latest) um dos dois arquivos:
+Baixe na página de [**Releases**](https://github.com/collemantiao/Greenhell-Companion/releases/latest) um dos dois arquivos:
 
 ### Opção 1: arquivo `.zip` (recomendado)
 
@@ -97,7 +97,7 @@ Para desligar todos os mods do jogo, apague o `winhttp.dll` da pasta do jogo.
 2. Abra o jogo uma vez e veja se apareceu o arquivo `BepInEx\LogOutput.log`. Se ele não aparecer, o carregador de mods não está ativo.
 3. Se ele existir, procure por `Green Hell Companion` dentro dele.
 
-Abra uma [issue](https://github.com/carvalhoofelipe/Greenhell-Companion/issues) com o conteúdo do `LogOutput.log` e o que aconteceu.
+Abra uma [issue](https://github.com/collemantiao/Greenhell-Companion/issues) com o conteúdo do `LogOutput.log` e o que aconteceu.
 
 > Esta é a primeira versão. Se algum aviso, número ou receita estiver errado, conte na issue qual ficha e o que você viu no jogo.
 
