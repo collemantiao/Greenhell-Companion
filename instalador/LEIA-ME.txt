@@ -50,10 +50,23 @@ Os avisos de saúde e a ajuda de construção aparecem sozinhos.
 NÃO FUNCIONOU?
 --------------
 
-- Confira se o winhttp.dll ficou na MESMA pasta do GH.exe.
-- Depois de abrir o jogo uma vez, deve existir o arquivo BepInEx\LogOutput.log.
-  Se ele não existir, o carregador de mods não foi ativado: confira o passo 3.
-- Se existir, procure "Green Hell Companion" dentro dele. As mensagens de erro aparecem ali.
+Quando o mod está funcionando, ao entrar numa partida aparece a mensagem
+"Green Hell Companion ativo · F1 guia · F4 configurações" no canto da tela.
+
+Se ela não aparecer:
+
+1. O winhttp.dll precisa estar na MESMA pasta do GH.exe.
+   O "Extrair tudo" do Windows costuma criar uma pasta com o nome do zip
+   (ex.: Green Hell\GreenHellCompanion-1.0.1\). Se aconteceu, mova o conteúdo
+   dessa pasta para a pasta do jogo.
+2. Veja se o antivírus apagou ou pôs em quarentena o winhttp.dll.
+   Se sim, restaure-o e adicione a pasta do jogo às exceções.
+3. Steam Deck ou Linux: nas propriedades do jogo na Steam, em Opções de
+   inicialização, coloque:   WINEDLLOVERRIDES="winhttp=n,b" %command%
+4. Abra o jogo uma vez e veja se existe o arquivo BepInEx\LogOutput.log.
+   - Não existe: o carregador de mods não iniciou (veja os itens 1 a 3).
+   - Existe: procure "Green Hell Companion" nele e mande o arquivo para quem
+     te passou o mod, ou abra uma issue no GitHub.
 
 
 COMO REMOVER

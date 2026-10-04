@@ -94,9 +94,12 @@ Para desligar todos os mods do jogo, apague o `winhttp.dll` da pasta do jogo.
 
 ## Problemas?
 
-1. Confira se o `winhttp.dll` está na **mesma** pasta do `GH.exe`.
-2. Abra o jogo uma vez e veja se apareceu o arquivo `BepInEx\LogOutput.log`. Se ele não aparecer, o carregador de mods não está ativo.
-3. Se ele existir, procure por `Green Hell Companion` dentro dele.
+Quando o mod está funcionando, ao entrar numa partida aparece a mensagem **"Green Hell Companion ativo · F1 guia · F4 configurações"**. Se ela não aparecer:
+
+1. **O `winhttp.dll` precisa estar na mesma pasta do `GH.exe`.** O "Extrair tudo" do Windows costuma criar uma pasta com o nome do zip (ex.: `Green Hell\GreenHellCompanion-1.0.1\`). Se aconteceu, mova o conteúdo dela para a pasta do jogo.
+2. **Antivírus:** veja se ele apagou ou pôs em quarentena o `winhttp.dll`. Restaure e adicione a pasta do jogo às exceções.
+3. **Steam Deck / Linux:** em *Propriedades > Opções de inicialização* do jogo na Steam, coloque `WINEDLLOVERRIDES="winhttp=n,b" %command%`.
+4. Abra o jogo uma vez e veja se existe `BepInEx\LogOutput.log`. Se **não existir**, o carregador de mods não iniciou (itens 1 a 3). Se existir, procure por `Green Hell Companion` nele.
 
 Abra uma [issue](https://github.com/collemantiao/Greenhell-Companion/issues) com o conteúdo do `LogOutput.log` e o que aconteceu.
 

@@ -63,8 +63,26 @@ namespace GreenHellCompanion
             menuConstrucao = new JanelaConstrucao();
             Configuracoes = new JanelaConfig();
 
-            new Harmony(Id).PatchAll(typeof(Plugin).Assembly);
-            Logger.LogInfo("Green Hell Companion carregado");
+            // cada patch separado: se a versão do jogo for diferente e um falhar, o resto do mod continua funcionando
+            var harmony = new Harmony(Id);
+            foreach (var tipo in new[] { typeof(BloqueiaMenuPausa), typeof(RegistraMorte) })
+            {
+                try { harmony.CreateClassProcessor(tipo).Patch(); }
+                catch (System.Exception e) { Logger.LogWarning($"Patch {tipo.Name} não aplicado (versão do jogo diferente?): {e.Message}"); }
+            }
+            Logger.LogInfo($"Green Hell Companion {Info.Metadata.Version} carregado (jogo: {Application.version})");
+        }
+
+        bool avisouAtivo;
+
+        /// <summary>Mensagem do próprio HUD do jogo ao entrar na partida, para o jogador saber que o mod está ativo.</summary>
+        void AvisarAtivo()
+        {
+            try
+            {
+                HUDMessages.Get()?.AddMessage($"Green Hell Companion ativo · {TeclaGuia.Value.MainKey} guia · {TeclaConfig.Value.MainKey} configurações");
+            }
+            catch (System.Exception e) { Logger.LogWarning("aviso de ativo: " + e.Message); }
         }
 
         public static void Log(string msg) => Instancia.Logger.LogInfo(msg);
@@ -73,6 +91,8 @@ namespace GreenHellCompanion
         void Update()
         {
             bool jogando = Jogo.EmJogo();
+            if (jogando && !avisouAtivo) { avisouAtivo = true; AvisarAtivo(); }
+            if (!jogando) avisouAtivo = false;
             if (!jogando)
             {
                 if (Janela.Aberta != null) Janela.Fechar();
