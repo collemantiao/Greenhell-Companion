@@ -21,6 +21,7 @@ namespace GreenHellCompanion
         Construcao construcao;
         Macros macros;
         Marcadores marcadores;
+        public static Marcadores MarcadoresAtivos => Instancia?.marcadores;
         JanelaGuia guia;
         JanelaConstrucao menuConstrucao;
         public static JanelaConfig Configuracoes { get; private set; }
@@ -117,6 +118,37 @@ namespace GreenHellCompanion
         {
             try { a(); }
             catch (System.Exception e) { if (jaLogado.Add(onde)) Erro(onde, e); }
+        }
+    }
+
+    // Quando o jogador morre, guarda a posição como marcador. No multiplayer a mochila cai nesse lugar
+    // (DeathController.DropInventory) e o jogador renasce no último ponto salvo; no single-player o jogo recarrega o save.
+    [HarmonyPatch(typeof(DeathController), "OnEnable")]
+    static class RegistraMorte
+    {
+        static void Postfix(DeathController __instance)
+        {
+            try
+            {
+                var p = Player.Get();
+                if (p == null || MainLevel.Instance == null || !MainLevel.Instance.m_LevelStarted) return;
+                bool loot = P2PTransportLayer.Instance.GetGameVisibility() != P2PGameVisibility.Singleplayer || __instance.m_RespawnAfterZeroHPLoad;
+                Plugin.MarcadoresAtivos?.RegistrarMorte(p.transform.position, loot, Quando());
+            }
+            catch (System.Exception e) { Plugin.Erro("registrar morte", e); }
+        }
+
+        static string Quando()
+        {
+            string hora = "";
+            try
+            {
+                float h = MainLevel.Instance.m_TODSky.Cycle.Hour;
+                hora = $"{Mathf.FloorToInt(h):00}:{Mathf.FloorToInt((h % 1) * 60):00}";
+                int dias = StatsManager.Get().GetStatistic(Enums.Event.DaysSurvived).IValue;
+                return $"dia {dias + 1}, {hora}";
+            }
+            catch { return hora; }
         }
     }
 

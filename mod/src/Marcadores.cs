@@ -7,7 +7,14 @@ using static GreenHellCompanion.Estilo;
 
 namespace GreenHellCompanion
 {
-    [Serializable] public class Marcador { public string nome; public float x, y, z; public bool ativo; public Vector3 Pos => new Vector3(x, y, z); }
+    public class Marcador
+    {
+        public string nome, info;
+        public float x, y, z;
+        public bool ativo, morte;
+        public Vector3 Pos => new Vector3(x, y, z);
+        public Color Cor => morte ? Estilo.Cor(Estilo.Perigo) : Estilo.Cor(Estilo.Destaque);
+    }
 
     /// <summary>Pontos marcados pelo jogador, salvos por partida.</summary>
     public class Marcadores
@@ -44,7 +51,8 @@ namespace GreenHellCompanion
                     var raiz = (Dictionary<string, object>)Json.Ler(File.ReadAllText(Arquivo));
                     lista = raiz.L("lista").OfType<Dictionary<string, object>>().Select(o => new Marcador
                     {
-                        nome = o.S("nome") ?? "Marcador", x = (float)o.N("x"), y = (float)o.N("y"), z = (float)o.N("z"), ativo = o.B("ativo"),
+                        nome = o.S("nome") ?? "Marcador", info = o.S("info"), x = (float)o.N("x"), y = (float)o.N("y"), z = (float)o.N("z"),
+                        ativo = o.B("ativo"), morte = o.B("morte"),
                     }).ToList();
                 }
                 Plugin.Log($"Marcadores da partida {chave}: {lista.Count}");
@@ -62,7 +70,7 @@ namespace GreenHellCompanion
                 Directory.CreateDirectory(pasta);
                 var dados = new Dictionary<string, object>
                 {
-                    ["lista"] = lista.Select(m => (object)new Dictionary<string, object> { ["nome"] = m.nome, ["x"] = m.x, ["y"] = m.y, ["z"] = m.z, ["ativo"] = m.ativo }).ToList(),
+                    ["lista"] = lista.Select(m => (object)new Dictionary<string, object> { ["nome"] = m.nome, ["info"] = m.info, ["x"] = m.x, ["y"] = m.y, ["z"] = m.z, ["ativo"] = m.ativo, ["morte"] = m.morte }).ToList(),
                 };
                 File.WriteAllText(Arquivo, Json.Escrever(dados));
             }
@@ -96,6 +104,26 @@ namespace GreenHellCompanion
         }
 
         public void Apagar(Marcador m) { lista.Remove(m); Salvar(); }
+
+        /// <summary>
+        /// Marca onde o jogador morreu (só existe um: o da última morte). No multiplayer o jogo solta a mochila
+        /// nesse lugar e o jogador renasce longe, então o marcador já fica ativo para guiar até o loot.
+        /// </summary>
+        public void RegistrarMorte(Vector3 pos, bool lootNoChao, string quando)
+        {
+            Atualizar();
+            if (chave == null) return;
+            lista.RemoveAll(m => m.morte);
+            foreach (var m in lista) m.ativo = false;
+            lista.Add(new Marcador
+            {
+                nome = lootNoChao ? "Seu loot" : "Última morte",
+                info = lootNoChao ? $"{quando} · sua mochila ficou aqui" : quando,
+                x = pos.x, y = pos.y, z = pos.z, ativo = true, morte = true,
+            });
+            Salvar();
+            Plugin.Log($"Morte registrada em {pos} ({(lootNoChao ? "loot no chão" : "save recarregado")})");
+        }
 
         public void AlternarLista()
         {
@@ -176,7 +204,7 @@ namespace GreenHellCompanion
             float w = tam.x + icone + pad * 3;
             var r = new Rect((Screen.width - w) / 2, Screen.height * 0.022f, w, h);
             Caixa(r, Painel);
-            Losango(new Vector2(r.x + pad + icone / 2, r.center.y), icone * 0.7f, Cor(Destaque));
+            Losango(new Vector2(r.x + pad + icone / 2, r.center.y), icone * 0.7f, ativo.Cor);
             GUI.Label(new Rect(r.x + pad * 2 + icone, r.y + Px(6), tam.x, tam.y), cont, Texto);
 
             // seta relativa, logo antes da direção cardeal
@@ -197,7 +225,7 @@ namespace GreenHellCompanion
             if (p.z <= 0) return;
             var c = new Vector2(p.x, Screen.height - p.y);
             float lado = Px(11);
-            Losango(c, lado, Cor(Destaque));
+            Losango(c, lado, m.Cor);
             string simples = $"<b>{Esc(m.nome)}</b>\n{TextoDistancia(Distancia(m.Pos))}";
             if (estiloMundo == null || estiloMundo.fontSize != Pequeno.fontSize)
             {
@@ -288,7 +316,7 @@ namespace GreenHellCompanion
                 {
                     var lr = new Rect(0, ly, conteudo.width, linha);
                     CaixaArredondada(lr, m.ativo ? new Color32(232, 169, 60, 30) : new Color32(255, 255, 255, 8), RaioLinha);
-                    Losango(new Vector2(lr.x + Px(16), lr.y + Px(18)), Px(9), m.ativo ? Cor(Destaque) : Cor(Apagado));
+                    Losango(new Vector2(lr.x + Px(16), lr.y + Px(18)), Px(9), m.ativo || m.morte ? m.Cor : Cor(Apagado));
                     float tx = lr.x + Px(30), bw = Px(84), bx = lr.xMax - Px(8) - bw * 3 - Px(8);
 
                     if (renomeando == m)
@@ -303,7 +331,7 @@ namespace GreenHellCompanion
                     }
                     else
                     {
-                        GUI.Label(new Rect(tx, lr.y + Px(6), bx - tx, Px(22)), $"<b>{Esc(m.nome)}</b>{(m.ativo ? "   " + C(Destaque, "ativo") : "")}", Texto);
+                        GUI.Label(new Rect(tx, lr.y + Px(6), bx - tx, Px(22)), $"<b>{Esc(m.nome)}</b>{(m.ativo ? "   " + C(Destaque, "ativo") : "")}{(m.info != null ? "   " + C(Apagado, Esc(m.info)) : "")}", Texto);
                         if (GUI.Button(new Rect(bx, lr.y + Px(6), bw, Px(24)), m.ativo ? "Ocultar" : "Mostrar", Botao)) dono.Ativar(m);
                         if (GUI.Button(new Rect(bx + bw + Px(4), lr.y + Px(6), bw, Px(24)), "Renomear", Botao)) { renomeando = m; novoNome = m.nome; apagando = null; }
                         string rot = apagando == m ? C(Perigo, "Confirmar") : "Apagar";
