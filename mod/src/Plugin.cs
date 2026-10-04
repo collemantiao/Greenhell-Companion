@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace GreenHellCompanion
 {
-    [BepInPlugin(Id, "Green Hell Companion", "1.0.1")]
+    [BepInPlugin(Id, "Green Hell Companion", "1.0.2")]
     public class Plugin : BaseUnityPlugin
     {
         public const string Id = "br.felipe.greenhellcompanion";

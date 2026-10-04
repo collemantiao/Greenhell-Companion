@@ -8,7 +8,7 @@
     <AssemblyName>GreenHellCompanion</AssemblyName>
     <RootNamespace>GreenHellCompanion</RootNamespace>
     <Nullable>disable</Nullable>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <GamePath Condition="'$(GamePath)' == ''">E:\SteamLibrary\steamapps\common\Green Hell</GamePath>
     <Managed>$(GamePath)\GH_Data\Managed</Managed>
     <PluginDir>$(GamePath)\BepInEx\plugins\GreenHellCompanion</PluginDir>
