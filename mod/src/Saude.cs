@@ -14,6 +14,13 @@ namespace GreenHellCompanion
         {
             public string chave, rotulo, corRotulo, titulo, onde, fichaId, rodape, imagem;
             public List<string> linhas = new List<string>();
+            public Dictionary<int, ItemID> icones = new Dictionary<int, ItemID>();   // linha → item (para o ícone do jogo)
+
+            public void Item(ItemID id, string efeito = null, string risco = null, string acao = null)
+            {
+                linhas.Add(LinhaItem(id, efeito, risco, acao));
+                icones[linhas.Count - 1] = id;
+            }
             public float criado;
             public bool tratando;
         }
@@ -142,7 +149,7 @@ namespace GreenHellCompanion
                     fichaId = FichaDoenca(tipo),
                 };
                 foreach (var (id, efeito) in CurasDe(tipo).Take(4))
-                    a.linhas.Add(LinhaItem(id, efeito > 0 ? $"−{efeito}" : null));
+                    a.Item(id, efeito > 0 ? $"−{efeito}" : null);
                 if (a.linhas.Count < 2) DicasDaFicha(a, 3 - a.linhas.Count);
                 a.rodape = "Coma ou beba pela mochila.";
                 saida[chave] = a;
@@ -176,40 +183,40 @@ namespace GreenHellCompanion
         {
             if (infectado)
             {
-                a.linhas.Add(LinhaItem(ItemID.Maggots));
-                a.linhas.Add(LinhaItem(ItemID.Honey_Dressing));
+                a.Item(ItemID.Maggots);
+                a.Item(ItemID.Honey_Dressing);
                 return;
             }
             switch (tipo)
             {
                 case InjuryType.Laceration:
                 case InjuryType.LacerationCat:
-                    a.linhas.Add(LinhaItem(ItemID.Ants));
-                    a.linhas.Add(LinhaItem(ItemID.ash_dressing));
-                    a.linhas.Add(LinhaItem(ItemID.Goliath_dressing));
-                    a.linhas.Add(LinhaItem(ItemID.Honey_Dressing));
-                    a.linhas.Add(LinhaItem(ItemID.Leaf_Bandage, null, estado == InjuryState.Bleeding ? "Em ferida sangrando, infecciona. Só em emergência." : null));
+                    a.Item(ItemID.Ants);
+                    a.Item(ItemID.ash_dressing);
+                    a.Item(ItemID.Goliath_dressing);
+                    a.Item(ItemID.Honey_Dressing);
+                    a.Item(ItemID.Leaf_Bandage, null, estado == InjuryState.Bleeding ? "Em ferida sangrando, infecciona. Só em emergência." : null);
                     break;
                 case InjuryType.VenomBite:
                 case InjuryType.SnakeBite:
-                    a.linhas.Add(LinhaItem(ItemID.Tabaco_Dressing));
-                    a.linhas.Add(LinhaItem(ItemID.lily_dressing));
-                    foreach (var (id, v) in Antiveneno().Take(2)) a.linhas.Add(LinhaItem(id, $"−{v} veneno", null, "comer"));
+                    a.Item(ItemID.Tabaco_Dressing);
+                    a.Item(ItemID.lily_dressing);
+                    foreach (var (id, v) in Antiveneno().Take(2)) a.Item(id, $"−{v} veneno", null, "comer");
                     break;
                 case InjuryType.Rash:
-                    a.linhas.Add(LinhaItem(ItemID.lily_dressing));
-                    a.linhas.Add(LinhaItem(ItemID.Honey_Dressing));
+                    a.Item(ItemID.lily_dressing);
+                    a.Item(ItemID.Honey_Dressing);
                     break;
                 case InjuryType.Worm:
-                    a.linhas.Add(LinhaItem(ItemID.Bone_Needle));
-                    a.linhas.Add(LinhaItem(ItemID.Fish_Bone));
-                    a.linhas.Add(LinhaItem(ItemID.Stingray_sting));
+                    a.Item(ItemID.Bone_Needle);
+                    a.Item(ItemID.Fish_Bone);
+                    a.Item(ItemID.Stingray_sting);
                     break;
                 case InjuryType.Leech:
                     a.linhas.Add(C(Ok, "✓") + "  Arranque com a mão. Não precisa de item.");
                     break;
                 default: // escoriação, arranhão, buraco de verme aberto: qualquer curativo
-                    foreach (var id in Curativos().OrderByDescending(Jogo.QuantosTenho).Take(4)) a.linhas.Add(LinhaItem(id));
+                    foreach (var id in Curativos().OrderByDescending(Jogo.QuantosTenho).Take(4)) a.Item(id);
                     break;
             }
         }
@@ -466,7 +473,8 @@ namespace GreenHellCompanion
             b.Add(Rotulo, C(a.corRotulo, a.rotulo));
             b.Add(Titulo, Esc(a.titulo), 0, 2);
             if (!string.IsNullOrEmpty(a.onde)) b.Add(Pequeno, a.onde, 0, 1);
-            for (int i = 0; i < a.linhas.Count; i++) b.Add(Texto, a.linhas[i], 0, i == 0 ? 6 : 2);
+            for (int i = 0; i < a.linhas.Count; i++)
+                b.Add(Texto, a.linhas[i], 0, i == 0 ? 6 : 2, a.icones.TryGetValue(i, out var item) ? Jogo.Icone(item) : null);
             string tecla = Plugin.TeclaGuia.Value.MainKey.ToString();
             b.Add(Pequeno, $"{a.rodape} Ficha completa: {C(Tinta, tecla)}", 0, 6);
             return b;

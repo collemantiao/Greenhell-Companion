@@ -153,8 +153,10 @@ namespace GreenHellCompanion
                 return;
             }
             float w = area.width - Px(18);
-            var linhas = new List<(GUIStyle s, string t, float esp)>();
-            void L(GUIStyle s, string t, float esp = 0) => linhas.Add((s, t, esp));
+            var linhas = new List<(GUIStyle s, string t, float esp, Sprite ic)>();
+            void L(GUIStyle s, string t, float esp = 0, Sprite ic = null) => linhas.Add((s, t, esp, ic));
+            float tamIc = Px(22), recIc = tamIc + Px(8);
+            float Rec((GUIStyle s, string t, float esp, Sprite ic) l) => l.ic != null ? recIc : 0;
 
             string perigo = atual.perigo > 0 ? $"  ·  PERIGO {atual.perigo}/5" : "";
             L(Rotulo, Esc(atual.categoria.ToUpperInvariant()) + perigo);
@@ -171,23 +173,29 @@ namespace GreenHellCompanion
                     n++;
                     string marca = s.tipo == "armas" || s.tipo == "tratamento" ? C(Apagado, n + ".") : C(cor, "•");
                     string nota = it.nota != null && Notas.TryGetValue(it.nota, out var cn) ? "  " + C(cn, "<size=" + Px(10) + ">" + NomeNota[it.nota] + "</size>") : "";
-                    L(Texto, $"{marca}  <b>{Esc(it.t)}</b>{nota}", 6);
+                    L(Texto, $"{marca}  <b>{Esc(it.t)}</b>{nota}", 6, Jogo.IconeDoTexto(it.t));   // ícone do item, do próprio jogo
                     if (!string.IsNullOrEmpty(it.d)) L(Pequeno, "     " + Esc(it.d), 1);
                 }
             }
             var rel = atual.relacionados.Select(Guia.Get).Where(f => f != null).ToList();
 
-            float altura = linhas.Sum(l => Px(l.esp) + l.s.CalcHeight(new GUIContent(l.t), w));
+            float altura = linhas.Sum(l => Px(l.esp) + l.s.CalcHeight(new GUIContent(l.t), w - Rec(l)));
             float alturaRel = rel.Count > 0 ? Px(30) + Mathf.Ceil(rel.Count / 3f) * Px(30) : 0;
             var conteudo = new Rect(0, 0, w, altura + alturaRel + Px(10));
             rolFicha = GUI.BeginScrollView(area, rolFicha, conteudo);
-            Imagens.Desenhar(Imagens.Get(atual.id), new Rect(w * 0.55f, 0, w * 0.45f, Px(150)), Plugin.OpacidadeImagem.Value * 0.8f);
+            // ilustração: ícone do item (do jogo) para itens e plantas; silhueta para animais
+            bool fauna = new[] { "Predadores", "Animais de caça", "Peixes e água", "Venenosos e insetos", "Inimigos" }.Contains(atual.categoria);
+            var iconeFicha = fauna ? null : Jogo.Icone(Jogo.ItemPorNome(atual.nomeEn));
+            if (iconeFicha != null) DesenharSprite(iconeFicha, new Rect(w - Px(72), Px(4), Px(72), Px(72)), Color.white);
+            else Imagens.Desenhar(Imagens.Get(atual.id), new Rect(w * 0.55f, 0, w * 0.45f, Px(150)), Plugin.OpacidadeImagem.Value * 0.8f);
             float y = 0;
             foreach (var l in linhas)
             {
                 y += Px(l.esp);
-                float h = l.s.CalcHeight(new GUIContent(l.t), w);
-                GUI.Label(new Rect(0, y, w, h), l.t, l.s);
+                float rec = Rec(l);
+                float h = l.s.CalcHeight(new GUIContent(l.t), w - rec);
+                if (l.ic != null) DesenharSprite(l.ic, new Rect(0, y, tamIc, tamIc), Color.white);
+                GUI.Label(new Rect(rec, y, w - rec, h), l.t, l.s);
                 y += h;
             }
             if (rel.Count > 0)

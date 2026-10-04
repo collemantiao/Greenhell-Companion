@@ -50,6 +50,88 @@ namespace GreenHellCompanion
             return n;
         }
 
+        /// <summary>Ícone do item (o mesmo da mochila), lido do próprio jogo. Null se não houver.</summary>
+        public static Sprite Icone(ItemID id)
+        {
+            if (id == ItemID.None) return null;
+            var im = ItemsManager.Get();
+            var info = im?.GetInfo(id);
+            if (info == null || string.IsNullOrEmpty(info.m_IconName)) return null;
+            return im.m_ItemIconsSprites.TryGetValue(info.m_IconName, out var s) ? s : null;
+        }
+
+        static Dictionary<string, ItemID> porNomeIngles;
+        static readonly Dictionary<string, ItemID> Apelidos = new Dictionary<string, ItemID>
+        {
+            ["ash"] = ItemID.Campfire_ash, ["ashes"] = ItemID.Campfire_ash, ["painkiller"] = ItemID.Painkillers,
+        };
+
+        /// <summary>
+        /// Acha o item pelo nome em inglês que as fichas trazem entre parênteses ("Molineria Leaf" → Molineria_leaf).
+        /// Tenta o nome exato, singular, "+ leaf" e, por último, o primeiro item que começa com o nome.
+        /// </summary>
+        public static ItemID ItemPorNome(string ingles)
+        {
+            if (string.IsNullOrWhiteSpace(ingles)) return ItemID.None;
+            if (porNomeIngles == null)
+            {
+                porNomeIngles = new Dictionary<string, ItemID>();
+                foreach (ItemID id in System.Enum.GetValues(typeof(ItemID)))
+                {
+                    var n = Guia.Norm(id.ToString().Replace('_', ' '));
+                    if (n.Length > 1 && !porNomeIngles.ContainsKey(n)) porNomeIngles[n] = id;
+                }
+            }
+            string k = Guia.Norm(ingles);
+            if (Apelidos.TryGetValue(k, out var a)) return a;
+            if (porNomeIngles.TryGetValue(k, out var r)) return r;
+            if (k.EndsWith("leaves") && porNomeIngles.TryGetValue(k.Substring(0, k.Length - 6) + "leaf", out r)) return r;
+            if (k.EndsWith("s") && porNomeIngles.TryGetValue(k.Substring(0, k.Length - 1), out r)) return r;
+            if (porNomeIngles.TryGetValue(k + " leaf", out r)) return r;
+            foreach (var kv in porNomeIngles)
+                if (kv.Key.StartsWith(k + " ") && !kv.Key.Contains("seeds") && !kv.Key.Contains("reward")) return kv.Value;
+            return ItemID.None;
+        }
+
+        static readonly System.Text.RegularExpressions.Regex Parenteses = new System.Text.RegularExpressions.Regex(@"\(([^()]+)\)\s*$");
+
+        /// <summary>Ícone para uma linha das fichas, pelo nome em inglês entre parênteses no fim ("… (Molineria Leaf)").</summary>
+        public static Sprite IconeDoTexto(string texto)
+        {
+            if (string.IsNullOrEmpty(texto)) return null;
+            var m = Parenteses.Match(texto);
+            if (!m.Success) return null;
+            // "(Stone / Bone / Tribal Spear)": vários itens numa linha, sem ícone para não mostrar o errado
+            string nome = m.Groups[1].Value;
+            if (nome.IndexOfAny(new[] { '/', ',', ';' }) >= 0) return null;
+            var id = ItemPorNome(nome.Trim());
+            // segunda tentativa: o nome em português antes dos parênteses, comparado com os nomes do jogo no idioma atual
+            if (id == ItemID.None) id = ItemPorNomeDoJogo(texto.Substring(0, m.Index));
+            return Icone(id);
+        }
+
+        static Dictionary<string, ItemID> porNomeDoJogo;
+
+        /// <summary>Item cujo nome no idioma do jogo é exatamente este texto ("1x Pena" → Pena).</summary>
+        public static ItemID ItemPorNomeDoJogo(string texto)
+        {
+            if (porNomeDoJogo == null)
+            {
+                var loc = GreenHellGame.Instance?.GetLocalization();
+                if (loc == null || ItemsManager.Get() == null) return ItemID.None;   // tenta de novo quando o jogo estiver pronto
+                porNomeDoJogo = new Dictionary<string, ItemID>();
+                foreach (var info in ItemsManager.Get().GetAllInfos().Values)
+                {
+                    if (info == null || !loc.Contains(info.m_ID.ToString())) continue;
+                    var n = Guia.Norm(loc.Get(info.m_ID.ToString()));
+                    if (n.Length > 2 && !porNomeDoJogo.ContainsKey(n)) porNomeDoJogo[n] = info.m_ID;
+                }
+            }
+            // tira quantidades e sinais do começo: "1x Pena", "+ cinzas"
+            string k = System.Text.RegularExpressions.Regex.Replace(Guia.Norm(texto), @"^(\d+\s*x?\s+|x\s+)", "").Trim();
+            return porNomeDoJogo.TryGetValue(k, out var id) ? id : ItemID.None;
+        }
+
         /// <summary>Quantos o jogador carrega: mochila + mãos (incluindo troncos/pedras empilhados no ombro).</summary>
         public static int QuantosTenho(ItemID id)
         {

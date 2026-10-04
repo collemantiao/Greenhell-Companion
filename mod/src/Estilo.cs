@@ -207,14 +207,19 @@ namespace GreenHellCompanion
     /// <summary>Painel montado em duas passadas: mede as linhas, desenha o fundo e depois o texto.</summary>
     public class Bloco
     {
-        struct L { public GUIStyle s; public string t; public float rec, esp; public bool barra; public float frac; public string corBarra; }
+        struct L { public GUIStyle s; public string t; public float rec, esp; public bool barra; public float frac; public string corBarra; public Sprite ic; }
         readonly List<L> linhas = new List<L>();
         public string Faixa;      // cor da tarja à esquerda (opcional)
         public Texture2D Imagem;  // silhueta no canto superior direito (opcional)
+        public Sprite IconeGrande; // ícone do item (do jogo) no lugar da silhueta (opcional)
         public Tema.Lado Lado = Tema.Lado.Esquerda;   // lado da tela em que o cartão encosta (para a pincelada)
 
-        public Bloco Add(GUIStyle s, string t, float recuo = 0, float espacoAntes = 0)
-        { linhas.Add(new L { s = s, t = t, rec = recuo, esp = espacoAntes }); return this; }
+        public Bloco Add(GUIStyle s, string t, float recuo = 0, float espacoAntes = 0, Sprite icone = null)
+        { linhas.Add(new L { s = s, t = t, rec = recuo, esp = espacoAntes, ic = icone }); return this; }
+
+        static float TamIcone => Estilo.Px(20);
+        // recuo do texto: o pedido + o espaço do ícone da linha, se houver
+        static float Recuo(L l) => Estilo.Px(l.rec) + (l.ic != null ? TamIcone + Estilo.Px(6) : 0);
 
         public Bloco Barra(float frac, string cor)
         { linhas.Add(new L { barra = true, frac = Mathf.Clamp01(frac), corBarra = cor, esp = 2 }); return this; }
@@ -224,19 +229,19 @@ namespace GreenHellCompanion
         {
             float pad = Estilo.Px(10), faixa = Faixa != null && !Plugin.CartoesPincel.Value ? Estilo.Px(5) : 0, w = 0;
             foreach (var l in linhas)
-                if (!l.barra) w = Mathf.Max(w, l.s.CalcSize(new GUIContent(l.t)).x + Estilo.Px(l.rec));
+                if (!l.barra) w = Mathf.Max(w, l.s.CalcSize(new GUIContent(l.t)).x + Recuo(l));
             w += ColunaImagem;   // a silhueta fica numa coluna própria, sem cobrir o texto
             return Mathf.Clamp(w + pad * 2 + faixa + 2, Estilo.Px(200), maximo);
         }
 
-        float ColunaImagem => Imagem != null ? Estilo.Px(64) : 0;
+        float ColunaImagem => Imagem != null || IconeGrande != null ? Estilo.Px(64) : 0;
 
         public float Altura(float largura)
         {
             float pad = Estilo.Px(10), h = pad * 2;
             largura -= ColunaImagem;
             foreach (var l in linhas)
-                h += Estilo.Px(l.esp) + (l.barra ? Estilo.Px(4) : l.s.CalcHeight(new GUIContent(l.t), largura - pad * 2 - Estilo.Px(l.rec) - (Faixa != null ? Estilo.Px(5) : 0)));
+                h += Estilo.Px(l.esp) + (l.barra ? Estilo.Px(4) : l.s.CalcHeight(new GUIContent(l.t), largura - pad * 2 - Recuo(l) - (Faixa != null ? Estilo.Px(5) : 0)));
             return h;
         }
 
@@ -248,7 +253,12 @@ namespace GreenHellCompanion
             float pad = Estilo.Px(10), faixa = Faixa != null ? Estilo.Px(5) : 0;
             if (Faixa != null && !pincel) GUI.DrawTexture(new Rect(r.x, r.y, faixa, r.height), Estilo.Tex(Estilo.Cor(Faixa)));
             float col = ColunaImagem;
-            if (Imagem != null) Imagens.Desenhar(Imagem, new Rect(r.xMax - pad - col, r.y + pad, col, Mathf.Min(Estilo.Px(64), r.height - pad * 2)), Mathf.Max(Plugin.OpacidadeImagem.Value, 0.25f));
+            if (IconeGrande != null)
+            {
+                float t = Mathf.Min(col, Estilo.Px(56), r.height - pad * 2);
+                Estilo.DesenharSprite(IconeGrande, new Rect(r.xMax - pad - (col + t) / 2, r.y + pad, t, t), Color.white);
+            }
+            else if (Imagem != null) Imagens.Desenhar(Imagem, new Rect(r.xMax - pad - col, r.y + pad, col, Mathf.Min(Estilo.Px(64), r.height - pad * 2)), Mathf.Max(Plugin.OpacidadeImagem.Value, 0.25f));
             float x = r.x + pad + faixa, y = r.y + pad, w = r.width - pad * 2 - faixa - col;
             foreach (var l in linhas)
             {
@@ -261,9 +271,15 @@ namespace GreenHellCompanion
                     y += bh;
                     continue;
                 }
-                float rec = Estilo.Px(l.rec);
+                float rec = Recuo(l);
                 var c = new GUIContent(l.t);
                 float h = l.s.CalcHeight(c, w - rec);
+                if (l.ic != null)
+                {
+                    float lh = l.s.CalcHeight(new GUIContent("Ag"), 999);
+                    float t = TamIcone;
+                    Estilo.DesenharSprite(l.ic, new Rect(x + Estilo.Px(l.rec), y + (lh - t) / 2, t, t), Color.white);
+                }
                 if (pincel) Tema.TextoComSombra(new Rect(x + rec, y, w - rec, h), l.t, l.s);
                 else GUI.Label(new Rect(x + rec, y, w - rec, h), c, l.s);
                 y += h;

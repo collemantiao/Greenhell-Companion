@@ -255,7 +255,10 @@ namespace GreenHellCompanion
             {
                 int t = Tenho(kv.Key);
                 string cor = t >= kv.Value ? Ok : Perigo;
-                GUI.Label(new Rect(x, y, w - Px(70), lh), Esc(Jogo.NomeItem(kv.Key)), esq);
+                var icItem = Jogo.Icone(kv.Key);
+                float ri = icItem != null ? lh + Px(4) : 0;
+                if (icItem != null) DesenharSprite(icItem, new Rect(x, y + Px(1), lh - Px(2), lh - Px(2)), Color.white);
+                GUI.Label(new Rect(x + ri, y, w - Px(70) - ri, lh), Esc(Jogo.NomeItem(kv.Key)), esq);
                 GUI.Label(new Rect(x, y, w, lh), $"<b>{kv.Value}</b> {C(cor, $"({t})")}", dir);
                 y += lh;
             }

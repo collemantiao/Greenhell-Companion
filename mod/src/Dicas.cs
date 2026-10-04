@@ -17,6 +17,7 @@ namespace GreenHellCompanion
         class Dica
         {
             public string chave, titulo, rotulo = "DICA", fichaId, imagem;
+            public ItemID item = ItemID.None;   // ícone do jogo no cartão
             public List<string> linhas = new List<string>();
         }
 
@@ -101,7 +102,7 @@ namespace GreenHellCompanion
         // ---------- Itens ----------
         Dica DeItem(ItemInfo info)
         {
-            var dica = new Dica { chave = "item:" + info.m_ID, titulo = info.GetNameToDisplayLocalized() };
+            var dica = new Dica { chave = "item:" + info.m_ID, titulo = info.GetNameToDisplayLocalized(), item = info.m_ID };
             var ficha = FichaDoItem(info.m_ID);
             dica.fichaId = ficha?.id;
             dica.imagem = ficha != null && Imagens.Get(ficha.id) != null ? ficha.id : null;
@@ -305,7 +306,8 @@ namespace GreenHellCompanion
             float desde = Time.unscaledTime - vistoEm;
             if (desde >= Permanencia) return y;
 
-            var b = new Bloco { Faixa = Info, Imagem = Imagens.Get(mostrando.imagem), Lado = Tema.Lado.Direita };
+            var icone = Jogo.Icone(mostrando.item);
+            var b = new Bloco { Faixa = Info, IconeGrande = icone, Imagem = icone == null ? Imagens.Get(mostrando.imagem) : null, Lado = Tema.Lado.Direita };
             b.Add(Rotulo, C(Info, mostrando.rotulo));
             b.Add(Titulo, Esc(mostrando.titulo), 0, 2);
             for (int i = 0; i < mostrando.linhas.Count; i++) b.Add(Texto, mostrando.linhas[i], 0, i == 0 ? 6 : 3);
