@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guia Green Hell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: caderno de campo — barra de busca fixa no topo; lista de resultados à esquerda, ficha aberta à direita (uma coluna no celular). */
+:root {
+  --bg: #e7ece2;
+  --surface: #f5f7f1;
+  --surface-2: #dde5d7;
+  --ink: #13201a;
+  --muted: #536459;
+  --line: #c4cfbf;
+  --brand: #1d4a34;
+  --accent: #b9740b;
+  --ok: #24744a;
+  --good: #1f6a86;
+  --warn: #9a5b00;
+  --danger: #b0281f;
+  --danger-bg: #f6e1dc;
+  --focus: #b9740b;
+  --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif-condensed, Impact, sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1511; --surface: #141f19; --surface-2: #1b2a22; --ink: #e2e9de; --muted: #93a598;
+    --line: #2a3b31; --brand: #8fcaa6; --accent: #e5a540; --ok: #6cc893; --good: #6bbad6;
+    --warn: #e0a24a; --danger: #ff7a6b; --danger-bg: #3a1c18; --focus: #e5a540; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1511; --surface: #141f19; --surface-2: #1b2a22; --ink: #e2e9de; --muted: #93a598;
+  --line: #2a3b31; --brand: #8fcaa6; --accent: #e5a540; --ok: #6cc893; --good: #6bbad6;
+  --warn: #e0a24a; --danger: #ff7a6b; --danger-bg: #3a1c18; --focus: #e5a540; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.5 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* ---------- Topo ---------- */
+.top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: var(--brand);
+  color: var(--surface);
+  padding: 14px 16px 12px;
+}
+:root .top { --t-ink: #eef3ea; --t-muted: #b9cdbf; }
+.top-inner { max-width: 1180px; margin: 0 auto; display: grid; gap: 10px; }
+.brandline { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.brandline h1 {
+  margin: 0;
+  font: 800 30px/1 var(--f-display);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--t-ink);
+}
+.brandline h1 span { color: #f0b54d; }
+.brandline p { margin: 0; font-size: 14px; color: var(--t-muted); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .top { background: #0a2418; } }
+:root[data-theme="dark"] .top { background: #0a2418; }
+
+.search {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 0 12px;
+  border: 2px solid transparent;
+}
+.search:focus-within { border-color: var(--accent); }
+.search svg { flex: none; color: var(--muted); }
+.search input {
+  flex: 1; min-width: 0;
+  border: 0; outline: 0; background: transparent;
+  font-size: 18px; padding: 12px 0;
+}
+.search input::placeholder { color: var(--muted); }
+.clear {
+  border: 0; background: var(--surface-2); color: var(--muted);
+  border-radius: 6px; padding: 4px 10px; font-size: 13px; cursor: pointer;
+}
+.quick { display: flex; gap: 6px; flex-wrap: wrap; }
+.quick button {
+  border: 1px solid rgba(255,255,255,.28);
+  background: transparent; color: var(--t-ink);
+  border-radius: 999px; padding: 3px 12px; font-size: 14px; cursor: pointer;
+}
+.quick button:hover { background: rgba(255,255,255,.12); }
+
+/* ---------- Corpo ---------- */
+.wrap { max-width: 1180px; margin: 0 auto; padding: 16px 16px 48px; }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.filters button {
+  border: 1px solid var(--line); background: var(--surface);
+  border-radius: 8px; padding: 5px 12px; font-size: 14px; cursor: pointer;
+  display: inline-flex; gap: 6px; align-items: baseline;
+}
+.filters button small { font: 500 11px var(--f-mono); color: var(--muted); }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.filters button[aria-pressed="true"] small { color: var(--bg); opacity: .7; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .layout.has-detail .list-col { display: none; }
+  .layout:not(.has-detail) .detail-col { display: none; }
+}
+.list-col { min-width: 0; }
+.count { font: 500 12px var(--f-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin: 0 0 8px; }
+
+.group-h {
+  font: 700 13px var(--f-body); text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); margin: 18px 0 6px; padding-bottom: 4px; border-bottom: 1px solid var(--line);
+}
+.group-h:first-of-type { margin-top: 0; }
+.results { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.result {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px;
+  width: 100%; text-align: left; cursor: pointer;
+  border: 0; border-radius: 8px; background: transparent; padding: 9px 10px;
+}
+.result:hover { background: var(--surface-2); }
+.result[aria-current="true"] { background: var(--surface); box-shadow: inset 3px 0 0 var(--accent); }
+.result .nm { font-weight: 700; font-size: 16px; min-width: 0; }
+.result .nm em { font-style: normal; font-weight: 400; color: var(--muted); font-size: 14px; }
+.result .sm { grid-column: 1 / -1; color: var(--muted); font-size: 14px; line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.result .cat { font: 500 11px var(--f-mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+
+/* Medidor de perigo */
+.meter { display: inline-flex; gap: 2px; align-items: center; }
+.meter i { width: 6px; height: 12px; border-radius: 1px; background: var(--line); }
+.meter[data-l="1"] i:nth-child(-n+1),
+.meter[data-l="2"] i:nth-child(-n+2) { background: var(--ok); }
+.meter[data-l="3"] i:nth-child(-n+3) { background: var(--warn); }
+.meter[data-l="4"] i:nth-child(-n+4),
+.meter[data-l="5"] i:nth-child(-n+5) { background: var(--danger); }
+
+.empty { padding: 24px 12px; color: var(--muted); }
+.empty strong { color: var(--ink); }
+
+/* ---------- Ficha ---------- */
+.detail-col { min-width: 0; position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--top-h, 150px) + 12px); }
+@media (max-width: 860px) { .detail-col { position: static; } }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 22px 24px 26px;
+}
+@media (max-width: 520px) { .card { padding: 18px 16px 22px; } }
+.back {
+  display: none; border: 0; background: transparent; color: var(--accent);
+  font-weight: 700; padding: 0 0 10px; cursor: pointer;
+}
+@media (max-width: 860px) { .back { display: inline-block; } }
+.eyebrow { display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  font: 500 12px var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.card h2 { margin: 6px 0 2px; font: 800 40px/1.02 var(--f-display); text-transform: uppercase; letter-spacing: .01em; text-wrap: balance; }
+.card .en { margin: 0 0 12px; color: var(--muted); font-style: italic; }
+.card .resumo { margin: 0 0 18px; font-size: 18px; max-width: 65ch; }
+.danger-tag { display: inline-flex; align-items: center; gap: 6px; }
+
+.sec { margin-top: 22px; }
+.sec h3 {
+  margin: 0 0 8px; font: 700 14px var(--f-body); text-transform: uppercase; letter-spacing: .08em;
+  color: var(--brand);
+}
+.sec ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.it { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 12px; align-items: start; }
+.it .mk { width: 8px; height: 8px; margin-top: 8px; border-radius: 50%; background: var(--line); }
+.it .tt { font-weight: 700; }
+.it .dd { color: var(--ink); opacity: .86; max-width: 70ch; }
+.badge {
+  display: inline-block; margin-left: 6px; vertical-align: 2px;
+  font: 500 10px/1 var(--f-mono); text-transform: uppercase; letter-spacing: .06em;
+  padding: 3px 6px; border-radius: 4px; border: 1px solid currentColor;
+}
+.n-melhor .mk { background: var(--ok); } .n-melhor .badge { color: var(--ok); }
+.n-bom .mk { background: var(--good); } .n-bom .badge { color: var(--good); }
+.n-emergencial .mk { background: var(--warn); } .n-emergencial .badge { color: var(--warn); }
+.n-cuidado .mk { background: var(--danger); } .n-cuidado .badge { color: var(--danger); }
+
+.sec.t-armas ul, .sec.t-tratamento ul { counter-reset: r; }
+.sec.t-armas .it .mk, .sec.t-tratamento .it .mk {
+  counter-increment: r; width: 22px; height: 22px; margin-top: 0; border-radius: 6px;
+  display: grid; place-items: center; color: var(--surface);
+  font: 500 12px var(--f-mono);
+}
+.sec.t-armas .it .mk::before, .sec.t-tratamento .it .mk::before { content: counter(r); }
+.sec.t-armas .it:not([class*="n-"]) .mk, .sec.t-tratamento .it:not([class*="n-"]) .mk { background: var(--muted); }
+
+.sec.t-receita ul { background: var(--surface-2); border-radius: 8px; padding: 12px 14px; }
+.sec.t-receita .it .mk { border-radius: 2px; background: var(--accent); }
+
+.sec.t-alerta { background: var(--danger-bg); border-radius: 8px; padding: 12px 14px; }
+.sec.t-alerta h3 { color: var(--danger); }
+.sec.t-alerta .it .mk { background: var(--danger); }
+
+.rel { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--line); }
+.rel h3 { margin: 0 0 8px; font: 700 13px var(--f-body); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button {
+  border: 1px solid var(--line); background: var(--bg); border-radius: 999px;
+  padding: 3px 12px; font-size: 14px; cursor: pointer;
+}
+.chips button:hover { border-color: var(--accent); }
+
+.foot { margin-top: 28px; font-size: 13px; color: var(--muted); max-width: 70ch; }
+mark { background: color-mix(in srgb, var(--accent) 30%, transparent); color: inherit; border-radius: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .card { animation: in .18s ease-out; }
+  @keyframes in { from { transform: translateY(4px); opacity: .6; } to { transform: none; opacity: 1; } }
+}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="top-inner">
+    <div class="brandline">
+      <h1>Green <span>Hell</span> · Guia</h1>
+      <p>Pesquise um bicho, doença, ferimento ou item e veja o que fazer.</p>
+    </div>
+    <label class="search" for="q">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Ex.: onça, febre, sanguessuga, água, arco…" aria-label="Pesquisar">
+      <button class="clear" id="clear" type="button" hidden>Limpar</button>
+    </label>
+    <div class="quick" id="quick" aria-label="Buscas rápidas"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="filters" id="filters" role="group" aria-label="Filtrar por grupo"></div>
+  <div class="layout" id="layout">
+    <section class="list-col" aria-label="Resultados">
+      <p class="count" id="count"></p>
+      <div id="list"></div>
+    </section>
+    <section class="detail-col" id="detail" aria-live="polite"></section>
+  </div>
+  <p class="foot">Guia feito por fãs a partir da wiki e de guias do jogo. Nomes em português com o nome original em inglês entre parênteses, para você achar no inventário mesmo jogando em outro idioma.</p>
+</main>
+
+<script src="dados.js"></script>
+<script>
+(() => {
+  const DADOS = (window.GH_DADOS || []).filter(e => e && e.id && e.nome);
+
+  const GRUPOS = [
+    { id: "fauna", nome: "Fauna", cats: ["Predadores", "Animais de caça", "Peixes e água", "Venenosos e insetos", "Inimigos"] },
+    { id: "saude", nome: "Saúde", cats: ["Ferimentos", "Doenças e condições", "Nutrição e sanidade", "Plantas e remédios"] },
+    { id: "sobrev", nome: "Sobrevivência", cats: ["Armas", "Ferramentas", "Comida e água", "Fogo e abrigo", "Armadilhas", "Materiais", "Dicas gerais"] },
+  ];
+  const ORDEM_CAT = GRUPOS.flatMap(g => g.cats);
+  const grupoDe = c => (GRUPOS.find(g => g.cats.includes(c)) || GRUPOS[2]).id;
+
+  const RAPIDAS = ["Onça", "Febre", "Sanguessuga", "Cobra", "Água", "Melhor arma", "Intoxicação", "Primeiros passos"];
+  const NOTA = { melhor: "melhor", bom: "bom", emergencial: "emergência", cuidado: "cuidado" };
+  // Palavras de intenção que não precisam aparecer no texto ("como matar onça" → "onça").
+  const VAZIAS = new Set("a o as os de da do das dos e em no na nos nas um uma para pra por com sem como que qual quais matar mato mata tratar trato curar curo cura usar uso fazer faço fazer contra pegar achar onde melhor melhores the how to kill".split(" "));
+
+  const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  // Índice de busca
+  const IDX = DADOS.map(e => {
+    const itens = (e.secoes || []).flatMap(s => [s.titulo, ...(s.itens || []).flatMap(i => [i.t, i.d])]);
+    return {
+      e,
+      id: norm(e.id),
+      titulo: norm(e.nome),
+      nome: norm(e.nome + " " + (e.nomeEn || "")),
+      alias: (e.aliases || []).map(norm),
+      resumo: norm(e.resumo),
+      corpo: norm(itens.join(" ")),
+      cat: norm(e.categoria),
+    };
+  });
+  const POR_ID = new Map(DADOS.map(e => [e.id, e]));
+
+  function pontuar(x, tokens) {
+    let total = 0;
+    for (const t of tokens) {
+      let s = 0;
+      const plural = t.length > 3 && t.endsWith("s") ? t.slice(0, -1) : null;
+      const palavras = x.nome.split(" ");
+      if (x.nome === t || x.alias.includes(t)) s = 100;
+      else if (palavras.some(p => p.startsWith(t)) || x.alias.some(a => a.split(" ").some(p => p.startsWith(t)))) s = 60;
+      else if (plural && (x.nome.includes(plural) || x.alias.some(a => a.includes(plural)))) s = 50;
+      else if (x.nome.includes(t) || x.alias.some(a => a.includes(t))) s = 40;
+      else if (x.cat.includes(t)) s = 20;
+      else if (x.resumo.includes(t)) s = 14;
+      else if (x.corpo.includes(t)) s = 6;
+      if (!s) return 0;
+      total += s;
+    }
+    return total;
+  }
+
+  function buscar(q) {
+    const todos = norm(q).split(" ").filter(Boolean);
+    if (!todos.length) return null;
+    const uteis = todos.filter(t => !VAZIAS.has(t));
+    const tokens = uteis.length ? uteis : todos;
+    // A frase inteira igual ao nome de uma ficha ("melhor arma") vem antes de tudo.
+    const frase = todos.join(" ");
+    const exata = x => x.titulo === frase || x.id === frase ? 1500 : x.alias.includes(frase) ? 1000 : 0;
+    let r = IDX.map(x => ({ e: x.e, s: exata(x) + pontuar(x, tokens) })).filter(r => r.s > 0);
+    // Se nada bate com todas as palavras, aceita qualquer uma.
+    if (!r.length && tokens.length > 1) {
+      r = IDX.map(x => ({ e: x.e, s: Math.max(...tokens.map(t => pontuar(x, [t]))) })).filter(r => r.s > 0);
+    }
+    return r.sort((a, b) => b.s - a.s || a.e.nome.localeCompare(b.e.nome, "pt")).map(r => r.e);
+  }
+
+  // Estado
+  const $ = id => document.getElementById(id);
+  const st = { q: "", grupo: "tudo", atual: null };
+
+  function meter(l) {
+    const n = Math.max(0, Math.min(5, Number(l) || 0));
+    return `<span class="meter" data-l="${n}" title="Perigo ${n}/5" aria-label="Perigo ${n} de 5">${"<i></i>".repeat(5)}</span>`;
+  }
+
+  function destacar(texto, tokens) {
+    let h = esc(texto);
+    if (!tokens.length) return h;
+    // destaca ignorando acento: mapeia posição normalizada → original
+    const base = String(texto);
+    const plano = base.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    if (plano.length !== base.length) return h;
+    const marcas = [];
+    for (const t of tokens) {
+      if (t.length < 2) continue;
+      let i = plano.indexOf(t);
+      while (i !== -1) { marcas.push([i, i + t.length]); i = plano.indexOf(t, i + t.length); }
+    }
+    if (!marcas.length) return h;
+    marcas.sort((a, b) => a[0] - b[0]);
+    let out = "", pos = 0;
+    for (const [a, b] of marcas) {
+      if (a < pos) continue;
+      out += esc(base.slice(pos, a)) + "<mark>" + esc(base.slice(a, b)) + "</mark>";
+      pos = b;
+    }
+    return out + esc(base.slice(pos));
+  }
+
+  function itemLista(e, tokens) {
+    const cur = st.atual === e.id ? ' aria-current="true"' : "";
+    return `<li><button class="result" data-id="${esc(e.id)}"${cur}>
+      <span class="nm">${destacar(e.nome, tokens)}${e.nomeEn && norm(e.nomeEn) !== norm(e.nome) ? ` <em>${esc(e.nomeEn)}</em>` : ""}</span>
+      ${e.perigo ? meter(e.perigo) : `<span class="cat">${esc(e.categoria)}</span>`}
+      <span class="sm">${esc(e.resumo)}</span>
+    </button></li>`;
+  }
+
+  function renderLista() {
+    const res = buscar(st.q);
+    const tokens = norm(st.q).split(" ").filter(t => t && !VAZIAS.has(t));
+    let lista = res || [...DADOS];
+    if (st.grupo !== "tudo") lista = lista.filter(e => grupoDe(e.categoria) === st.grupo);
+
+    // contagem nos filtros
+    const base = res || DADOS;
+    $("filters").innerHTML = [{ id: "tudo", nome: "Tudo" }, ...GRUPOS].map(g => {
+      const n = g.id === "tudo" ? base.length : base.filter(e => grupoDe(e.categoria) === g.id).length;
+      return `<button type="button" data-g="${g.id}" aria-pressed="${st.grupo === g.id}">${g.nome} <small>${n}</small></button>`;
+    }).join("");
+
+    $("count").textContent = res
+      ? `${lista.length} resultado${lista.length === 1 ? "" : "s"} para “${st.q.trim()}”`
+      : `${lista.length} fichas no guia`;
+
+    if (!lista.length) {
+      $("list").innerHTML = `<div class="empty"><strong>Nada encontrado.</strong><br>Tente outra palavra (ex.: “jaguar”, “corte”, “veneno”) ou o nome em inglês.</div>`;
+      return lista;
+    }
+    if (res) {
+      $("list").innerHTML = `<ul class="results">${lista.map(e => itemLista(e, tokens)).join("")}</ul>`;
+    } else {
+      const porCat = new Map();
+      for (const e of lista) {
+        if (!porCat.has(e.categoria)) porCat.set(e.categoria, []);
+        porCat.get(e.categoria).push(e);
+      }
+      const cats = [...porCat.keys()].sort((a, b) => (ORDEM_CAT.indexOf(a) + 99) % 99 - (ORDEM_CAT.indexOf(b) + 99) % 99);
+      $("list").innerHTML = cats.map(c => {
+        const es = porCat.get(c).sort((a, b) => (b.perigo || 0) - (a.perigo || 0) || a.nome.localeCompare(b.nome, "pt"));
+        return `<h2 class="group-h">${esc(c)}</h2><ul class="results">${es.map(e => itemLista(e, [])).join("")}</ul>`;
+      }).join("");
+    }
+    return lista;
+  }
+
+  function renderFicha(e) {
+    if (!e) { $("detail").innerHTML = ""; $("layout").classList.remove("has-detail"); return; }
+    const secoes = (e.secoes || []).map(s => `
+      <section class="sec t-${esc(s.tipo || "dicas")}">
+        <h3>${esc(s.titulo)}</h3>
+        <ul>${(s.itens || []).map(i => `
+          <li class="it${i.nota && NOTA[i.nota] ? " n-" + i.nota : ""}">
+            <span class="mk" aria-hidden="true"></span>
+            <div><span class="tt">${esc(i.t)}</span>${i.nota && NOTA[i.nota] ? `<span class="badge">${NOTA[i.nota]}</span>` : ""}
+            ${i.d ? `<div class="dd">${esc(i.d)}</div>` : ""}</div>
+          </li>`).join("")}
+        </ul>
+      </section>`).join("");
+
+    const rel = (e.relacionados || []).map(id => POR_ID.get(id)).filter(Boolean);
+
+    $("detail").innerHTML = `<article class="card">
+      <button class="back" type="button" id="back">← Voltar à lista</button>
+      <div class="eyebrow"><span>${esc(e.categoria)}</span>${e.perigo ? `<span class="danger-tag">Perigo ${meter(e.perigo)}</span>` : ""}</div>
+      <h2>${esc(e.nome)}</h2>
+      ${e.nomeEn ? `<p class="en">${esc(e.nomeEn)}</p>` : ""}
+      <p class="resumo">${esc(e.resumo)}</p>
+      ${secoes}
+      ${rel.length ? `<div class="rel"><h3>Veja também</h3><div class="chips">${rel.map(r => `<button type="button" data-id="${esc(r.id)}">${esc(r.nome)}</button>`).join("")}</div></div>` : ""}
+    </article>`;
+    $("layout").classList.add("has-detail");
+  }
+
+  function abrir(id, { rolar = true, hash = true } = {}) {
+    const e = POR_ID.get(id);
+    st.atual = e ? e.id : null;
+    renderFicha(e);
+    document.querySelectorAll(".result").forEach(b => b.setAttribute("aria-current", b.dataset.id === st.atual ? "true" : "false"));
+    if (hash) {
+      try { history.replaceState(null, "", e ? "#" + e.id : location.pathname + location.search); } catch (_) { /* sem history */ }
+    }
+    if (rolar && e && window.matchMedia("(max-width: 860px)").matches) window.scrollTo({ top: 0 });
+  }
+
+  function atualizar({ abrirPrimeiro = false } = {}) {
+    const lista = renderLista();
+    const largo = window.matchMedia("(min-width: 861px)").matches;
+    if (abrirPrimeiro && lista.length && (largo || st.q)) {
+      if (largo) abrir(lista[0].id, { rolar: false });
+    } else if (st.atual && !lista.some(e => e.id === st.atual) && largo && lista.length) {
+      abrir(lista[0].id, { rolar: false });
+    }
+  }
+
+  // Eventos
+  let timer;
+  $("q").addEventListener("input", ev => {
+    st.q = ev.target.value;
+    $("clear").hidden = !st.q;
+    clearTimeout(timer);
+    timer = setTimeout(() => atualizar({ abrirPrimeiro: !!st.q.trim() }), 90);
+  });
+  $("q").addEventListener("keydown", ev => {
+    if (ev.key === "Enter") {
+      const first = document.querySelector(".result");
+      if (first) abrir(first.dataset.id);
+    }
+    if (ev.key === "Escape") { $("clear").click(); }
+  });
+  $("clear").addEventListener("click", () => {
+    $("q").value = ""; st.q = ""; $("clear").hidden = true; atualizar(); $("q").focus();
+  });
+  $("quick").innerHTML = RAPIDAS.map(r => `<button type="button">${esc(r)}</button>`).join("");
+  $("quick").addEventListener("click", ev => {
+    const b = ev.target.closest("button"); if (!b) return;
+    $("q").value = b.textContent; st.q = b.textContent; $("clear").hidden = false;
+    st.grupo = "tudo";
+    atualizar({ abrirPrimeiro: true });
+    const first = document.querySelector(".result");
+    if (first) abrir(first.dataset.id);
+  });
+  $("filters").addEventListener("click", ev => {
+    const b = ev.target.closest("button[data-g]"); if (!b) return;
+    st.grupo = b.dataset.g; atualizar();
+  });
+  $("list").addEventListener("click", ev => {
+    const b = ev.target.closest(".result"); if (b) abrir(b.dataset.id);
+  });
+  $("detail").addEventListener("click", ev => {
+    if (ev.target.closest("#back")) { abrir(null); return; }
+    const b = ev.target.closest(".chips button"); if (b) { abrir(b.dataset.id); $("detail").scrollIntoView({ block: "start" }); }
+  });
+  window.addEventListener("hashchange", () => { const id = location.hash.slice(1); if (id !== st.atual) abrir(id, { hash: false }); });
+
+  const ajustaTopo = () => document.documentElement.style.setProperty("--top-h", $("top").offsetHeight + "px");
+  window.addEventListener("resize", ajustaTopo);
+
+  // Início
+  ajustaTopo();
+  renderLista();
+  const inicial = location.hash.slice(1);
+  if (POR_ID.has(inicial)) abrir(inicial, { hash: false });
+  else if (window.matchMedia("(min-width: 861px)").matches) {
+    const primeira = document.querySelector(".result");
+    abrir(POR_ID.has("onca-pintada") ? "onca-pintada" : primeira && primeira.dataset.id, { hash: false });
+  }
+})();
+</script>
+</body>
+</html>

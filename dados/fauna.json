@@ -1,0 +1,3752 @@
+[
+  {
+    "id": "onca-pintada",
+    "nome": "Onça-pintada",
+    "nomeEn": "Jaguar",
+    "categoria": "Predadores",
+    "aliases": [
+      "onca",
+      "onça",
+      "onca pintada",
+      "jaguar",
+      "gato",
+      "felino",
+      "felino grande",
+      "big cat",
+      "pintada"
+    ],
+    "perigo": 5,
+    "resumo": "Felino agressivo que ataca quem chega perto e causa lacerações que podem matar. O melhor jeito de matar é arremessar uma lança ou acertar uma flecha na cabeça enquanto ela se aproxima devagar.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada na cabeça (Stone / Bone / Tribal / Metal Spear)",
+            "d": "Segundo a wiki, é a forma mais eficaz: arremesse quando ela vier andando devagar na sua direção. Na cabeça costuma matar com 1 arremesso; jogadores relatam que lanças fracas (ex.: de osso) às vezes pedem 2. Leve 2–3 lanças e mire um pouco acima por causa da queda do arremesso.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arco (Bow) + Flechas (Arrow)",
+            "d": "Flecha na cabeça mata instantaneamente. No corpo, jogadores relatam até ~5 flechas e a onça foge ferida. Flechas de metal (Metal Arrow) causam mais dano. Segure Shift para estabilizar a mira (gasta stamina).",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança de Pedra (Stone Spear) corpo a corpo",
+            "d": "Tem o maior alcance entre as lanças iniciais; a wiki cita que fica mais fácil afastar uma onça sem ser atingido. A Lança de Obsidiana (Obsidian Spear) bate mais forte, mas tem alcance curto.",
+            "nota": "bom"
+          },
+          {
+            "t": "Machados pesados (Metal Axe, Tribal Axe, Heavy Stone Axe)",
+            "d": "Dano alto, mas alcance médio: você fica exposto às patadas. Use só se não tiver lança.",
+            "nota": "emergencial"
+          },
+          {
+            "t": "Facas e lâminas (Blades)",
+            "d": "Dano muito baixo e alcance curto — servem para esfolar, não para lutar.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar / se defender",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Encare a onça, não dê as costas",
+            "d": "Pela wiki, se você olhar para ela, ela demora mais a atacar; se virar as costas, ataca imediatamente.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Ande, não corra",
+            "d": "Jogadores relatam que correr provoca ataque imediato; andando, ela apenas segue e dá botes ocasionais — tempo para mirar.",
+            "nota": "bom"
+          },
+          {
+            "t": "Use os ouvidos",
+            "d": "Ela pode ser ouvida a uma distância relativamente segura. Pare e localize o som antes de seguir.",
+            "nota": "bom"
+          },
+          {
+            "t": "Bloqueie (tecla padrão R)",
+            "d": "Bloquear com a arma na mão reduz o dano do golpe; recue enquanto bloqueia e contra-ataque.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadura (Armor)",
+            "d": "Armadura de Tatu absorve 70% e a de Metal 90% do dano no membro protegido. Jogadores relatam sair ilesos usando armadura de tatu.",
+            "nota": "bom"
+          },
+          {
+            "t": "Dificuldade",
+            "d": "No modo \"A Walk In The Park\" os predadores ficam desligados (a dificuldade não pode ser trocada depois de iniciado o jogo)."
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration)",
+            "d": "Sangramento que drena a vida rápido e infecciona se não tratado. Com pouca vida, pode matar.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento da laceração",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Formigas (Ants) como pontos",
+            "d": "O jeito mais rápido de fechar a Laceração (Laceration): inspecione o corpo e aplique formigas coletadas do formigueiro. Dói e reduz a sanidade temporariamente.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Curativo de Mel / Cinzas / Golias (Honey / Ash / Goliath Dressing)",
+            "d": "Curativos com propriedade desinfetante param o sangramento e reduzem o risco de infecção; a cicatrização é mais lenta.",
+            "nota": "bom"
+          },
+          {
+            "t": "Bandagem de Folha (Leaf Bandage)",
+            "d": "Estanca o sangramento, mas a laceração tem alto risco de virar Infecção (Infection).",
+            "nota": "emergencial"
+          },
+          {
+            "t": "Se infeccionar",
+            "d": "Coloque Larvas de mosca (Maggots) na ferida infeccionada e depois faça um curativo.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "4x Carne de Felino (Big Cat Meat)",
+            "d": "Muita proteína e energia. Cozinhe, defume ou seque; crua pode dar parasitas."
+          },
+          {
+            "t": "4x Osso (Bone)",
+            "d": "Agulhas de osso, armas e infusão contra febre/intoxicação."
+          },
+          {
+            "t": "Presas de Felino (Cat Fangs) — chance",
+            "d": "Sem uso no modo história/sobrevivência; no Spirits of Amazonia viram Presas de Metal (Metal Fangs) com molde, após ler as pedras da lenda do Artesão."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "puma",
+      "pantera-negra",
+      "lanca-de-pedra",
+      "lanca-de-osso",
+      "lanca-tribal",
+      "lanca-de-metal",
+      "arco",
+      "flecha-de-metal",
+      "armadura-de-tatu",
+      "ferimento-laceracao",
+      "formiga-tocandira",
+      "curativo-de-mel",
+      "carne-de-felino"
+    ]
+  },
+  {
+    "id": "puma",
+    "nome": "Puma (Onça-parda / Suçuarana)",
+    "nomeEn": "Puma",
+    "categoria": "Predadores",
+    "aliases": [
+      "puma",
+      "onca parda",
+      "onça-parda",
+      "sucuarana",
+      "suçuarana",
+      "leao da montanha",
+      "cougar",
+      "mountain lion",
+      "gato",
+      "felino"
+    ],
+    "perigo": 5,
+    "resumo": "Felino agressivo semelhante à onça, menos musculoso, mas igualmente perigoso. Faz menos barulho, então é mais difícil perceber que está sendo caçado.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada na cabeça",
+            "d": "A wiki aponta lança arremessada e arco como as armas úteis para matá-lo. Jogadores relatam matar puma com um único arremesso de Lança de Pedra (Stone Spear) na cabeça.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Headshot mata na hora; no corpo ele aguenta várias flechas e foge. Prefira Flecha de Metal (Metal Arrow).",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança de Pedra (Stone Spear) corpo a corpo",
+            "d": "Maior alcance entre as lanças básicas; mantenha distância.",
+            "nota": "bom"
+          },
+          {
+            "t": "Machados",
+            "d": "Alcance médio; só em último caso.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar / se defender",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Atenção redobrada ao som",
+            "d": "Jogadores relatam que o puma faz menos barulho que a onça. Pare com frequência para ouvir em áreas de mata.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Não corra e não dê as costas",
+            "d": "Mesma lógica da onça: encare, ande e prepare a mira enquanto ele avança.",
+            "nota": "bom"
+          },
+          {
+            "t": "Bloqueie e use armadura",
+            "d": "Bloqueio (R) reduz o dano; armaduras de Tatu (70%) e Metal (90%) protegem o membro coberto.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration)",
+            "d": "Sangramento intenso e risco de infecção.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento da laceração",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Formigas (Ants) como pontos",
+            "d": "O jeito mais rápido de fechar a Laceração (Laceration): inspecione o corpo e aplique formigas coletadas do formigueiro. Dói e reduz a sanidade temporariamente.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Curativo de Mel / Cinzas / Golias (Honey / Ash / Goliath Dressing)",
+            "d": "Curativos com propriedade desinfetante param o sangramento e reduzem o risco de infecção; a cicatrização é mais lenta.",
+            "nota": "bom"
+          },
+          {
+            "t": "Bandagem de Folha (Leaf Bandage)",
+            "d": "Estanca o sangramento, mas a laceração tem alto risco de virar Infecção (Infection).",
+            "nota": "emergencial"
+          },
+          {
+            "t": "Se infeccionar",
+            "d": "Coloque Larvas de mosca (Maggots) na ferida infeccionada e depois faça um curativo.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "4x Carne de Felino (Big Cat Meat)",
+            "d": "Alta em proteína e energia."
+          },
+          {
+            "t": "4x Osso (Bone)",
+            "d": "Agulhas de osso, armas e infusão de osso (contra febre e intoxicação)."
+          },
+          {
+            "t": "Presas de Felino (Cat Fangs) — chance",
+            "d": "Uso apenas no Spirits of Amazonia (lenda do Artesão)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "onca-pintada",
+      "lanca-de-pedra",
+      "arco",
+      "flecha-de-metal",
+      "armadura-de-tatu",
+      "ferimento-laceracao",
+      "carne-de-felino"
+    ]
+  },
+  {
+    "id": "pantera-negra",
+    "nome": "Pantera-negra (Ha'kra)",
+    "nomeEn": "Black Panther",
+    "categoria": "Predadores",
+    "aliases": [
+      "pantera",
+      "pantera negra",
+      "onca preta",
+      "onça-preta",
+      "hakra",
+      "ha'kra",
+      "black panther",
+      "black jaguar",
+      "felino"
+    ],
+    "perigo": 5,
+    "resumo": "Onça melânica única da lenda 'The Dance of Death' no modo Spirits of Amazonia; não aparece em outro lugar. Matá-la rende a Cauda de Ha'kra para o ancião Un'garaca.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada na cabeça",
+            "d": "Mesma tática dos outros felinos: arremesse quando ela vier na sua direção. Leve várias lanças.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arco (Bow) + Flecha de Metal (Metal Arrow)",
+            "d": "Headshot mata na hora; tenha bastante munição, pois o encontro é em caverna.",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança de Pedra (Stone Spear) corpo a corpo",
+            "d": "Alcance longo para manter distância.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar / se preparar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Prepare-se antes da caverna",
+            "d": "O encontro acontece numa caverna (região de 46W 15S). Entre com armadura, curativos e formigas para suturar.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Encare e bloqueie",
+            "d": "Não dê as costas; bloqueie (R) e recue se ela atacar.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration)",
+            "d": "Como todo felino: sangramento e risco de infecção.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Cauda de Ha'kra (Ha'kra Tail)",
+            "d": "Item da lenda: leve ao ancião da Vila Un'garaca para concluir 'The Dance of Death'.",
+            "nota": "melhor"
+          },
+          {
+            "t": "2x Carne de Felino (Big Cat Meat)",
+            "d": "Alta em proteína e energia; cozinhe antes de comer."
+          },
+          {
+            "t": "2x Osso (Bone) + Presas de Felino (Cat Fangs)",
+            "d": "As presas viram Presas de Metal (Metal Fangs) com molde, na lenda do Artesão."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "onca-pintada",
+      "lanca-de-pedra",
+      "arco",
+      "ferimento-laceracao",
+      "lenda-dance-of-death",
+      "spirits-of-amazonia"
+    ]
+  },
+  {
+    "id": "jacare-acu",
+    "nome": "Jacaré-açu (Jacaré-negro)",
+    "nomeEn": "Black Caiman",
+    "categoria": "Predadores",
+    "aliases": [
+      "jacare",
+      "jacaré",
+      "jacare negro",
+      "jacare acu",
+      "caiman",
+      "black caiman",
+      "crocodilo",
+      "croc"
+    ],
+    "perigo": 5,
+    "resumo": "Grande réptil de rios, lagos e pântanos que se camufla como tronco na margem e dá bote para fora da água. Rápido nadando, lento em terra; exige vários golpes.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada na cabeça",
+            "d": "Segundo a wiki, a forma mais eficaz é arremessar a lança na cabeça enquanto ele avança devagar em terra. Leve várias lanças — ele aguenta vários golpes.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Ataque à distância enquanto ele se arrasta em terra; prefira Flecha de Metal (Metal Arrow). Jogadores relatam matar com uma flecha de metal bem colocada.",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança de Pedra (Stone Spear) corpo a corpo",
+            "d": "Alcance longo para golpear sem chegar perto da boca.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar / se defender",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Desconfie de \"troncos\" na margem",
+            "d": "Ele se camufla como tronco à beira d'água. Observe antes de chegar perto de rios e lagos.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Saia da água",
+            "d": "Ele é rápido nadando e lento em terra (e em água rasa). Em terra você tem tempo de mirar e recuar.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Ele persegue por muito tempo",
+            "d": "Depois de te notar, segue em silêncio por longas distâncias e pode atacar bem depois. Olhe para trás ao andar perto da água.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Nunca fique perto da boca",
+            "d": "A mordida causa dano muito alto. Desde a V.2.0.1 ele não mata mais com uma só mordida, mas continua letal.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Onde aparece",
+            "d": "Em volta de grandes lagos, rios e pântanos; muito comum nas águas da Anaconda Island."
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Mordida de dano muito alto",
+            "d": "Inspecione o corpo após o ataque e trate os ferimentos encontrados (ex.: laceração).",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "4x Carne de Jacaré (Black Caiman Meat)",
+            "d": "Cozinhe, defume, seque ou faça sopa."
+          },
+          {
+            "t": "4x Osso (Bone)",
+            "d": "Agulhas de osso, armas e infusão de osso."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "jacare-albino",
+      "lanca-de-pedra",
+      "arco",
+      "flecha-de-metal",
+      "ferimento-laceracao",
+      "anaconda-island"
+    ]
+  },
+  {
+    "id": "jacare-albino",
+    "nome": "Jacaré-albino (Demônio Branco)",
+    "nomeEn": "Albino Caiman",
+    "categoria": "Predadores",
+    "aliases": [
+      "jacare albino",
+      "jacaré albino",
+      "demonio branco",
+      "white demon",
+      "albino caiman",
+      "caiman",
+      "jacare branco"
+    ],
+    "perigo": 5,
+    "resumo": "Jacaré gigante da lenda 'White Demon' (Spirits of Amazonia). Só aparece à noite, numa pequena caverna do pântano perto do Steamboat, depois de ler todas as pedras da lenda.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) + Flechas na cabeça",
+            "d": "Aguenta cerca de 2,5x mais golpes que um jacaré comum — a wiki cita ~5 headshots de arco. Leve muitas flechas (de metal, se possível).",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lanças arremessadas na cabeça",
+            "d": "Arremesse enquanto ele avança devagar em terra/água rasa. Leve várias.",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança corpo a corpo",
+            "d": "Só para finalizar; fique longe da boca.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar / se preparar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Vá à noite e preparado",
+            "d": "Ele só sai depois que escurece. Leve tocha, armadura, curativos e munição extra.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lute em terra",
+            "d": "Rápido em água funda, lento em terra ou água rasa — recue para o seco e atire.",
+            "nota": "bom"
+          },
+          {
+            "t": "Dificuldade Tourist",
+            "d": "Nessa dificuldade ele não aparece e o ícone da lenda pode não surgir."
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Pata de Jacaré (Caiman Paw)",
+            "d": "Leve ao ancião Mu'agi para concluir a lenda White Demon (+100 de confiança).",
+            "nota": "melhor"
+          },
+          {
+            "t": "4x Carne de Jacaré + 4x Osso",
+            "d": "Mesma carne do jacaré comum (Black Caiman Meat)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "jacare-acu",
+      "arco",
+      "lanca-de-pedra",
+      "lenda-white-demon",
+      "spirits-of-amazonia",
+      "tocha"
+    ]
+  },
+  {
+    "id": "tamandua-bandeira",
+    "nome": "Tamanduá-bandeira",
+    "nomeEn": "Giant Anteater",
+    "categoria": "Predadores",
+    "aliases": [
+      "tamandua",
+      "tamanduá",
+      "tamandua bandeira",
+      "anteater",
+      "giant anteater",
+      "papa-formiga"
+    ],
+    "perigo": 4,
+    "resumo": "Animal grande e agressivo que ataca quem chega perto; segundo a wiki, é tão perigoso quanto pumas e onças. Aparece perto de formigueiros por pouco tempo.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada ou Arco (Bow)",
+            "d": "Ataque à distância antes que ele chegue perto; mire na cabeça.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadilha Mortal (Killer Trap) / Armadilha de Laço (Snare Trap)",
+            "d": "Ambas pegam tamanduá-bandeira, segundo a wiki. O laço pode capturá-lo vivo.",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança de Pedra (Stone Spear) corpo a corpo",
+            "d": "Alcance longo para não entrar no raio de ataque.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Cuidado ao chegar em formigueiros",
+            "d": "Ele fica perto de formigueiros por pouco tempo e some por cerca de 6 horas do jogo. Olhe em volta antes de coletar formigas.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Mantenha distância",
+            "d": "Ele só ataca se você se aproximar demais.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa / usos",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "4x Carne de Tamanduá (Giant Anteater Meat)",
+            "d": "Cozinhe, defume ou seque antes de comer."
+          },
+          {
+            "t": "5x Osso (Bone)",
+            "d": "A quantidade depende da habilidade de Esfolar (Animal Harvesting)."
+          },
+          {
+            "t": "Criação de animais",
+            "d": "Pode ser criado no Cercado (Animal Pen); come insetos (larvas de mosca ou formigas) no comedouro de insetos."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "formiga-tocandira",
+      "armadilha-mortal",
+      "armadilha-de-laco",
+      "arco",
+      "lanca-de-pedra",
+      "criacao-de-animais"
+    ]
+  },
+  {
+    "id": "sucuri",
+    "nome": "Sucuri (Anaconda)",
+    "nomeEn": "Anaconda",
+    "categoria": "Predadores",
+    "aliases": [
+      "sucuri",
+      "anaconda",
+      "cobra grande",
+      "jiboia",
+      "boa",
+      "cobra gigante"
+    ],
+    "perigo": 0,
+    "resumo": "Não existe sucuri viva no jogo. Há apenas uma sucuri morta exposta numa estrutura no acampamento da Anaconda Island, que dá nome ao local.",
+    "secoes": [
+      {
+        "titulo": "O que saber",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Só decoração",
+            "d": "A sucuri da Anaconda Island está morta e não interage. A única cobra viva confirmada no jogo é a Cascavel (South American Rattlesnake)."
+          },
+          {
+            "t": "Perigo real na Anaconda Island",
+            "d": "As águas em volta têm Jacaré-açu (Black Caiman). Em compensação, é ótimo lugar para pescar e caçar.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Se você foi mordido por cobra",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "É a cascavel",
+            "d": "A única cobra que ataca no jogo é a Cascavel (South American Rattlesnake): a mordida causa ferida venenosa e febre. Trate com analgésicos, curativo de lírio/tabaco ou chá de lírio.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "cascavel",
+      "jacare-acu",
+      "anaconda-island"
+    ]
+  },
+  {
+    "id": "piranha",
+    "nome": "Piranha-vermelha",
+    "nomeEn": "Red-Bellied Piranha",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "piranha",
+      "piranha vermelha",
+      "red piranha",
+      "red-bellied piranha",
+      "peixe"
+    ],
+    "perigo": 3,
+    "resumo": "Peixe agressivo: entrar na água onde há piranhas pode causar lacerações ou até a morte. Mas também é comida e fonte de espinhas de peixe.",
+    "secoes": [
+      {
+        "titulo": "Como pescar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Armadilha de Vara de Pesca (Fishing Rod Trap)",
+            "d": "Pega piranha e tucunaré sozinha, mesmo sem isca. Não sobe a habilidade de pesca.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Vara de Pesca (Fishing Rod) + Anzol de Osso (Bone Hook)",
+            "d": "Iscas que atraem piranha: Larva (Larva), Acará-bandeira (Angelfish) ou Acará-disco (Discus Fish).",
+            "nota": "bom"
+          },
+          {
+            "t": "Qualquer lança (pesca com lança)",
+            "d": "Mire segurando o botão e solte para estocar. A Lança de Quatro Pontas (Four Pronged Spear) é feita para pesca.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilhas de Peixe (Stick Fish Trap / Large Stick Fish Trap)",
+            "d": "Também capturam piranhas.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Não nade onde há piranhas",
+            "d": "Pesque da margem. Locais comuns: praia do Fishing Dock e o rio no sul, perto do Barco (Boat) e do Pântano.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration)",
+            "d": "Trate com formigas (pontos), curativo de mel/cinzas ou bandagem de folha.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Carne de Piranha (Piranha Meat)",
+            "d": "Cozinhe antes de comer."
+          },
+          {
+            "t": "4x Espinha de Peixe (Fish Bone)",
+            "d": "Remove vermes da pele e serve para fazer anzol (Fish Hook)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "vara-de-pesca",
+      "armadilha-de-vara-de-pesca",
+      "armadilha-de-peixe",
+      "lanca-de-quatro-pontas",
+      "ferimento-laceracao",
+      "espinha-de-peixe",
+      "larva"
+    ]
+  },
+  {
+    "id": "arraia",
+    "nome": "Arraia-de-rio",
+    "nomeEn": "River Stingray",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "arraia",
+      "raia",
+      "arraia de rio",
+      "stingray",
+      "river stingray",
+      "ferrao"
+    ],
+    "perigo": 3,
+    "resumo": "Fica camuflada no fundo de rios rasos. Se você pisar perto, ela ferroa e causa ferida venenosa e febre. Morre com um golpe de lança.",
+    "secoes": [
+      {
+        "titulo": "Como matar / pescar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança (pesca com lança)",
+            "d": "Um golpe de lança mata. A Lança de Pedra (Stone Spear), de maior alcance, permite acertar de mais longe.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Também mata com um acerto.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Cuidado ao atravessar rios rasos",
+            "d": "Ela se confunde com o fundo lamacento. Olhe a água antes de pisar e evite andar distraído por rios rasos.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Ferida venenosa (Venom Wound) + Febre (Fever)",
+            "d": "Perde vida e energia com o tempo; trate logo.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento do veneno",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Lírio ou de Tabaco (Lily / Tobacco Dressing)",
+            "d": "Aplicado na Ferida venenosa (Venom Wound): -4 de veneno, agindo ao longo do tempo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "-4 de veneno e -5 de febre de uma vez.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de Folha de Lírio ou de Tabaco (Plantain Lily / Tobacco Brew)",
+            "d": "Beber o chá dá -4 de veneno; comer a folha de lírio crua dá -2.",
+            "nota": "bom"
+          },
+          {
+            "t": "Febre (Fever)",
+            "d": "O veneno quase sempre traz febre: chá de Quássia (Quassia Amara Brew, -15), infusão de osso (Bone, -3) ou analgésicos (-5). Febre causada por veneno só some depois que o veneno acaba.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "2x Carne de Arraia (Stingray Meat)",
+            "d": "Boa fonte de proteína."
+          },
+          {
+            "t": "Ferrão de Arraia (Stingray Sting)",
+            "d": "Serve para remover vermes da pele."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "lanca-de-pedra",
+      "arco",
+      "envenenamento",
+      "febre",
+      "curativo-de-lirio",
+      "curativo-de-tabaco",
+      "analgesicos",
+      "vermes"
+    ]
+  },
+  {
+    "id": "cascavel",
+    "nome": "Cascavel",
+    "nomeEn": "South American Rattlesnake",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "cobra",
+      "cascavel",
+      "serpente",
+      "snake",
+      "rattlesnake",
+      "mordida de cobra",
+      "chocalho"
+    ],
+    "perigo": 4,
+    "resumo": "Única cobra viva do jogo. Você ouve o chocalho antes de vê-la; se chegar perto demais, ela morde e causa ferida venenosa e febre.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada ou Lâmina arremessada",
+            "d": "Segundo a wiki, ela é morta facilmente arremessando uma lança ou uma lâmina — sem entrar no alcance do bote.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lança de Pedra (Stone Spear) corpo a corpo",
+            "d": "Pela wiki, o alcance da lança de pedra permite atacar a cascavel com segurança. A Lança de Obsidiana (Obsidian Spear) tem alcance curto demais para isso.",
+            "nota": "bom"
+          },
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Funciona à distância; ela costuma ficar parada.",
+            "nota": "bom"
+          },
+          {
+            "t": "Machado ou faca",
+            "d": "Obriga a chegar perto — risco alto de mordida.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Ouça o chocalho",
+            "d": "Ao ouvir o som, pare, localize a cobra e contorne ou mate à distância.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Não atravesse mato fechado correndo",
+            "d": "Ande com atenção em áreas de vegetação densa.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Ferida venenosa (Venom Wound) + Febre (Fever)",
+            "d": "O veneno drena vida e stamina; doses altas matam se não tratadas.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento do veneno",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Lírio ou de Tabaco (Lily / Tobacco Dressing)",
+            "d": "Aplicado na Ferida venenosa (Venom Wound): -4 de veneno, agindo ao longo do tempo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "-4 de veneno e -5 de febre de uma vez.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de Folha de Lírio ou de Tabaco (Plantain Lily / Tobacco Brew)",
+            "d": "Beber o chá dá -4 de veneno; comer a folha de lírio crua dá -2.",
+            "nota": "bom"
+          },
+          {
+            "t": "Febre (Fever)",
+            "d": "O veneno quase sempre traz febre: chá de Quássia (Quassia Amara Brew, -15), infusão de osso (Bone, -3) ou analgésicos (-5). Febre causada por veneno só some depois que o veneno acaba.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "2x Carne de Cascavel (Rattlesnake Meat)",
+            "d": "Fonte moderada de proteína. Esfolar a cascavel não deixa você sujo."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "mordida-de-cobra",
+      "envenenamento",
+      "febre",
+      "lanca-de-pedra",
+      "curativo-de-lirio",
+      "curativo-de-tabaco",
+      "analgesicos",
+      "folha-de-lirio"
+    ]
+  },
+  {
+    "id": "aranha-armadeira",
+    "nome": "Aranha-armadeira",
+    "nomeEn": "Brazilian Wandering Spider",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "aranha",
+      "armadeira",
+      "aranha armadeira",
+      "spider",
+      "wandering spider",
+      "aranha das bananeiras"
+    ],
+    "perigo": 4,
+    "resumo": "Aranha pequena e difícil de ver, comum no chão perto de bananeiras. A picada causa ferida venenosa e febre.",
+    "secoes": [
+      {
+        "titulo": "Como matar / capturar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança de Pedra (Stone Spear)",
+            "d": "Pela wiki, o alcance da lança de pedra permite atacá-la sem ser picado.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadilha de Gaiola (Cage Trap) / Armadilha de Pedra (Stone Trap)",
+            "d": "Formas de obtê-la segundo a wiki.",
+            "nota": "bom"
+          },
+          {
+            "t": "Pedras arremessadas (tecla G)",
+            "d": "Bom para pequenos animais sem chegar perto.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Ouça o barulho de arranhar",
+            "d": "Perto dela se ouve um som alto de arranhado. Cuidado ao coletar perto de bananeiras.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Ferida venenosa (Venom Wound) + Febre (Fever)",
+            "d": "O veneno drena vida e stamina; trate logo.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento do veneno",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Lírio ou de Tabaco (Lily / Tobacco Dressing)",
+            "d": "Aplicado na Ferida venenosa (Venom Wound): -4 de veneno, agindo ao longo do tempo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "-4 de veneno e -5 de febre de uma vez.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de Folha de Lírio ou de Tabaco (Plantain Lily / Tobacco Brew)",
+            "d": "Beber o chá dá -4 de veneno; comer a folha de lírio crua dá -2.",
+            "nota": "bom"
+          },
+          {
+            "t": "Febre (Fever)",
+            "d": "O veneno quase sempre traz febre: chá de Quássia (Quassia Amara Brew, -15), infusão de osso (Bone, -3) ou analgésicos (-5). Febre causada por veneno só some depois que o veneno acaba.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Comida",
+            "d": "Cozida na fogueira: 4 de proteína e -5 de sanidade."
+          },
+          {
+            "t": "Isca",
+            "d": "Pode ser usada como isca em armadilhas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "aranha-golias",
+      "armadilha-de-gaiola",
+      "armadilha-de-pedra",
+      "lanca-de-pedra",
+      "envenenamento",
+      "febre"
+    ]
+  },
+  {
+    "id": "aranha-golias",
+    "nome": "Aranha-golias (Caranguejeira)",
+    "nomeEn": "Goliath Birdeater Spider",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "aranha",
+      "caranguejeira",
+      "tarantula",
+      "tarântula",
+      "golias",
+      "goliath",
+      "birdeater",
+      "aranha golias"
+    ],
+    "perigo": 3,
+    "resumo": "Caranguejeira da floresta que faz um som característico. A picada causa ferida venenosa e febre, mas queimada ela vira cinza para o Curativo de Golias.",
+    "secoes": [
+      {
+        "titulo": "Como matar / capturar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Pedras arremessadas (tecla G)",
+            "d": "A wiki recomenda armas à distância ou pedras.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arco ou lança arremessada",
+            "d": "Mate à distância.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilha de Pedra (Stone Trap)",
+            "d": "Armadilhas pequenas capturam a aranha.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Escute antes de pisar",
+            "d": "Parada, ela é difícil de ver; o som denuncia a presença.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Ferida venenosa (Venom Wound) + Febre (Fever)",
+            "d": "O veneno drena vida e stamina; trate logo.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento do veneno",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Lírio ou de Tabaco (Lily / Tobacco Dressing)",
+            "d": "Aplicado na Ferida venenosa (Venom Wound): -4 de veneno, agindo ao longo do tempo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "-4 de veneno e -5 de febre de uma vez.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de Folha de Lírio ou de Tabaco (Plantain Lily / Tobacco Brew)",
+            "d": "Beber o chá dá -4 de veneno; comer a folha de lírio crua dá -2.",
+            "nota": "bom"
+          },
+          {
+            "t": "Febre (Fever)",
+            "d": "O veneno quase sempre traz febre: chá de Quássia (Quassia Amara Brew, -15), infusão de osso (Bone, -3) ou analgésicos (-5). Febre causada por veneno só some depois que o veneno acaba.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Cinza de Golias (Goliath Birdeater Ash)",
+            "d": "Deixe a aranha queimar na fogueira para obter a cinza, usada no Curativo de Golias (Goliath Dressing), que trata ferimentos e infecção.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Comida",
+            "d": "Não é esfolada: pegue o corpo (E) e cozinhe. Crua dá intoxicação alimentar."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "curativo-de-golias",
+      "aranha-armadeira",
+      "armadilha-de-pedra",
+      "envenenamento",
+      "febre"
+    ]
+  },
+  {
+    "id": "escorpiao",
+    "nome": "Escorpião",
+    "nomeEn": "Scorpion",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "escorpiao",
+      "escorpião",
+      "scorpion",
+      "lacrau"
+    ],
+    "perigo": 3,
+    "resumo": "Pequeno, vive dentro e em volta de cavernas. Pisar nele causa ferida venenosa e febre. Uma pedra arremessada basta para matá-lo.",
+    "secoes": [
+      {
+        "titulo": "Como matar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Pedra arremessada (tecla G)",
+            "d": "Uma pedra basta, segundo a wiki.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Qualquer arma",
+            "d": "A maioria das armas mata; prefira lança pelo alcance.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilha de Pedra (Stone Trap)",
+            "d": "Armadilhas pequenas capturam escorpiões.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Cuidado em cavernas",
+            "d": "Perto dele se ouve um estalar. Use tocha e olhe onde pisa.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Ferida venenosa (Venom Wound) + Febre (Fever)",
+            "d": "Acontece ao pisar nele; o veneno drena vida e stamina.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento do veneno",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Lírio ou de Tabaco (Lily / Tobacco Dressing)",
+            "d": "Aplicado na Ferida venenosa (Venom Wound): -4 de veneno, agindo ao longo do tempo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "-4 de veneno e -5 de febre de uma vez.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de Folha de Lírio ou de Tabaco (Plantain Lily / Tobacco Brew)",
+            "d": "Beber o chá dá -4 de veneno; comer a folha de lírio crua dá -2.",
+            "nota": "bom"
+          },
+          {
+            "t": "Febre (Fever)",
+            "d": "O veneno quase sempre traz febre: chá de Quássia (Quassia Amara Brew, -15), infusão de osso (Bone, -3) ou analgésicos (-5). Febre causada por veneno só some depois que o veneno acaba.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Comida",
+            "d": "Não é esfolado, mas pode ser cozido: proteína com pequena perda de sanidade. Cru dá 3 de intoxicação alimentar."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "armadilha-de-pedra",
+      "tocha",
+      "envenenamento",
+      "febre"
+    ]
+  },
+  {
+    "id": "centopeia",
+    "nome": "Centopeia (Lacraia)",
+    "nomeEn": "Centipede",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "centopeia",
+      "lacraia",
+      "centipede",
+      "piolho de cobra"
+    ],
+    "perigo": 3,
+    "resumo": "Esconde-se em itens deixados no chão (troncos, folhas de palmeira). Ao pegar o item, se ouvir um arranhado, solte tudo na hora (Q) e recue.",
+    "secoes": [
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Solte o item imediatamente (Q)",
+            "d": "Ao ouvir o arranhado ao carregar troncos ou folhas, solte e dê um passo para trás; ela cai no chão.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Coloque o item numa construção",
+            "d": "Se o item for usado numa construção ou estante (Stand), a centopeia deixa de existir.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como matar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança",
+            "d": "Depois que ela cai, mate com uma arma como a lança. Se falhar, ela foge e se enterra.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Ferida venenosa (Venom Wound) + Febre (Fever)",
+            "d": "Se você não soltar o item, ela sobe pelo braço e morde.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento do veneno",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Lírio ou de Tabaco (Lily / Tobacco Dressing)",
+            "d": "Aplicado na Ferida venenosa (Venom Wound): -4 de veneno, agindo ao longo do tempo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "-4 de veneno e -5 de febre de uma vez.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de Folha de Lírio ou de Tabaco (Plantain Lily / Tobacco Brew)",
+            "d": "Beber o chá dá -4 de veneno; comer a folha de lírio crua dá -2.",
+            "nota": "bom"
+          },
+          {
+            "t": "Febre (Fever)",
+            "d": "O veneno quase sempre traz febre: chá de Quássia (Quassia Amara Brew, -15), infusão de osso (Bone, -3) ou analgésicos (-5). Febre causada por veneno só some depois que o veneno acaba.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "envenenamento",
+      "febre",
+      "lanca-de-pedra"
+    ]
+  },
+  {
+    "id": "sapo-dardo",
+    "nome": "Sapo-dardo-venenoso",
+    "nomeEn": "Poison Dart Frog",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "sapo",
+      "ra",
+      "rã",
+      "sapo dardo",
+      "sapinho colorido",
+      "dart frog",
+      "poison dart frog",
+      "sapo venenoso",
+      "veneno para dardo"
+    ],
+    "perigo": 4,
+    "resumo": "Inofensivo se deixado em paz, mas pegá-lo vivo dá de 5 a 8 doses de veneno mais febre — pode matar mesmo com vida cheia. É a fonte de veneno dos Dardos Envenenados.",
+    "secoes": [
+      {
+        "titulo": "Alerta",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Não pegue vivo sem preparo",
+            "d": "Pegar o sapo vivo aplica muito veneno. Tenha remédios para veneno à mão (analgésicos, curativo de lírio/tabaco, chá de lírio).",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Nunca coma a carne",
+            "d": "Carne de Sapo-dardo (Dart Frog Meat) dá 20 de intoxicação alimentar e grande perda de sanidade, em qualquer preparo.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Dardos envenenados",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "Esticador de Sapo (Frog Stretcher)",
+            "d": "Coloque um sapo vivo no esticador e arraste Dardos Inacabados (Unfinished Darts) sobre ele: cada uso gasta 33% do veneno e gera 5 Dardos Envenenados (Poison Dart). Até 15 dardos por sapo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Zarabatana de Bambu (Bamboo Blowpipe)",
+            "d": "Atira os dardos: adormece capivara, cateto e anta (para criação) e mata outros animais. Pouco efeito contra indígenas."
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Margens de rios e lagoas",
+            "d": "Aparece em várias cores perto da água."
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento do veneno",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Lírio ou de Tabaco (Lily / Tobacco Dressing)",
+            "d": "Aplicado na Ferida venenosa (Venom Wound): -4 de veneno, agindo ao longo do tempo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "-4 de veneno e -5 de febre de uma vez.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de Folha de Lírio ou de Tabaco (Plantain Lily / Tobacco Brew)",
+            "d": "Beber o chá dá -4 de veneno; comer a folha de lírio crua dá -2.",
+            "nota": "bom"
+          },
+          {
+            "t": "Febre (Fever)",
+            "d": "O veneno quase sempre traz febre: chá de Quássia (Quassia Amara Brew, -15), infusão de osso (Bone, -3) ou analgésicos (-5). Febre causada por veneno só some depois que o veneno acaba.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "zarabatana",
+      "dardo-envenenado",
+      "esticador-de-sapo",
+      "envenenamento",
+      "intoxicacao-alimentar",
+      "analgesicos"
+    ]
+  },
+  {
+    "id": "vespa",
+    "nome": "Vespa-brasileira (Marimbondo)",
+    "nomeEn": "Brazilian Wasp",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "vespa",
+      "marimbondo",
+      "abelha",
+      "ninho de vespa",
+      "colmeia",
+      "wasp",
+      "queen bee",
+      "abelha rainha"
+    ],
+    "perigo": 3,
+    "resumo": "Ninhos cinzentos e arredondados em árvores mortas. As vespas atacam quem entra no raio do ninho, causando irritação na pele; ficar ali pode matar. Elas não podem ser mortas.",
+    "secoes": [
+      {
+        "titulo": "Como lidar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Tocha acesa (Torch)",
+            "d": "Segurar uma tocha acesa impede o ataque das vespas — use para coletar o ninho com segurança.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadura nos dois braços",
+            "d": "Com armadura nos dois braços, o personagem espanta as vespas sem perder vida nem pegar irritação.",
+            "nota": "bom"
+          },
+          {
+            "t": "Ouça o zumbido e afaste-se",
+            "d": "Ao ouvir o zumbido, não fique na área.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que se obtém",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Favo de Mel (Honeycomb)",
+            "d": "Derrube o ninho com uma pedra ou arma à distância. As vespas continuam por perto um tempo depois."
+          },
+          {
+            "t": "Abelha-rainha (Queen Bee)",
+            "d": "Coletada do ninho (com tocha ou armadura); usada para montar a Colmeia (Beehive)."
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Irritação na pele (Rash)",
+            "d": "Reduz a sanidade; permanecer na zona de ataque pode matar.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento da irritação (Rash)",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Mel ou de Lírio (Honey / Lily Dressing)",
+            "d": "Acelera a cura da Irritação na pele (Rash), que reduz a sanidade enquanto durar.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Esperar",
+            "d": "A irritação some sozinha com o tempo.",
+            "nota": "emergencial"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "tocha",
+      "erupcao-cutanea",
+      "favo-de-mel",
+      "colmeia",
+      "curativo-de-mel",
+      "curativo-de-lirio"
+    ]
+  },
+  {
+    "id": "formiga-tocandira",
+    "nome": "Formiga (Tocandira)",
+    "nomeEn": "Rainforest Ants (Bullet Ant)",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "formiga",
+      "formigas",
+      "formigueiro",
+      "tocandira",
+      "formiga bala",
+      "ants",
+      "bullet ant",
+      "pontos",
+      "sutura"
+    ],
+    "perigo": 2,
+    "resumo": "Formigueiros espalhados pela floresta atacam quem chega perto, causando irritação; ficar muito tempo pode matar. As formigas coletadas servem como pontos para fechar lacerações.",
+    "secoes": [
+      {
+        "titulo": "Como coletar com segurança",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Tocha acesa (Torch)",
+            "d": "Chegar ao formigueiro com tocha acesa impede o ataque.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadura",
+            "d": "Com armadura o personagem espanta as formigas sem levar dano.",
+            "nota": "bom"
+          },
+          {
+            "t": "Aproxime-se devagar e aperte E",
+            "d": "Colete rápido e saia.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Uso medicinal",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Pontos em Laceração (Laceration)",
+            "d": "Aplicar formigas numa laceração fecha a ferida e acelera a cura; dói e reduz a sanidade por um tempo.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causa",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Irritação na pele (Rash)",
+            "d": "E morte se você ficar parado no formigueiro.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamento da irritação (Rash)",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de Mel ou de Lírio (Honey / Lily Dressing)",
+            "d": "Acelera a cura da Irritação na pele (Rash), que reduz a sanidade enquanto durar.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Esperar",
+            "d": "A irritação some sozinha com o tempo.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Dicas",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Caça perto de formigueiros",
+            "d": "Tatus ficam bastante tempo perto de formigueiros; o tamanduá-bandeira aparece por pouco tempo — e é agressivo."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "ferimento-laceracao",
+      "tocha",
+      "erupcao-cutanea",
+      "tatu",
+      "tamandua-bandeira"
+    ]
+  },
+  {
+    "id": "sanguessuga",
+    "nome": "Sanguessuga",
+    "nomeEn": "Leeches",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "sanguessuga",
+      "sanguessugas",
+      "leech",
+      "leeches"
+    ],
+    "perigo": 1,
+    "resumo": "Grudam no corpo ao andar pela mata ou pela água. Não matam, mas cada uma tira 1 de sanidade enquanto estiver presa.",
+    "secoes": [
+      {
+        "titulo": "Como tratar",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Inspecionar o corpo e puxar",
+            "d": "Abra a inspeção do corpo, localize cada sanguessuga e clique para arrancá-la.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Prevenção",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Não há como evitar",
+            "d": "Segundo a wiki, não existe forma de prevenir; verifique o corpo quando aparecer o ícone de inspeção."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "sanidade",
+      "inspecao-do-corpo",
+      "vermes"
+    ]
+  },
+  {
+    "id": "vermes",
+    "nome": "Vermes (Berne)",
+    "nomeEn": "Worms",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "verme",
+      "vermes",
+      "berne",
+      "bicho",
+      "larva na pele",
+      "worms",
+      "worm"
+    ],
+    "perigo": 2,
+    "resumo": "Larvas que entram sob a pele quando você dorme no chão. Drenam a sanidade rápido e, se não removidas, viram infecção.",
+    "secoes": [
+      {
+        "titulo": "Como remover",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Agulha de Osso (Bone Needle) ou Espinha de Peixe (Fish Bone)",
+            "d": "Inspecione o corpo e arraste a agulha/espinha até o calombo do verme.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Ferrão de Arraia (Stingray Sting)",
+            "d": "Também remove vermes.",
+            "nota": "bom"
+          },
+          {
+            "t": "Depois",
+            "d": "Cubra o ferimento com Curativo de Cinzas (Ash Dressing) ou Bandagem de Folha (Leaf Bandage) para evitar infecção.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Prevenção",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Durma elevado",
+            "d": "Use rede ou Cama de Troncos (Log Bed), não o chão.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Fogueira perto da cama",
+            "d": "Reduz o risco de vermes.",
+            "nota": "bom"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "agulha-de-osso",
+      "espinha-de-peixe",
+      "curativo-de-cinzas",
+      "infeccao",
+      "sanidade",
+      "arraia"
+    ]
+  },
+  {
+    "id": "larva",
+    "nome": "Larva (Bicho-de-coco)",
+    "nomeEn": "Larva",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "larva",
+      "larvas",
+      "bicho de coco",
+      "isca",
+      "grub"
+    ],
+    "perigo": 0,
+    "resumo": "Larvas amarelas que vivem em tocos de árvore e em frutas estragadas. Ótima isca e comida de emergência.",
+    "secoes": [
+      {
+        "titulo": "Onde obter",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Tocos de árvore",
+            "d": "Procure em tocos no chão da floresta."
+          },
+          {
+            "t": "Frutas estragadas",
+            "d": "Esfolar/colher frutas estragadas pode render larvas."
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Isca de pesca",
+            "d": "Na vara de pesca atrai Tucunaré (Peacock Bass) e Piranha.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Isca de armadilha pequena",
+            "d": "Na Armadilha de Pedra (Stone Trap) aumenta a chance de pegar um animal comestível.",
+            "nota": "bom"
+          },
+          {
+            "t": "Comida",
+            "d": "Cozida dá 5 de proteína."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "vara-de-pesca",
+      "armadilha-de-pedra",
+      "tucunare",
+      "piranha"
+    ]
+  },
+  {
+    "id": "larvas-de-mosca-animal",
+    "nome": "Larvas de mosca (Vermes de carniça)",
+    "nomeEn": "Maggots",
+    "categoria": "Venenosos e insetos",
+    "aliases": [
+      "larvas de mosca",
+      "vermes de carniça",
+      "maggots",
+      "bicheira",
+      "larva de mosca",
+      "infeccao"
+    ],
+    "perigo": 0,
+    "resumo": "Encontradas em cadáveres e carne estragada. São o tratamento para feridas infeccionadas e boa isca para peixes pequenos.",
+    "secoes": [
+      {
+        "titulo": "Onde obter",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Cadáveres e carne estragada",
+            "d": "Pegue (E) em corpos em decomposição ou esfole carne estragada."
+          },
+          {
+            "t": "Composteira (Composter)",
+            "d": "Cada composto colhido rende 5 larvas de mosca."
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Tratar Infecção (Infection)",
+            "d": "Aplique na ferida infeccionada: a infecção some e a ferida fica limpa; depois coloque um curativo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Isca em armadilhas de peixe",
+            "d": "Atrai Acará-bandeira (Angelfish) e Acará-disco (Discus Fish).",
+            "nota": "bom"
+          },
+          {
+            "t": "Ração de insetos",
+            "d": "Alimenta tatus e tamanduás no Cercado (10 larvas enchem o comedouro de insetos)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "infeccao",
+      "armadilha-de-peixe",
+      "acara-bandeira",
+      "acara-disco",
+      "criacao-de-animais"
+    ]
+  },
+  {
+    "id": "capivara",
+    "nome": "Capivara",
+    "nomeEn": "Capybara",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "capivara",
+      "capybara",
+      "roedor"
+    ],
+    "perigo": 0,
+    "resumo": "Animal pacífico de mata densa e beira d'água que foge quando você se aproxima. Rende muita carne e ossos.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada ou Arco (Bow)",
+            "d": "A wiki recomenda lança ou arma à distância; mire na cabeça.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadilha Mortal (Killer Trap)",
+            "d": "Pega capivaras em rotas de animais, sem precisar de isca.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilha de Laço (Snare Trap)",
+            "d": "Captura viva: corte a corda e leve ao cercado ou mate no chão.",
+            "nota": "bom"
+          },
+          {
+            "t": "Zarabatana + Dardo Envenenado (Bamboo Blowpipe + Poison Dart)",
+            "d": "Um dardo faz a capivara desmaiar; amarre com corda (segure E) para criar. Afaste-a da água antes: se desmaiar na água, morre afogada e a carne sai estragada.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "4x Carne de Capivara (Capybara Meat)",
+            "d": "Boa fonte de gordura e proteína."
+          },
+          {
+            "t": "5x Osso (Bone)",
+            "d": "Agulhas de osso e armas."
+          }
+        ]
+      },
+      {
+        "titulo": "Criação",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Cercado (Animal Pen)",
+            "d": "Pode ser criada e reproduzida; gestação de 3 dias."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "arco",
+      "lanca-de-pedra",
+      "armadilha-mortal",
+      "armadilha-de-laco",
+      "zarabatana",
+      "dardo-envenenado",
+      "criacao-de-animais"
+    ]
+  },
+  {
+    "id": "cateto",
+    "nome": "Cateto (Porco-do-mato)",
+    "nomeEn": "Collared Peccary",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "cateto",
+      "caititu",
+      "porco do mato",
+      "porco-do-mato",
+      "queixada",
+      "javali",
+      "peccary",
+      "collared peccary",
+      "porco"
+    ],
+    "perigo": 0,
+    "resumo": "Parece um porco, anda em pares em áreas de vegetação alta e foge quando você chega perto.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada",
+            "d": "A wiki recomenda a lança.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Mire na cabeça para matar na hora.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilha Mortal (Killer Trap) / Armadilha de Laço (Snare Trap)",
+            "d": "Ambas pegam catetos; o laço pode capturar vivo.",
+            "nota": "bom"
+          },
+          {
+            "t": "Zarabatana + Dardo Envenenado",
+            "d": "Adormece para captura e criação.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "3x Carne de Cateto (Peccary Meat)",
+            "d": "A quantidade depende da habilidade de esfolar."
+          },
+          {
+            "t": "4x Osso (Bone)",
+            "d": "Para armas e Agulha de Osso (Bone Needle)."
+          }
+        ]
+      },
+      {
+        "titulo": "Criação",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Cercado (Animal Pen)",
+            "d": "Gestação de 3 dias; o filhote vira adulto em 2 dias."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "lanca-de-pedra",
+      "arco",
+      "armadilha-mortal",
+      "armadilha-de-laco",
+      "zarabatana",
+      "criacao-de-animais"
+    ]
+  },
+  {
+    "id": "anta",
+    "nome": "Anta",
+    "nomeEn": "South American Tapir",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "anta",
+      "tapir",
+      "south american tapir"
+    ],
+    "perigo": 0,
+    "resumo": "Maior mamífero terrestre da Amazônia, pacífico. É a melhor fonte de proteína do jogo e a segunda melhor de gordura.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança arremessada ou Arco (Bow)",
+            "d": "Mire na cabeça.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadilha Mortal (Killer Trap)",
+            "d": "Pega antas em rotas de animais.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilha de Laço (Snare Trap) / Zarabatana",
+            "d": "Captura viva para criação.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "6x Carne de Anta (Tapir Meat)",
+            "d": "Melhor fonte de proteína.",
+            "nota": "melhor"
+          },
+          {
+            "t": "4x Osso (Bone)",
+            "d": "Para armas e Agulha de Osso (Bone Needle)."
+          },
+          {
+            "t": "Crânio de Anta (Tapir Skull)",
+            "d": "Rende 4 agulhas de osso; no Spirits of Amazonia é usado na missão Rebuild Totems."
+          }
+        ]
+      },
+      {
+        "titulo": "Criação",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Cercado (Animal Pen)",
+            "d": "Gestação de 4 dias."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "filhote-de-anta",
+      "armadilha-mortal",
+      "armadilha-de-laco",
+      "zarabatana",
+      "agulha-de-osso",
+      "criacao-de-animais"
+    ]
+  },
+  {
+    "id": "filhote-de-anta",
+    "nome": "Filhote de anta",
+    "nomeEn": "Baby Tapir",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "filhote de anta",
+      "anta filhote",
+      "baby tapir",
+      "pele de anta"
+    ],
+    "perigo": 0,
+    "resumo": "Exclusivo do Spirits of Amazonia (parte 2). Aparece em pares perto de pequenas poças nas pedras, apenas à noite e com chuva. Muito arisco.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Headshot com Arco (Bow) ou lança",
+            "d": "Morre fácil com tiro na cabeça. Se acertar o corpo, corre um pouco e sangra até morrer.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde e quando",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Noite chuvosa, perto de rock pools",
+            "d": "Fora dessas condições ele não aparece. Aproxime-se agachado — ele foge se você chegar perto."
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Pele de Filhote de Anta (Baby Tapir Skin)",
+            "d": "Usada para construir Tambores (Drums) e na lenda Gifts of the Jungle.",
+            "nota": "melhor"
+          },
+          {
+            "t": "3x Carne de Anta + 2x Osso",
+            "d": "Carne de Anta (Tapir Meat), rica em proteína."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "anta",
+      "arco",
+      "spirits-of-amazonia",
+      "lenda-gifts-of-the-jungle"
+    ]
+  },
+  {
+    "id": "tatu",
+    "nome": "Tatu-galinha",
+    "nomeEn": "Armadillo",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "tatu",
+      "tatu galinha",
+      "armadillo",
+      "casco de tatu",
+      "armadura de tatu"
+    ],
+    "perigo": 0,
+    "resumo": "Tatu de casco resistente a flechas e à maioria das armas corpo a corpo. Sua carapaça é a matéria-prima da Armadura de Tatu (70% de defesa).",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Persiga até ele virar bola",
+            "d": "Corra atrás por uma curta distância: ele se enrola em bola. Aí é só esfolar (mata na hora) ou amarrá-lo com corda e carregar vivo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lança arremessada no peito, pescoço ou cabeça",
+            "d": "Mata instantaneamente. Em outras partes ele foge sangrando — siga o rastro.",
+            "nota": "bom"
+          },
+          {
+            "t": "Flecha na cabeça",
+            "d": "Funciona, mas exige mira precisa: a parte blindada da cabeça não sofre dano.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Armadilha Mortal / Armadilha de Laço",
+            "d": "A Killer Trap perfura o casco; ambas pegam tatus.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Até 4x Carne de Tatu (Armadillo Meat)",
+            "d": "Cozinhe, defume ou seque."
+          },
+          {
+            "t": "Casco de Tatu (Armadillo Shell)",
+            "d": "Para a Armadura de Tatu. Com Esfolar nível 40 sai 2 cascos; nível 80, 3.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Dicas",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Perto de formigueiros",
+            "d": "Tatus passam bastante tempo perto de formigueiros."
+          },
+          {
+            "t": "Criação",
+            "d": "Come insetos no cercado (larvas de mosca, formigas)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "tatu-bola",
+      "armadura-de-tatu",
+      "lanca-de-pedra",
+      "armadilha-mortal",
+      "armadilha-de-laco",
+      "formiga-tocandira"
+    ]
+  },
+  {
+    "id": "tatu-bola",
+    "nome": "Tatu-bola",
+    "nomeEn": "Three Banded Armadillo",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "tatu bola",
+      "tatu-bola",
+      "tatu de tres bandas",
+      "three banded armadillo",
+      "tatu"
+    ],
+    "perigo": 0,
+    "resumo": "Tatu menor, do interior da floresta. Ao ser alcançado, para e se enrola numa bola — basta esfolar para matar.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Persiga e esfole",
+            "d": "Corra atrás; quando virar bola, use a opção de esfolar (precisa de lâmina).",
+            "nota": "melhor"
+          },
+          {
+            "t": "Captura só com corda",
+            "d": "Dá para amarrá-lo apenas com Corda (Rope) e carregá-lo vivo para o cercado.",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança arremessada",
+            "d": "O casco resiste a flechas e à maioria dos golpes corpo a corpo.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "1x Carne de Tatu-bola (Three-Banded Armadillo Meat)",
+            "d": "Cozinhe, defume ou seque."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "tatu",
+      "corda",
+      "criacao-de-animais"
+    ]
+  },
+  {
+    "id": "jabuti",
+    "nome": "Jabuti-piranga",
+    "nomeEn": "Red Footed Tortoise",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "jabuti",
+      "tartaruga",
+      "cagado",
+      "cágado",
+      "tortoise",
+      "turtle",
+      "casco de tartaruga"
+    ],
+    "perigo": 0,
+    "resumo": "Jabuti lento que vive perto de leitos de rio na borda da mata. Morre com um golpe da maioria das armas e dá um casco que serve de panela.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Qualquer arma, antes de ele se esconder",
+            "d": "Um golpe da maioria das armas mata. Depois que se recolhe no casco, ele não sofre dano.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Carne de Jabuti (Tortoise Meat)",
+            "d": "1 unidade; cozinhe antes de comer."
+          },
+          {
+            "t": "Casco de Jabuti (Tortoise Shell)",
+            "d": "Recipiente de 25 unidades: ferve água suja, cozinha sopas e chás e junta água da chuva. Não se deteriora.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Dicas",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Treinar habilidades",
+            "d": "Bater no jabuti recolhido conta como acerto sem matá-lo — um jeito de subir habilidades de armas."
+          },
+          {
+            "t": "Spawn garantido",
+            "d": "Na Anaconda Island há jabutis, tatus e lagartos garantidos."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "anaconda-island",
+      "agua-potavel"
+    ]
+  },
+  {
+    "id": "iguana",
+    "nome": "Iguana-verde",
+    "nomeEn": "Green Iguana",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "iguana",
+      "iguana verde",
+      "lagarto",
+      "green iguana"
+    ],
+    "perigo": 0,
+    "resumo": "Lagarto grande que sibila quando você chega perto e foge de longe; depois de fugir, se camufla fácil.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Ataque à distância antes que ela perceba você.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lança arremessada",
+            "d": "Arremesse antes que ela fuja — depois de assustada, some na vegetação.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilha de Espinhos (Spike Trap)",
+            "d": "Posicionada no caminho da iguana, mata esse réptil veloz.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "2x Carne de Iguana (Iguana Meat)",
+            "d": "Boa fonte de proteína."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "arco",
+      "armadilha-de-espinhos",
+      "jacuruxi"
+    ]
+  },
+  {
+    "id": "jacuruxi",
+    "nome": "Jacuruxi (Lagarto-jacaré)",
+    "nomeEn": "Caiman Lizard",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "jacuruxi",
+      "lagarto jacare",
+      "lagarto-jacaré",
+      "lagarto",
+      "caiman lizard",
+      "calango"
+    ],
+    "perigo": 0,
+    "resumo": "Pequeno réptil verde de cabeça avermelhada, comum perto de água limpa e entradas de cavernas. Foge rápido.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Qualquer arma",
+            "d": "Geralmente morre com um golpe.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilha de Pedra (Stone Trap)",
+            "d": "Captura o lagarto sem esforço.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "1x Carne de Lagarto-jacaré (Caiman Lizard Meat)",
+            "d": "Cozinhe, defume, seque ou faça sopa."
+          }
+        ]
+      },
+      {
+        "titulo": "Onde",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Anaconda Island",
+            "d": "Spawn garantido na região."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "armadilha-de-pedra",
+      "anaconda-island",
+      "iguana"
+    ]
+  },
+  {
+    "id": "rato",
+    "nome": "Rato",
+    "nomeEn": "Mouse",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "rato",
+      "camundongo",
+      "mouse",
+      "roedor"
+    ],
+    "perigo": 0,
+    "resumo": "Pequeno roedor da floresta, cavernas e acampamentos. Morre com um golpe ou uma pedra arremessada.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Pedra arremessada (tecla G)",
+            "d": "Mata com um acerto.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadilha de Pedra (Stone Trap) / Armadilha de Gaiola (Cage Trap)",
+            "d": "Capturam ratos.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "1x Carne de Rato (Mouse Meat)",
+            "d": "O corpo (0,8 kg) não estraga até ser esfolado — dá para guardar na mochila."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "armadilha-de-pedra",
+      "armadilha-de-gaiola"
+    ]
+  },
+  {
+    "id": "sapo-cururu",
+    "nome": "Sapo-cururu",
+    "nomeEn": "Cane Toad",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "sapo",
+      "cururu",
+      "sapo cururu",
+      "cane toad",
+      "toad"
+    ],
+    "perigo": 0,
+    "resumo": "Sapo comum perto de rios, lento e abundante — fonte fácil de carne. Não confundir com o sapo-dardo venenoso.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Qualquer arma corpo a corpo / lança",
+            "d": "Morre com um golpe; ele pula devagar. A wiki diz que não dá para pegá-lo com arco e flecha.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadilhas pequenas (Stone Trap / Cage Trap)",
+            "d": "Capturam sapos sem esforço.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "1x Carne de Sapo (Cane Toad Meat)",
+            "d": "Pode ser esfolado no chão ou na mochila; cozinhe antes de comer."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "sapo-dardo",
+      "armadilha-de-pedra",
+      "armadilha-de-gaiola"
+    ]
+  },
+  {
+    "id": "arara-vermelha",
+    "nome": "Arara-vermelha",
+    "nomeEn": "Scarlet Macaw",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "arara",
+      "arara vermelha",
+      "papagaio",
+      "ave",
+      "passaro",
+      "pássaro",
+      "macaw",
+      "parrot",
+      "penas"
+    ],
+    "perigo": 0,
+    "resumo": "Ave colorida do dossel. Abata quando pousar em pedras ou troncos; também aparece morta no chão da floresta.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Atire quando ela pousar; chegar perto faz a ave voar.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Pedras arremessadas (tecla G)",
+            "d": "Funcionam contra aves pousadas.",
+            "nota": "bom"
+          },
+          {
+            "t": "Recolher aves mortas",
+            "d": "Araras-vermelhas mortas são encontradas no chão e também podem ser esfoladas.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "1x Carne de Arara (Macaw Meat)",
+            "d": "Cozinhe antes de comer."
+          },
+          {
+            "t": "6x Pena (Feather)",
+            "d": "Matéria-prima das flechas.",
+            "nota": "melhor"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "arara-azul",
+      "tucano",
+      "arco",
+      "flecha",
+      "pena"
+    ]
+  },
+  {
+    "id": "arara-azul",
+    "nome": "Arara-azul",
+    "nomeEn": "Hyacinth Macaw",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "arara azul",
+      "arara",
+      "ave",
+      "passaro",
+      "pássaro",
+      "hyacinth macaw",
+      "penas"
+    ],
+    "perigo": 0,
+    "resumo": "Arara azul e amarela que voa perto de rios e pântanos. Diferente da vermelha, não aparece morta no chão.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Atire quando pousar em pedras ou troncos caídos.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Pedras arremessadas (tecla G)",
+            "d": "Funcionam contra aves pousadas.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "1x Carne de Arara (Macaw Meat) + 6x Pena (Feather)",
+            "d": "Penas para flechas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "arara-vermelha",
+      "tucano",
+      "arco",
+      "pena"
+    ]
+  },
+  {
+    "id": "tucano",
+    "nome": "Tucano",
+    "nomeEn": "Toucan",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "tucano",
+      "toucan",
+      "ave",
+      "passaro",
+      "pássaro",
+      "penas"
+    ],
+    "perigo": 0,
+    "resumo": "Ave de bico amarelo-alaranjado, comum em áreas abertas perto de rios. Também pode ser achado morto no chão.",
+    "secoes": [
+      {
+        "titulo": "Como caçar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) + Flechas",
+            "d": "Atire quando pousar.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Pedras arremessadas (tecla G)",
+            "d": "Funcionam contra aves pousadas.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "1x Carne de Tucano (Toucan Meat) + 6x Pena (Feather)",
+            "d": "Penas para fazer flechas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "arara-vermelha",
+      "arara-azul",
+      "arco",
+      "pena"
+    ]
+  },
+  {
+    "id": "morcego",
+    "nome": "Morcego",
+    "nomeEn": "Bats",
+    "categoria": "Animais de caça",
+    "aliases": [
+      "morcego",
+      "morcegos",
+      "bat",
+      "bats",
+      "borboleta",
+      "borboletas",
+      "butterfly"
+    ],
+    "perigo": 0,
+    "resumo": "Animal apenas decorativo: voa sobre o dossel em noites de céu limpo. Não pode ser caçado nem interage. O mesmo vale para as borboletas (laranja e azul).",
+    "secoes": [
+      {
+        "titulo": "O que saber",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Sem interação",
+            "d": "Morcegos e borboletas (Butterflies) existem só para ambientação; não dão recursos e não atacam."
+          }
+        ]
+      },
+      {
+        "titulo": "Onde ver",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Morcegos à noite, borboletas de dia",
+            "d": "Morcegos só aparecem à noite com céu limpo; borboletas laranja e azuis voam por várias áreas da floresta."
+          }
+        ]
+      }
+    ],
+    "relacionados": []
+  },
+  {
+    "id": "aruana",
+    "nome": "Aruanã",
+    "nomeEn": "Arowana",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "aruana",
+      "aruanã",
+      "arowana",
+      "peixe",
+      "escama"
+    ],
+    "perigo": 0,
+    "resumo": "Peixe alongado de escamas grandes, comum em lagos e lagoas de água clara, especialmente na Anaconda Island.",
+    "secoes": [
+      {
+        "titulo": "Como pescar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Vara de Pesca (Fishing Rod) com isca",
+            "d": "Iscas: Cogumelo Vermelho (Unknown Mushroom 1), Acará-bandeira (Angelfish) ou Acará-disco (Discus Fish).",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lanças (pesca com lança)",
+            "d": "Entre um pouco na água perto do cardume e estoque.",
+            "nota": "bom"
+          },
+          {
+            "t": "Arco (Bow)",
+            "d": "Flechas acertam peixes debaixo d'água.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilhas de peixe",
+            "d": "Também capturam aruanãs; isca aumenta a chance.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "2x Carne de Aruanã (Arowana Meat)",
+            "d": "Cozinhe, defume ou seque."
+          },
+          {
+            "t": "4x Espinha de Peixe (Fish Bone)",
+            "d": "Remove vermes e faz anzol."
+          },
+          {
+            "t": "Escama de Aruanã (Arowana Scale)",
+            "d": "Sem uso no modo história/sobrevivência (vai para a composteira); no Spirits of Amazonia vira Escamas de Metal com molde, na lenda do Artesão."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "vara-de-pesca",
+      "armadilha-de-peixe",
+      "lanca-de-quatro-pontas",
+      "espinha-de-peixe",
+      "anaconda-island"
+    ]
+  },
+  {
+    "id": "tucunare",
+    "nome": "Tucunaré",
+    "nomeEn": "Peacock Bass",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "tucunare",
+      "tucunaré",
+      "peacock bass",
+      "peixe",
+      "pavon"
+    ],
+    "perigo": 0,
+    "resumo": "Peixe predador grande, mais comum em poços d'água (Waterhole).",
+    "secoes": [
+      {
+        "titulo": "Como pescar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Vara de Pesca (Fishing Rod) com isca",
+            "d": "Iscas: Larva (Larva) ou Cogumelo Vermelho (Unknown Mushroom 1).",
+            "nota": "melhor"
+          },
+          {
+            "t": "Armadilha de Vara de Pesca (Fishing Rod Trap)",
+            "d": "Pega tucunaré sozinha.",
+            "nota": "bom"
+          },
+          {
+            "t": "Qualquer lança",
+            "d": "Pesca com lança na beira d'água; a Lança de Quatro Pontas (Four Pronged Spear) é feita para isso.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Carne de Tucunaré (Peacock Bass Meat) + 4x Espinha de Peixe",
+            "d": "Espinhas removem vermes e viram anzol."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "vara-de-pesca",
+      "armadilha-de-vara-de-pesca",
+      "larva",
+      "espinha-de-peixe"
+    ]
+  },
+  {
+    "id": "acara-bandeira",
+    "nome": "Acará-bandeira",
+    "nomeEn": "Angelfish",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "acara",
+      "acará",
+      "acara bandeira",
+      "peixe anjo",
+      "angelfish",
+      "isca",
+      "peixe pequeno"
+    ],
+    "perigo": 0,
+    "resumo": "Peixe pequeno que nada em cardumes com o acará-disco. É comido inteiro e serve de isca para peixes maiores.",
+    "secoes": [
+      {
+        "titulo": "Como pescar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Armadilha de Peixe (Stick Fish Trap / Large Stick Fish Trap) com Larvas de mosca",
+            "d": "Melhor forma, segundo a wiki.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Vara de pesca com Larvas de mosca (Maggots)",
+            "d": "Larvas de mosca atraem acarás na vara de pesca.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Isca",
+            "d": "Atrai Aruanã e Piranha na vara de pesca ou na armadilha de vara.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Comida",
+            "d": "Cozido, defumado, seco ou em sopa (pouca proteína). Só pode ser esfolado quando estragado."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "acara-disco",
+      "armadilha-de-peixe",
+      "larvas-de-mosca",
+      "aruana",
+      "piranha"
+    ]
+  },
+  {
+    "id": "acara-disco",
+    "nome": "Acará-disco",
+    "nomeEn": "Discus Fish",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "acara disco",
+      "acará-disco",
+      "disco",
+      "discus",
+      "peixe",
+      "isca",
+      "peixe pequeno"
+    ],
+    "perigo": 0,
+    "resumo": "Peixe pequeno e colorido que anda com o acará-bandeira em rios e lagoas. Isca para aruanã e piranha.",
+    "secoes": [
+      {
+        "titulo": "Como pescar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Armadilha de Peixe (Stick Fish Trap / Large Stick Fish Trap) com Larvas de mosca",
+            "d": "Melhor forma, segundo a wiki.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Vara de pesca com Larvas de mosca (Maggots)",
+            "d": "Larvas de mosca atraem acarás na vara de pesca.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Isca",
+            "d": "Para Aruanã (Arowana) e Piranha.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Comida",
+            "d": "Pouca proteína; cozinhe antes."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "acara-bandeira",
+      "armadilha-de-peixe",
+      "larvas-de-mosca",
+      "aruana",
+      "piranha"
+    ]
+  },
+  {
+    "id": "peixe-gussalla",
+    "nome": "Peixe Guss'alla",
+    "nomeEn": "Guss'alla Fish",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "gussalla",
+      "guss'alla",
+      "peixe dourado",
+      "peixe gigante",
+      "fish of fortune"
+    ],
+    "perigo": 0,
+    "resumo": "Peixe dourado gigante da lenda 'The Fish of Fortune' (Spirits of Amazonia). Só é pego na armadilha da tribo Habbacu, com a isca da lenda, e só come à noite.",
+    "secoes": [
+      {
+        "titulo": "Como pegar",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Leia todas as pedras da lenda",
+            "d": "Assim você aprende a fazer a Isca de Pesca (Fishing Bait) necessária.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Coloque a isca na armadilha da tribo",
+            "d": "Volte à noite (ou espere até de manhã). Pegue com E; ele fica pendurado na mochila e não pode ser esfolado."
+          },
+          {
+            "t": "Entregue ao ancião Habbacu",
+            "d": "Conclui a lenda."
+          }
+        ]
+      },
+      {
+        "titulo": "Alerta",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Não é comida",
+            "d": "Depois de pego, fica preso à mochila: não pode ser esfolado nem usado — é só para entregar ao ancião.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "spirits-of-amazonia",
+      "lenda-fish-of-fortune"
+    ]
+  },
+  {
+    "id": "camarao",
+    "nome": "Camarão",
+    "nomeEn": "Prawn",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "camarao",
+      "camarão",
+      "pitu",
+      "prawn",
+      "shrimp"
+    ],
+    "perigo": 0,
+    "resumo": "Pequeno crustáceo da parte rasa de lagoas e rios; cozido dá proteína, energia e sanidade.",
+    "secoes": [
+      {
+        "titulo": "Como pegar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Armadilha de Camarão (Prawn Trap)",
+            "d": "Captura fácil, com ou sem isca. Há uma pronta na Anaconda Island.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Comida",
+            "d": "Não é esfolado; pode ser cozido, defumado, seco ou em sopa. Cozido dá +3 de sanidade."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "armadilha-de-camarao",
+      "anaconda-island"
+    ]
+  },
+  {
+    "id": "caranguejo",
+    "nome": "Caranguejo-vermelho",
+    "nomeEn": "Red Crab",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "caranguejo",
+      "siri",
+      "crab",
+      "red crab"
+    ],
+    "perigo": 0,
+    "resumo": "Vive nas margens de rios rasos e foge devagar. Basta alcançá-lo e espetar com a lança.",
+    "secoes": [
+      {
+        "titulo": "Como pegar",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Lança",
+            "d": "Alcance e estoque; a Lança de Pedra (Stone Spear), de maior alcance, facilita.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Comida",
+            "d": "Cozido, defumado ou em sopa (não pode ser seco). Cozido dá 18 de proteína. Cru dá intoxicação alimentar."
+          },
+          {
+            "t": "Estragado",
+            "d": "Pode ser esfolado para obter larvas de mosca."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "lanca-de-pedra",
+      "larvas-de-mosca"
+    ]
+  },
+  {
+    "id": "caramujo",
+    "nome": "Caramujo (Aruá)",
+    "nomeEn": "Mystery Snail",
+    "categoria": "Peixes e água",
+    "aliases": [
+      "caramujo",
+      "caracol",
+      "aruá",
+      "arua",
+      "snail",
+      "mystery snail"
+    ],
+    "perigo": 0,
+    "resumo": "Fica em pedras e troncos nas margens de rios, lagos e lagoas. Basta pegar com E. Pode ser comido cru sem efeitos negativos.",
+    "secoes": [
+      {
+        "titulo": "Como pegar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Pegue com E",
+            "d": "Não foge nem ataca.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Comida rápida",
+            "d": "Pouca proteína. Cru não causa efeitos negativos (o Jake reclama, mas é seguro); também pode ser cozido, defumado ou em sopa."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "camarao",
+      "caranguejo"
+    ]
+  },
+  {
+    "id": "indigenas-waraha",
+    "nome": "Indígenas hostis (Tribo Waraha)",
+    "nomeEn": "Natives (Waraha Tribe)",
+    "categoria": "Inimigos",
+    "aliases": [
+      "indio",
+      "índio",
+      "indios",
+      "indigena",
+      "indígena",
+      "tribo",
+      "tribais",
+      "nativos",
+      "natives",
+      "waraha",
+      "warao",
+      "waraos",
+      "guerreiros pintados",
+      "skull painted warriors",
+      "canibais"
+    ],
+    "perigo": 5,
+    "resumo": "Guerreiros pintados com caveira, hostis, que andam em grupos e atacam bases com fogueira acesa por muito tempo. Tiro de flecha ou lança arremessada na cabeça mata qualquer tipo (exceto o Brutamontes, que usa máscara).",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) + Flechas na cabeça",
+            "d": "Headshot com qualquer flecha mata na hora. De longe, só o atingido parte para cima de você — dá para eliminar o grupo um a um.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lança arremessada na cabeça",
+            "d": "Também mata com um acerto na cabeça. A Lança de Obsidiana (Obsidian Spear) mata um indígena com cerca de 3 golpes corpo a corpo.",
+            "nota": "bom"
+          },
+          {
+            "t": "Machados",
+            "d": "A wiki cita machados como eficazes; Machado Tribal (Tribal Axe), Machado de Metal (Metal Axe) e Machado de Pedra Pesado têm dano alto.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilha de Espinhos (Spike Trap) / Armadilha de Arco (Bow Trap)",
+            "d": "Feitas para defender a base contra indígenas; a de espinhos pode matar quem pisa. Rearme com pilha de folhas / nova flecha.",
+            "nota": "bom"
+          },
+          {
+            "t": "Zarabatana (Bamboo Blowpipe)",
+            "d": "Os indígenas são parcialmente imunes aos dardos envenenados — não use contra eles.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar / se defender",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Ouça o canto",
+            "d": "Normalmente você os ouve cantando antes de vê-los. Ao notarem você, gritam para alertar o grupo.",
+            "nota": "bom"
+          },
+          {
+            "t": "Bloqueie recuando",
+            "d": "Bloquear (R) enquanto recua é a melhor defesa contra ataques corpo a corpo.",
+            "nota": "bom"
+          },
+          {
+            "t": "Desvie das flechas",
+            "d": "Observe o arqueiro puxar a corda e dê um passo para o lado na hora do disparo.",
+            "nota": "bom"
+          },
+          {
+            "t": "Use armadura",
+            "d": "Armadura de Osso (50%), Tatu (70%) e Metal (90%) absorvem boa parte do dano nos membros.",
+            "nota": "bom"
+          },
+          {
+            "t": "Cuidado com fogueiras",
+            "d": "Fogueiras acesas por muito tempo atraem ataques à base.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Destrua os acampamentos",
+            "d": "Derrubando todas as construções e totens de um acampamento, os Waraha não voltam mais. No Spirits of Amazonia isso dá confiança com a tribo da região (acampamento grande 40 pontos, pequeno 5).",
+            "nota": "melhor"
+          },
+          {
+            "t": "Dificuldade",
+            "d": "No modo \"A Walk In The Park\" as tribos hostis ficam desligadas."
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causam",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration) e Arranhão/Escoriação (Scratch & Abrasion)",
+            "d": "Os golpes podem causar lacerações (sangramento) e arranhões. Inspecione o corpo após a luta e trate.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "A arma que usavam",
+            "d": "Lâminas, Arco Tribal (Tribal Bow), Lança Tribal (Tribal Spear) — armas tiradas de indígenas vêm com mais de 90% de durabilidade.",
+            "nota": "melhor"
+          },
+          {
+            "t": "4x Carne Humana (Human Meat) + 4x Osso + 4x Pena (Feather)",
+            "d": "Comer carne humana derruba muito a sanidade (-35 a -40); só em último caso.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "guerreiro-waraha",
+      "cacador-waraha",
+      "lanceiro-waraha",
+      "brutamontes-waraha",
+      "arco",
+      "arco-tribal",
+      "flecha-tribal",
+      "lanca-tribal",
+      "armadilha-de-espinhos",
+      "armadilha-de-arco",
+      "ferimento-laceracao",
+      "acampamentos-waraha"
+    ]
+  },
+  {
+    "id": "guerreiro-waraha",
+    "nome": "Guerreiro Waraha (com lâmina)",
+    "nomeEn": "Blade Native (Waraha Warrior)",
+    "categoria": "Inimigos",
+    "aliases": [
+      "guerreiro",
+      "indio com faca",
+      "blade native",
+      "waraha warrior",
+      "indigena",
+      "nativo"
+    ],
+    "perigo": 4,
+    "resumo": "Indígena armado com lâmina que avança rápido e é difícil de despistar. Também arremessa pedras com boa precisão.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) na cabeça antes que ele chegue",
+            "d": "Headshot mata instantaneamente.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lança arremessada na cabeça",
+            "d": "Também mata com um acerto na cabeça.",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança ou machado corpo a corpo + bloqueio",
+            "d": "Bloqueie (R) os golpes e contra-ataque.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Atravesse um rio ou entre numa caverna",
+            "d": "Segundo a wiki, é assim que se escapa dele — correr em campo aberto não funciona.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causam",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration) e Arranhão/Escoriação (Scratch & Abrasion)",
+            "d": "Os golpes podem causar lacerações (sangramento) e arranhões. Inspecione o corpo após a luta e trate.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Lâmina de Graveto (Stick Blade) ou Lâmina de Obsidiana e Osso (Obsidian Bone Blade)",
+            "d": "Costuma largar a arma ao morrer."
+          },
+          {
+            "t": "Pedras",
+            "d": "As pedras que ele arremessa podem ser recolhidas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "indigenas-waraha",
+      "arco",
+      "lanca-de-pedra",
+      "ferimento-laceracao"
+    ]
+  },
+  {
+    "id": "cacador-waraha",
+    "nome": "Caçador Waraha (arqueiro)",
+    "nomeEn": "Bowman Native (Waraha Hunter)",
+    "categoria": "Inimigos",
+    "aliases": [
+      "arqueiro",
+      "indio arqueiro",
+      "cacador",
+      "caçador",
+      "bowman",
+      "waraha hunter",
+      "flecha tribal",
+      "arco tribal"
+    ],
+    "perigo": 4,
+    "resumo": "Indígena com Arco Tribal e flechas infinitas que ataca de longe com boa mira. Fonte do Arco Tribal e de Flechas Tribais.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) na cabeça",
+            "d": "Troca de tiros: espere ele disparar, desvie e responda.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lança arremessada",
+            "d": "Aproxime-se usando árvores como cobertura e arremesse.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar / se defender",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Desvie andando de lado",
+            "d": "As flechas dele podem ser esquivadas movendo-se no momento do disparo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Use árvores como cobertura",
+            "d": "Mantenha os guerreiros corpo a corpo entre você e o arqueiro.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causam",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration) e Arranhão/Escoriação (Scratch & Abrasion)",
+            "d": "Os golpes podem causar lacerações (sangramento) e arranhões. Inspecione o corpo após a luta e trate.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa / farm",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Arco Tribal (Tribal Bow) + Lâmina de Obsidiana e Osso",
+            "d": "Larga ao morrer.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Flechas Tribais (Tribal Arrow)",
+            "d": "Recolha as que errarem. Truque da wiki: mantenha distância (rio ou ponte entre vocês) e entre e saia da vista atrás de uma árvore — ele crava flechas no tronco para você recolher.",
+            "nota": "bom"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "indigenas-waraha",
+      "arco-tribal",
+      "flecha-tribal",
+      "arco"
+    ]
+  },
+  {
+    "id": "lanceiro-waraha",
+    "nome": "Lanceiro Waraha",
+    "nomeEn": "Spearman Native (Waraha Spearman)",
+    "categoria": "Inimigos",
+    "aliases": [
+      "lanceiro",
+      "indio com lanca",
+      "spearman",
+      "waraha spearman",
+      "lanca tribal"
+    ],
+    "perigo": 4,
+    "resumo": "Lutador corpo a corpo com Lança Tribal. Um pouco mais lento que o guerreiro com lâmina, mas o alcance maior o torna bem mais perigoso.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Arco (Bow) na cabeça à distância",
+            "d": "Não deixe ele chegar ao alcance da lança.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Lança arremessada na cabeça",
+            "d": "Também mata com um acerto na cabeça.",
+            "nota": "bom"
+          },
+          {
+            "t": "Lança longa corpo a corpo + bloqueio",
+            "d": "Use uma lança de bom alcance (Stone Spear) para não ficar em desvantagem.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Recue bloqueando",
+            "d": "O alcance dele é grande; não troque golpes parado.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causam",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration) e Arranhão/Escoriação (Scratch & Abrasion)",
+            "d": "Os golpes podem causar lacerações (sangramento) e arranhões. Inspecione o corpo após a luta e trate.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "O que dropa",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Lança Tribal (Tribal Spear)",
+            "d": "Larga ao morrer; arma de dano médio e alcance longo.",
+            "nota": "melhor"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "indigenas-waraha",
+      "lanca-tribal",
+      "arco"
+    ]
+  },
+  {
+    "id": "brutamontes-waraha",
+    "nome": "Brutamontes Waraha (Thug)",
+    "nomeEn": "Waraha Thug",
+    "categoria": "Inimigos",
+    "aliases": [
+      "brutamontes",
+      "thug",
+      "waraha thug",
+      "mascarado",
+      "indio de mascara",
+      "machado tribal",
+      "chefe"
+    ],
+    "perigo": 5,
+    "resumo": "Indígena mais alto, com dois Machados Tribais e uma máscara clara que protege a cabeça de flechas e lanças arremessadas. Seus golpes empurram o jogador para longe.",
+    "secoes": [
+      {
+        "titulo": "Armas recomendadas",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Armas de dano alto (Metal Spear, Metal Axe, Tribal Axe, Metal Arrow)",
+            "d": "Como headshot não resolve por causa da máscara, priorize dano bruto e muitos acertos no corpo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arco (Bow) com muitas flechas",
+            "d": "Atire no corpo de longe enquanto ele se aproxima.",
+            "nota": "bom"
+          },
+          {
+            "t": "Armadilhas de base",
+            "d": "Armadilhas de Espinhos e de Arco ajudam a desgastá-lo.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar / se defender",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Armadura forte",
+            "d": "Armadura de Tatu ou de Metal nos membros reduz muito o dano.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Não lute encurralado",
+            "d": "Os golpes dele derrubam/empurram você para trás; lute em terreno aberto, sem precipícios.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Onde aparece",
+            "d": "Pode estar entre os 4–5 guerreiros de um acampamento grande (adicionado no Spirits of Amazonia parte 2)."
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos que causam",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Laceração (Laceration) e Arranhão/Escoriação (Scratch & Abrasion)",
+            "d": "Os golpes podem causar lacerações (sangramento) e arranhões. Inspecione o corpo após a luta e trate.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "indigenas-waraha",
+      "machado-tribal",
+      "lanca-de-metal",
+      "flecha-de-metal",
+      "armadura-de-metal",
+      "armadura-de-tatu"
+    ]
+  },
+  {
+    "id": "alucinacoes-inimigos",
+    "nome": "Alucinações",
+    "nomeEn": "Hallucinations",
+    "categoria": "Inimigos",
+    "aliases": [
+      "alucinacao",
+      "alucinação",
+      "alucinacoes",
+      "fantasma",
+      "vozes",
+      "hallucination",
+      "sanidade baixa",
+      "insanidade"
+    ],
+    "perigo": 3,
+    "resumo": "Com sanidade em 20 ou menos, surgem alucinações que atacam e causam dano (podem deixar ferimentos). Abaixo de 40 você já ouve vozes.",
+    "secoes": [
+      {
+        "titulo": "Como se defender",
+        "tipo": "armas",
+        "itens": [
+          {
+            "t": "Pedras arremessadas (tecla G) ou qualquer arma",
+            "d": "Elas são derrotadas facilmente.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Recupere a sanidade",
+            "d": "Fique perto de uma fogueira acesa e coma comida cozida ou encontrada. Evite carne humana e de sapo-dardo, sanguessugas, vermes e irritações sem tratar.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Ferimentos",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Ferimentos de alucinação",
+            "d": "Às vezes somem depois que a alucinação é derrotada."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "sanidade",
+      "sanguessuga",
+      "vermes"
+    ]
+  }
+]

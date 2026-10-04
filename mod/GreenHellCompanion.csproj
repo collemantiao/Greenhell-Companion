@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Plugin BepInEx 5 para Green Hell. Compila contra as DLLs da sua instalação do jogo
+       (nada do jogo é copiado para o repositório). Mude GamePath se o jogo estiver em outro lugar:
+       dotnet build -c Release -p:GamePath="D:\Jogos\Green Hell" -->
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>GreenHellCompanion</AssemblyName>
+    <RootNamespace>GreenHellCompanion</RootNamespace>
+    <Nullable>disable</Nullable>
+    <Version>1.0.0</Version>
+    <GamePath Condition="'$(GamePath)' == ''">E:\SteamLibrary\steamapps\common\Green Hell</GamePath>
+    <Managed>$(GamePath)\GH_Data\Managed</Managed>
+    <PluginDir>$(GamePath)\BepInEx\plugins\GreenHellCompanion</PluginDir>
+    <!-- true: copia o plugin compilado para a pasta do jogo ao final do build -->
+    <InstalarNoJogo Condition="'$(InstalarNoJogo)' == ''">true</InstalarNoJogo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx" HintPath="$(GamePath)\BepInEx\core\BepInEx.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GamePath)\BepInEx\core\0Harmony.dll" Private="false" />
+    <Reference Include="Assembly-CSharp" HintPath="$(Managed)\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(Managed)\Assembly-CSharp-firstpass.dll" Private="false" />
+    <Reference Include="UnityEngine" HintPath="$(Managed)\UnityEngine.dll" Private="false" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(Managed)\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="UnityEngine.IMGUIModule" HintPath="$(Managed)\UnityEngine.IMGUIModule.dll" Private="false" />
+    <Reference Include="UnityEngine.InputLegacyModule" HintPath="$(Managed)\UnityEngine.InputLegacyModule.dll" Private="false" />
+    <Reference Include="UnityEngine.ImageConversionModule" HintPath="$(Managed)\UnityEngine.ImageConversionModule.dll" Private="false" />
+    <Reference Include="UnityEngine.JSONSerializeModule" HintPath="$(Managed)\UnityEngine.JSONSerializeModule.dll" Private="false" />
+    <Reference Include="UnityEngine.PhysicsModule" HintPath="$(Managed)\UnityEngine.PhysicsModule.dll" Private="false" />
+    <Reference Include="UnityEngine.TextRenderingModule" HintPath="$(Managed)\UnityEngine.TextRenderingModule.dll" Private="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Data\*.json" CopyToOutputDirectory="PreserveNewest" LinkBase="Data" />
+    <None Include="Data\img\*.png;Data\img\CREDITOS.md" CopyToOutputDirectory="PreserveNewest" LinkBase="Data\img" />
+  </ItemGroup>
+
+  <Target Name="InstalarPlugin" AfterTargets="Build" Condition="'$(InstalarNoJogo)' == 'true' And Exists('$(GamePath)\BepInEx\core')">
+    <ItemGroup>
+      <ArquivosPlugin Include="$(OutDir)GreenHellCompanion.dll" />
+      <ArquivosDados Include="$(OutDir)Data\*.json" />
+      <ArquivosImg Include="$(OutDir)Data\img\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ArquivosPlugin)" DestinationFolder="$(PluginDir)" />
+    <Copy SourceFiles="@(ArquivosDados)" DestinationFolder="$(PluginDir)\Data" />
+    <Copy SourceFiles="@(ArquivosImg)" DestinationFolder="$(PluginDir)\Data\img" />
+    <Message Importance="high" Text="Plugin instalado em $(PluginDir)" />
+  </Target>
+</Project>

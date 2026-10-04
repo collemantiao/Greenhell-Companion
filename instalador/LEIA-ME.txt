@@ -1,0 +1,70 @@
+GREEN HELL COMPANION
+====================
+
+Mod de ajuda para Green Hell: avisos de saúde com o tratamento indicado, materiais que
+faltam na construção, marcadores com distância e direção, e um guia dentro do jogo.
+Não altera status, não cria itens e não teleporta.
+
+No multiplayer, cada jogador instala no próprio PC. Quem não tiver o mod continua
+jogando normalmente com quem tem.
+
+
+COMO INSTALAR
+-------------
+
+1. Feche o Green Hell.
+
+2. Abra a pasta do jogo:
+   Steam > Biblioteca > clique com o botão direito em Green Hell > Gerenciar > Ver arquivos locais.
+   É a pasta que tem o arquivo GH.exe.
+
+3. Extraia TODO o conteúdo deste .zip dentro dessa pasta.
+   Se o Windows perguntar se quer substituir arquivos, escolha "Substituir".
+
+   Depois de extrair, a pasta do jogo deve ter:
+     GH.exe
+     winhttp.dll
+     doorstop_config.ini
+     BepInEx\core\...
+     BepInEx\plugins\GreenHellCompanion\GreenHellCompanion.dll
+
+4. Abra o jogo pela Steam e entre numa partida.
+
+Já usa outros mods com BepInEx 5? Então copie só a pasta BepInEx\plugins\GreenHellCompanion
+para dentro de BepInEx\plugins do seu jogo.
+
+
+TECLAS
+------
+
+F1   Guia (fichas de animais, doenças, ferimentos, itens)
+F2   Marca o ponto para onde você está olhando
+F3   Lista de marcadores
+F4   Configurações: tamanho do texto, transparência dos cartões e das ilustrações
+Esc  Fecha a janela do mod
+
+Os avisos de saúde e a ajuda de construção aparecem sozinhos.
+
+
+NÃO FUNCIONOU?
+--------------
+
+- Confira se o winhttp.dll ficou na MESMA pasta do GH.exe.
+- Depois de abrir o jogo uma vez, deve existir o arquivo BepInEx\LogOutput.log.
+  Se ele não existir, o carregador de mods não foi ativado: confira o passo 3.
+- Se existir, procure "Green Hell Companion" dentro dele. As mensagens de erro aparecem ali.
+
+
+COMO REMOVER
+------------
+
+Apague a pasta BepInEx\plugins\GreenHellCompanion.
+Para desligar todos os mods, apague o winhttp.dll da pasta do jogo.
+
+
+CRÉDITOS
+--------
+
+BepInEx (carregador de mods): https://github.com/BepInEx/BepInEx, licença LGPL 2.1.
+Silhuetas de animais: PhyloPic (https://www.phylopic.org), domínio público (CC0 / PDM).
+Lista completa em BepInEx\plugins\GreenHellCompanion\Data\img\CREDITOS.md.

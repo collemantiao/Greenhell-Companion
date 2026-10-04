@@ -1,0 +1,4276 @@
+[
+  {
+    "id": "inspecao-corporal",
+    "nome": "Inspeção corporal",
+    "nomeEn": "Body Inspection",
+    "categoria": "Ferimentos",
+    "aliases": [
+      "inspecao",
+      "inspeção",
+      "inspecionar",
+      "body inspection",
+      "inspect",
+      "lupa",
+      "como aplicar curativo",
+      "aplicar bandagem",
+      "como curar ferida",
+      "tratar ferimento"
+    ],
+    "perigo": 0,
+    "resumo": "É a tela onde você encontra e trata ferimentos no próprio corpo. Quase todo tratamento de ferida (curativos, formigas, larvas, agulha) é aplicado por aqui.",
+    "secoes": [
+      {
+        "titulo": "Como usar",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Abrir a inspeção",
+            "d": "No PC: tecla C para o menu radial e clique na lupa. Um menu mostra os quatro membros, começando pelo braço esquerdo."
+          },
+          {
+            "t": "Achar a ferida",
+            "d": "Clique em cada membro; segure o botão direito do mouse e mova para girar e ver frente e costas."
+          },
+          {
+            "t": "Aplicar o tratamento",
+            "d": "Com o membro aberto, abra a mochila e pegue o item. Se for o tratamento certo, aparece um círculo branco sobre a ferida: arraste o item até ele.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Dica no escuro",
+            "d": "Mesmo sem luz, o círculo branco aparece ao pegar o tratamento correto, o que ajuda a localizar a ferida."
+          }
+        ]
+      },
+      {
+        "titulo": "Quando abrir",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "Ícone de inspeção no HUD",
+            "d": "Aparece acima da barra de vida quando há infecção, laceração, sanguessugas, erupção, arranhão, verme ou ferimento por veneno."
+          },
+          {
+            "t": "Item errado",
+            "d": "Se você pegar um tratamento que não serve para aquela ferida, o círculo branco não aparece.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "laceracao",
+      "arranhoes-e-escoriacoes",
+      "ferimento-infectado",
+      "vermes-sob-a-pele",
+      "sanguessugas",
+      "ferimento-por-veneno",
+      "erupcao-cutanea"
+    ]
+  },
+  {
+    "id": "arranhoes-e-escoriacoes",
+    "nome": "Arranhões e escoriações",
+    "nomeEn": "Scratch & Abrasion",
+    "categoria": "Ferimentos",
+    "aliases": [
+      "arranhao",
+      "arranhão",
+      "escoriacao",
+      "escoriação",
+      "ralado",
+      "ralei",
+      "corte leve",
+      "machucado",
+      "scratch",
+      "abrasion",
+      "queimadura",
+      "queimei",
+      "pisei no fogo",
+      "queda",
+      "caí"
+    ],
+    "perigo": 2,
+    "resumo": "Ferida superficial, mais leve que a laceração, que tira um pouco de vida. Se ficar sem tratamento pode infeccionar.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de cinzas (Ash Dressing)",
+            "d": "Aplique pela inspeção corporal. Tem efeito desinfetante e evita infecção; a cura é lenta.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Curativo de mel (Honey Dressing)",
+            "d": "Aplique pela inspeção. Também é desinfetante.",
+            "nota": "bom"
+          },
+          {
+            "t": "Curativo Golias (Goliath Dressing)",
+            "d": "Mesmo efeito do curativo de cinzas (evita infecção), mas é bem mais difícil de fazer.",
+            "nota": "bom"
+          },
+          {
+            "t": "Bandagem de folha (Leaf Bandage)",
+            "d": "Estanca o sangramento, mas a infecção ainda pode acontecer, principalmente se você estiver sujo.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Queda de altura",
+            "d": "É a causa mais comum."
+          },
+          {
+            "t": "Combate",
+            "d": "Ataques de nativos e lutas em geral."
+          },
+          {
+            "t": "Pisar no fogo",
+            "d": "Pisar numa fogueira acesa causa arranhão ou escoriação. O jogo não tem um ferimento de queimadura separado."
+          },
+          {
+            "t": "Água envenenada (Spirits of Amazonia)",
+            "d": "Às vezes causa uma pequena escoriação além da febre."
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Lave-se antes de tratar",
+            "d": "Tratar uma ferida estando sujo aumenta a chance de infecção."
+          },
+          {
+            "t": "Desça com cuidado",
+            "d": "Evite pular de lugares altos."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "bandagem-de-folha",
+      "curativo-de-cinzas",
+      "curativo-de-mel",
+      "ferimento-infectado",
+      "sujeira",
+      "inspecao-corporal"
+    ]
+  },
+  {
+    "id": "laceracao",
+    "nome": "Laceração",
+    "nomeEn": "Laceration",
+    "categoria": "Ferimentos",
+    "aliases": [
+      "laceracao",
+      "laceração",
+      "corte",
+      "corte profundo",
+      "sangramento",
+      "sangrando",
+      "ferida aberta",
+      "rasgo",
+      "garra",
+      "arranhao de onca",
+      "laceration",
+      "bleeding",
+      "cut",
+      "rip"
+    ],
+    "perigo": 5,
+    "resumo": "Corte profundo que sangra e tira vida rapidamente. Infecciona com facilidade e pode matar se não for tratado logo.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Formigas como pontos (Ants)",
+            "d": "Na inspeção corporal, arraste as formigas da mochila até a laceração para fechar o corte. É o jeito mais rápido e eficaz, mas dói e baixa a sanidade por um tempo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Curativo de cinzas (Ash Dressing)",
+            "d": "Desinfetante: evita infecção e reduz o tempo de cura da laceração. É a opção de curativo mais segura e fácil de fazer.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Curativo Golias (Goliath Dressing)",
+            "d": "Mesmo efeito do curativo de cinzas, mas mais trabalhoso de fazer.",
+            "nota": "bom"
+          },
+          {
+            "t": "Curativo de mel (Honey Dressing)",
+            "d": "Desinfetante. A wiki registra que, a partir da versão 2.9.1, ele ainda pode deixar infeccionar.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Bandagem de folha (Leaf Bandage)",
+            "d": "Para o sangramento, mas o risco de infecção numa laceração é alto. Use só se não tiver outra coisa.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Sintomas",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "Tela escurece",
+            "d": "A tela escurece e a barra de vida pisca em vermelho por um instante."
+          },
+          {
+            "t": "Ícone de inspeção",
+            "d": "Aparece acima da barra de vida."
+          },
+          {
+            "t": "Vida caindo rápido",
+            "d": "O sangramento drena vida até a ferida ser tratada."
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Felinos",
+            "d": "Ataques de onça-pintada (Jaguar) e puma (Puma)."
+          },
+          {
+            "t": "Nativos",
+            "d": "Também pode acontecer em combate com nativos."
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Leve sempre um tratamento",
+            "d": "Tenha formigas ou curativo de cinzas na mochila antes de explorar."
+          },
+          {
+            "t": "Esteja limpo",
+            "d": "Sujeira aumenta o risco de infecção ao tratar."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "formigas",
+      "curativo-de-cinzas",
+      "curativo-de-mel",
+      "curativo-golias",
+      "bandagem-de-folha",
+      "ferimento-infectado",
+      "onca-pintada",
+      "puma"
+    ]
+  },
+  {
+    "id": "ferimento-infectado",
+    "nome": "Ferimento infectado",
+    "nomeEn": "Wound Infection",
+    "categoria": "Ferimentos",
+    "aliases": [
+      "infeccao",
+      "infecção",
+      "infectado",
+      "ferida infeccionada",
+      "pus",
+      "necrose",
+      "gangrena",
+      "infection",
+      "infected wound"
+    ],
+    "perigo": 5,
+    "resumo": "Ferida aberta que pegou germes: fica com pus amarelo-esverdeado e tecido morto. Dá febre e pode matar se não for tratada.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Larvas de mosca (Maggots)",
+            "d": "Na inspeção corporal, arraste as larvas até a ferida infectada. Elas comem o tecido morto e, depois de um tempo, a ferida volta a ficar limpa. Tira um pouco de sanidade.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Depois: curativo de cinzas (Ash Dressing)",
+            "d": "Assim que as larvas limparem a ferida, aplique logo um curativo antisséptico para não infeccionar de novo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Depois: curativo de mel (Honey Dressing)",
+            "d": "Alternativa ao curativo de cinzas para fechar a ferida já limpa.",
+            "nota": "bom"
+          },
+          {
+            "t": "Trate a febre",
+            "d": "A infecção causa febre, que deve ser tratada à parte (veja Febre)."
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Ferida aberta sem tratamento",
+            "d": "Lacerações, arranhões, escoriações e buracos de verme deixados sem curativo."
+          },
+          {
+            "t": "Tratar estando sujo",
+            "d": "Tratar ferimentos com o corpo sujo também causa infecção."
+          },
+          {
+            "t": "Bandagem de folha numa laceração",
+            "d": "Lacerações infeccionam com frequência se não receberem um curativo antisséptico."
+          }
+        ]
+      },
+      {
+        "titulo": "Sintomas",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "Aspecto da ferida",
+            "d": "Pus amarelo-esverdeado, tecido acinzentado e pele vermelha e inchada ao redor."
+          },
+          {
+            "t": "Febre",
+            "d": "Febre e ícone de inspeção no HUD."
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Use curativo antisséptico",
+            "d": "Prefira curativo de cinzas, de mel ou Golias às bandagens de folha."
+          },
+          {
+            "t": "Lave-se antes",
+            "d": "Banhe-se num rio, na chuva ou no chuveiro de barro antes de tratar uma ferida."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "larvas-de-mosca",
+      "curativo-de-cinzas",
+      "curativo-de-mel",
+      "febre",
+      "sujeira",
+      "laceracao"
+    ]
+  },
+  {
+    "id": "vermes-sob-a-pele",
+    "nome": "Vermes sob a pele (berne)",
+    "nomeEn": "Worms",
+    "categoria": "Ferimentos",
+    "aliases": [
+      "verme",
+      "vermes",
+      "berne",
+      "bicho na pele",
+      "larva na pele",
+      "caroco",
+      "caroço",
+      "botfly",
+      "worm",
+      "worms",
+      "buraco de verme"
+    ],
+    "perigo": 3,
+    "resumo": "Um verme parecido com o berne entra na pele e forma um caroço vermelho. Se não for tirado, derruba a sanidade rapidamente.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Agulha de osso (Bone Needle)",
+            "d": "Na inspeção corporal, ache o caroço, abra a mochila e arraste a agulha até o círculo sobre o verme para arrancá-lo.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Espinha de peixe (Fish Bone)",
+            "d": "Funciona igual à agulha de osso.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Ferrão de arraia (Stingray Sting)",
+            "d": "Também serve para remover vermes.",
+            "nota": "bom"
+          },
+          {
+            "t": "Depois: feche o buraco",
+            "d": "Aplique um curativo de cinzas (Ash Dressing), de mel, Golias ou uma bandagem de folha no furo para evitar infecção.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Dormir no chão",
+            "d": "Dormir no chão ou em camas muito baixas."
+          },
+          {
+            "t": "Desmaiar",
+            "d": "Desmaiar no chão muitas vezes passa vermes."
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Cama elevada",
+            "d": "Durma numa cama de troncos (Log Bed) ou de bambu (Bamboo Log Bed) ou numa rede."
+          },
+          {
+            "t": "Fogo perto da cama",
+            "d": "Uma fogueira perto da cama também reduz o risco."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Pode infeccionar",
+            "d": "Se o verme não for tirado, a ferida vira uma infecção.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "agulha-de-osso",
+      "espinha-de-peixe",
+      "ferrao-de-arraia",
+      "ferimento-infectado",
+      "sono-e-camas",
+      "sanidade"
+    ]
+  },
+  {
+    "id": "sanguessugas",
+    "nome": "Sanguessugas",
+    "nomeEn": "Leeches",
+    "categoria": "Ferimentos",
+    "aliases": [
+      "sanguessuga",
+      "sanguessugas",
+      "sanguesuga",
+      "leech",
+      "leeches",
+      "bicho grudado"
+    ],
+    "perigo": 1,
+    "resumo": "Grudam no corpo para sugar sangue. Não matam, mas cada sanguessuga tira 1 de sanidade enquanto estiver presa.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Arrancar com a mão",
+            "d": "Abra a inspeção corporal, ache cada sanguessuga e clique nela para puxá-la. Não precisa de item.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Andar na mata e na água",
+            "d": "Grudam enquanto você anda pela floresta ou por rios e lagos."
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Não há prevenção",
+            "d": "Não dá para evitar. Inspecione o corpo sempre que o ícone aparecer e tire todas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "sanidade",
+      "inspecao-corporal"
+    ]
+  },
+  {
+    "id": "ferimento-por-veneno",
+    "nome": "Ferimento por veneno",
+    "nomeEn": "Venom Wound",
+    "categoria": "Ferimentos",
+    "aliases": [
+      "veneno",
+      "envenenado",
+      "envenenamento",
+      "picada de cobra",
+      "mordida de cobra",
+      "cobra",
+      "cascavel",
+      "picada de aranha",
+      "aranha",
+      "escorpiao",
+      "escorpião",
+      "arraia",
+      "centopeia",
+      "lacraia",
+      "arvore de espinhos",
+      "venom",
+      "venom wound",
+      "poison",
+      "snake bite"
+    ],
+    "perigo": 5,
+    "resumo": "Picada ou mordida venenosa com uma ou duas marcas. Tira vida e stamina com o tempo e costuma vir com febre. Doses altas matam.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de tabaco (Tobacco Dressing)",
+            "d": "Aplique na picada pela inspeção corporal. É o curativo mais eficaz contra veneno: -4 de veneno, que sai aos poucos.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "Coma pela mochila: -4 de veneno, -5 de febre e +3 de sanidade. São leves e não estragam.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de tabaco (Tobacco Brew)",
+            "d": "Ferva uma folha de tabaco (Tobacco Leaf) em água limpa num recipiente sobre o fogo e beba: -4 de veneno.",
+            "nota": "bom"
+          },
+          {
+            "t": "Chá de hosta (Plantain Lily Leaf Brew)",
+            "d": "Ferva a folha de hosta em água limpa e beba: -4 de veneno.",
+            "nota": "bom"
+          },
+          {
+            "t": "Curativo de lírio (Lily Dressing)",
+            "d": "Aplique na picada pela inspeção: -4 de veneno, que sai aos poucos.",
+            "nota": "bom"
+          },
+          {
+            "t": "Folha de hosta crua (Plantain Lily Leaf)",
+            "d": "Coma crua: -2 de veneno.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Cascavel (South American Rattlesnake)",
+            "d": "Morde se você chegar perto. Dá para ouvir o chocalho."
+          },
+          {
+            "t": "Aranhas",
+            "d": "Armadeira (Brazilian Wandering Spider), perto de bananeiras, e caranguejeira-golias (Goliath Birdeater Spider)."
+          },
+          {
+            "t": "Escorpião (Scorpion)",
+            "d": "Fica em cavernas e faz um som de estalos. Pisar nele causa a picada."
+          },
+          {
+            "t": "Arraia (River Stingray)",
+            "d": "Fica em rios rasos e ferroa se você pisar perto."
+          },
+          {
+            "t": "Centopeia (Centipede)",
+            "d": "Se esconde sob troncos e folhas no chão. Ao ouvir o arranhado, solte o que carrega (Q) e recue."
+          },
+          {
+            "t": "Sapo venenoso (Poison Dart Frog)",
+            "d": "Pegar o sapo vivo dá de 5 a 8 doses de veneno e febre."
+          },
+          {
+            "t": "Árvore de espinhos (Spike Tree, Spirits of Amazonia)",
+            "d": "Cortá-la sem armadura envenena. Cada golpe acumula veneno, com no mínimo 2 doses."
+          }
+        ]
+      },
+      {
+        "titulo": "Sintomas",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "Ícone de veneno",
+            "d": "O número mostra as doses de veneno e um contador indica o tempo até o veneno sair."
+          },
+          {
+            "t": "Perda de vida e stamina",
+            "d": "Junto vem febre, que precisa ser tratada separadamente."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Febre só passa depois do veneno",
+            "d": "A febre causada por veneno só diminui depois que o efeito da toxina acaba.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Doses pequenas x grandes",
+            "d": "O corpo elimina doses pequenas sozinho, devagar. Doses grandes tiram vida rápido e podem matar."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "curativo-de-tabaco",
+      "tabaco",
+      "analgesicos",
+      "hosta",
+      "curativo-de-lirio",
+      "febre",
+      "cascavel",
+      "arraia",
+      "escorpiao",
+      "centopeia",
+      "sapo-venenoso"
+    ]
+  },
+  {
+    "id": "erupcao-cutanea",
+    "nome": "Erupção cutânea (alergia)",
+    "nomeEn": "Rash",
+    "categoria": "Ferimentos",
+    "aliases": [
+      "erupcao",
+      "erupção",
+      "brotoeja",
+      "alergia",
+      "coceira",
+      "manchas vermelhas",
+      "picada de vespa",
+      "picada de abelha",
+      "picada de formiga",
+      "ferroada",
+      "picada de inseto",
+      "rash"
+    ],
+    "perigo": 1,
+    "resumo": "Pele irritada com bolinhas vermelhas depois de picadas de insetos. Não mata, mas baixa a sanidade enquanto durar.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de mel (Honey Dressing)",
+            "d": "Tem efeito anti-histamínico. Aplique na área afetada pela inspeção corporal para acelerar a cura.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Curativo de lírio (Lily Dressing)",
+            "d": "Anti-histamínico, ótimo para picadas de vespa e formiga. Aplique pela inspeção.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Esperar",
+            "d": "A erupção cura sozinha com o tempo.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Vespas (Brazilian Wasp)",
+            "d": "Ataques perto do ninho."
+          },
+          {
+            "t": "Abelhas",
+            "d": "Inclusive as da sua própria colmeia (Beehive)."
+          },
+          {
+            "t": "Formigas (Ants)",
+            "d": "Ficar perto do formigueiro."
+          },
+          {
+            "t": "Água envenenada (Spirits of Amazonia)",
+            "d": "Lavar-se nela causa erupção nos braços."
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Tocha acesa (Torch)",
+            "d": "Chegar a formigueiros, ninhos de vespa e colmeias com uma tocha acesa impede os ataques."
+          },
+          {
+            "t": "Armadura",
+            "d": "Armadura nos dois braços evita a erupção ao coletar ninhos."
+          },
+          {
+            "t": "Chuva",
+            "d": "Na chuva também dá para chegar com segurança na colmeia que você construiu."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "curativo-de-mel",
+      "curativo-de-lirio",
+      "formigas",
+      "favo-de-mel",
+      "sanidade"
+    ]
+  },
+  {
+    "id": "febre",
+    "nome": "Febre",
+    "nomeEn": "Fever",
+    "categoria": "Doenças e condições",
+    "aliases": [
+      "febre",
+      "fever",
+      "temperatura",
+      "doente",
+      "quente",
+      "calafrio",
+      "febril"
+    ],
+    "perigo": 4,
+    "resumo": "Faz a hidratação e a energia caírem rápido e baixa a sanidade. Vem quase sempre de veneno, infecção ou intoxicação alimentar e pode matar aos poucos.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Infusão de quássia (Quassia Amara Infusion)",
+            "d": "Ferva uma flor de quássia (Quassia Amara Flower) em água limpa num recipiente sobre o fogo e beba: -15 de febre.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Analgésicos (Painkillers)",
+            "d": "Coma pela mochila: -5 de febre, -4 de veneno e +3 de sanidade. São fáceis de carregar e não estragam.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Infusão de osso (Bone Infusion)",
+            "d": "Ferva um osso (Bone) em água limpa e beba: -3 de febre e -3 de intoxicação alimentar.",
+            "nota": "bom"
+          },
+          {
+            "t": "Cogumelo desconhecido 7 (Unknown Mushroom 7)",
+            "d": "Coma: -1 de febre, mas tira 15 de hidratação, ou 40 se estiver seco.",
+            "nota": "emergencial"
+          },
+          {
+            "t": "Dormir e beber água",
+            "d": "O corpo vence a febre sozinho com o tempo, e dormir acelera bastante. Beba água para compensar a desidratação.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Ferimento por veneno",
+            "d": "Cobras, aranhas, escorpiões, arraias, centopeias e sapos."
+          },
+          {
+            "t": "Ferimento infectado",
+            "d": "Feridas que infeccionaram."
+          },
+          {
+            "t": "Intoxicação alimentar",
+            "d": "Comida estragada ou venenosa."
+          },
+          {
+            "t": "Água envenenada (Spirits of Amazonia)",
+            "d": "Andar ou nadar nela dá até 10 doses de febre."
+          }
+        ]
+      },
+      {
+        "titulo": "Sintomas",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "Ícone de febre",
+            "d": "O número mostra o nível da febre, ou seja, quantas vezes o círculo do ícone precisa esvaziar."
+          },
+          {
+            "t": "Sede e cansaço",
+            "d": "Hidratação e energia caem rápido, com risco de desmaiar."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Febre de veneno",
+            "d": "Só diminui depois que o veneno sai do corpo. Trate o veneno primeiro.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Vigie a hidratação ao dormir",
+            "d": "Confira vida e macronutrientes antes de dormir com febre.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "quassia-amara",
+      "analgesicos",
+      "infusao-de-osso",
+      "cogumelo-desconhecido-7",
+      "ferimento-por-veneno",
+      "ferimento-infectado",
+      "desidratacao",
+      "agua-envenenada"
+    ]
+  },
+  {
+    "id": "intoxicacao-alimentar",
+    "nome": "Intoxicação alimentar",
+    "nomeEn": "Food Poisoning",
+    "categoria": "Doenças e condições",
+    "aliases": [
+      "intoxicacao",
+      "intoxicação",
+      "intoxicacao alimentar",
+      "vomito",
+      "vômito",
+      "vomitando",
+      "enjoo",
+      "envenenamento alimentar",
+      "comida estragada",
+      "food poisoning",
+      "vomit"
+    ],
+    "perigo": 4,
+    "resumo": "Vem de comida estragada ou venenosa. Você vomita várias vezes e perde nutrientes e água. Doses altas podem matar.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Chá de ninfeia (Water Lily Flower Brew)",
+            "d": "Ferva a flor de ninfeia (Water Lily) em água limpa e beba: -5 de intoxicação.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Infusão de osso (Bone Infusion)",
+            "d": "Ferva um osso (Bone) em água limpa e beba: -3 de intoxicação e -3 de febre.",
+            "nota": "bom"
+          },
+          {
+            "t": "Chá de folha de albahaca (Unknown Herb A)",
+            "d": "Ferva as folhas verdes da albahaca e beba: -3 de intoxicação.",
+            "nota": "bom"
+          },
+          {
+            "t": "Ninfeia crua (Water Lily)",
+            "d": "Coma a flor crua: -2 de intoxicação.",
+            "nota": "bom"
+          },
+          {
+            "t": "Folha de albahaca crua (Unknown Herb A)",
+            "d": "Coma crua: -2 de intoxicação. Não coma a flor vermelha, que causa intoxicação.",
+            "nota": "bom"
+          },
+          {
+            "t": "Carvão (Charcoal)",
+            "d": "Coma pela mochila: -1 de intoxicação, mas -5 de sanidade.",
+            "nota": "emergencial"
+          },
+          {
+            "t": "Esperar e só beber água",
+            "d": "Doses baixas passam sozinhas, e dormir acelera. Evite comer enquanto vomita para não perder mais nutrientes.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Comida estragada (spoiled)",
+            "d": "Qualquer consumível estragado."
+          },
+          {
+            "t": "Plantas venenosas",
+            "d": "Flor de monstera (Monstera Deliciosa Flower), flor de albahaca (Unknown Herb B), bagas de psicotria (Psychotria Berries), chá de molinéria (Molineria Brew)."
+          },
+          {
+            "t": "Raízes cruas",
+            "d": "Mandioca (Cassava Bulb) e malanga (Malanga Bulb) cruas."
+          },
+          {
+            "t": "Cogumelos",
+            "d": "Cogumelo véu (Unknown Mushroom 2) cru e Unknown Mushroom 6."
+          },
+          {
+            "t": "Carne de sapo venenoso (Dart Frog Meat)",
+            "d": "+20 de intoxicação em qualquer forma de preparo."
+          },
+          {
+            "t": "Água envenenada (Spirits of Amazonia)",
+            "d": "Bebê-la dá 10 doses de intoxicação."
+          }
+        ]
+      },
+      {
+        "titulo": "Sintomas",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "Ícone de vômito",
+            "d": "O número mostra a dose de intoxicação."
+          },
+          {
+            "t": "Vômitos",
+            "d": "Vômitos frequentes com perda de nutrientes e hidratação."
+          }
+        ]
+      },
+      {
+        "titulo": "Depois de curar",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Reponha tudo",
+            "d": "Beba água limpa e coma para recuperar o que foi perdido nos vômitos."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "ninfeia",
+      "infusao-de-osso",
+      "albahaca",
+      "carvao",
+      "comida-estragada",
+      "cogumelos",
+      "desidratacao"
+    ]
+  },
+  {
+    "id": "parasitas",
+    "nome": "Parasitas",
+    "nomeEn": "Parasites",
+    "categoria": "Doenças e condições",
+    "aliases": [
+      "parasita",
+      "parasitas",
+      "verme intestinal",
+      "vermes intestinais",
+      "lombriga",
+      "barriga",
+      "estomago",
+      "estômago",
+      "parasites",
+      "stomach"
+    ],
+    "perigo": 2,
+    "resumo": "Organismos no intestino que fazem você gastar carboidratos, gorduras e proteínas mais rápido. Quanto mais parasitas, maior o gasto.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Chá de graviola (Guanabana Fruit Brew)",
+            "d": "Ferva a fruta em água limpa e beba: -3 de parasitas. É a melhor opção com mais de 2 parasitas.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Graviola crua (Guanabana Fruit)",
+            "d": "Coma a fruta: -2 de parasitas, e ainda dá carboidratos e água.",
+            "nota": "bom"
+          },
+          {
+            "t": "Leptonia azul (Indigo Blue Leptonia)",
+            "d": "Coma crua ou em sopa: -2 de parasitas e mais energia.",
+            "nota": "bom"
+          },
+          {
+            "t": "Sopa de copa hongo (Mushroom Soup 1)",
+            "d": "Sopa do cogumelo laranja em forma de copo: -2 de parasitas.",
+            "nota": "bom"
+          },
+          {
+            "t": "Copa hongo cru (Unknown Mushroom 1)",
+            "d": "Coma cru: -1 de parasita.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Carne crua",
+            "d": "Qualquer carne crua."
+          },
+          {
+            "t": "Água suja",
+            "d": "Água de rio e de lago sem ferver."
+          },
+          {
+            "t": "Comer sujo",
+            "d": "Comer com as mãos sujas."
+          },
+          {
+            "t": "Fezes de animal (Animal Droppings)",
+            "d": "Comer fezes dá +4 de parasitas."
+          }
+        ]
+      },
+      {
+        "titulo": "Sintomas",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "Ícone de estômago",
+            "d": "O número ao lado mostra quantos parasitas você tem."
+          },
+          {
+            "t": "Fome rápida",
+            "d": "Nutrientes caem mais rápido."
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Cozinhe a carne",
+            "d": "Nunca coma carne crua."
+          },
+          {
+            "t": "Ferva ou filtre a água",
+            "d": "Ou beba água da chuva e de coco."
+          },
+          {
+            "t": "Lave-se antes de comer",
+            "d": "Comer sujo aumenta o risco."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "graviola",
+      "leptonia-azul",
+      "copa-hongo",
+      "agua-potavel",
+      "sujeira",
+      "macronutrientes"
+    ]
+  },
+  {
+    "id": "insonia",
+    "nome": "Insônia",
+    "nomeEn": "Insomnia",
+    "categoria": "Doenças e condições",
+    "aliases": [
+      "insonia",
+      "insônia",
+      "sem dormir",
+      "sono",
+      "cansaco",
+      "cansaço",
+      "insomnia"
+    ],
+    "perigo": 2,
+    "resumo": "Aparece quando você fica tempo demais sem dormir. Baixa a sanidade e faz a energia cair mais rápido. Chega a até 6 níveis.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Dormir numa cama",
+            "d": "Dormir mais de 4 horas numa cama cura 1 nível de insônia.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Várias noites",
+            "d": "Níveis altos precisam de várias sessões de sono.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Evitar dormir",
+            "d": "Comer muitos alimentos de energia para não dormir causa insônia."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Desmaiar não cura",
+            "d": "Desmaiar por falta de energia não cura a insônia.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "sono-e-camas",
+      "sanidade",
+      "energia",
+      "desmaio"
+    ]
+  },
+  {
+    "id": "desmaio",
+    "nome": "Desmaio",
+    "nomeEn": "Passed Out",
+    "categoria": "Doenças e condições",
+    "aliases": [
+      "desmaio",
+      "desmaiei",
+      "desmaiar",
+      "apagou",
+      "sem energia",
+      "passed out",
+      "faint"
+    ],
+    "perigo": 3,
+    "resumo": "Acontece quando a energia acaba: o personagem cai e dorme por pouco tempo. Na água, desmaiar significa morrer afogado.",
+    "secoes": [
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Energia zerada",
+            "d": "Dieta desequilibrada, ficar muito tempo sem dormir ou fazer atividades cansativas, como cortar árvores."
+          },
+          {
+            "t": "Doenças",
+            "d": "Febre e insônia fazem a energia cair mais rápido."
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Dormir numa cama",
+            "d": "O desmaio passa sozinho, mas recupera menos energia que uma cama. Durma quando a energia estiver baixa.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Comer algo que dê energia",
+            "d": "Carne cozida, alguns cogumelos e algumas plantas repõem energia.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Água",
+            "d": "Desmaiar na água mata por afogamento.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Chão",
+            "d": "Desmaiado no chão você fica sujo e costuma pegar vermes.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "energia",
+      "sono-e-camas",
+      "vermes-sob-a-pele",
+      "febre",
+      "insonia"
+    ]
+  },
+  {
+    "id": "sujeira",
+    "nome": "Sujeira",
+    "nomeEn": "Dirt",
+    "categoria": "Doenças e condições",
+    "aliases": [
+      "sujeira",
+      "sujo",
+      "lama",
+      "higiene",
+      "banho",
+      "tomar banho",
+      "lavar",
+      "dirt",
+      "dirty"
+    ],
+    "perigo": 2,
+    "resumo": "Mede a falta de higiene, em até 5 níveis. Quanto mais sujo, maior a chance de infecção ao se ferir e de pegar parasitas ao comer.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Chuveiro de barro (Mud Shower)",
+            "d": "É o jeito mais rápido de se limpar. Precisa encher com água da chuva; depois fique embaixo e aperte E.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Nadar ou lavar-se num rio",
+            "d": "Nadar ou se lavar numa fonte de água remove a sujeira.",
+            "nota": "bom"
+          },
+          {
+            "t": "Chuva",
+            "d": "Ficar na chuva lava toda a sujeira.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Lama e barro",
+            "d": "Misturar lama, carregar tijolos de barro e andar em áreas lamacentas."
+          },
+          {
+            "t": "Animais e chão",
+            "d": "Esfolar animais e dormir no chão."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Água envenenada (Spirits of Amazonia)",
+            "d": "Lavar-se nela tira a sujeira, mas dá 2 de febre a cada vez e erupção nos dois braços.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "ferimento-infectado",
+      "parasitas",
+      "agua-envenenada"
+    ]
+  },
+  {
+    "id": "agua-envenenada",
+    "nome": "Água envenenada",
+    "nomeEn": "Poisoned Water",
+    "categoria": "Doenças e condições",
+    "aliases": [
+      "agua envenenada",
+      "água envenenada",
+      "agua verde",
+      "água tóxica",
+      "lixo toxico",
+      "resíduo tóxico",
+      "poisoned water",
+      "toxic waste",
+      "spirits of amazonia"
+    ],
+    "perigo": 4,
+    "resumo": "Só existe no modo Spirits of Amazonia: água com contaminação verde vinda de lixo tóxico do cartel. Encostar dá febre e beber dá intoxicação forte.",
+    "secoes": [
+      {
+        "titulo": "Sintomas",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "Contato",
+            "d": "Andar ou nadar nela dá febre, até no máximo 10 doses, e às vezes uma pequena escoriação."
+          },
+          {
+            "t": "Beber",
+            "d": "Beber dá 10 doses de intoxicação alimentar. Ela não pode ser fervida, então nunca fica potável."
+          },
+          {
+            "t": "Lavar-se",
+            "d": "Tira a sujeira, mas dá 2 de febre a cada vez e erupção nos braços."
+          }
+        ]
+      },
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Para a febre",
+            "d": "Infusão de quássia (Quassia Amara Infusion), analgésicos (Painkillers) ou infusão de osso (Bone Infusion).",
+            "nota": "melhor"
+          },
+          {
+            "t": "Para a intoxicação",
+            "d": "Chá de ninfeia (Water Lily Flower Brew), infusão de osso ou folha de albahaca (Unknown Herb A).",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como resolver",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Missão Purificar Águas Envenenadas (Purify Poisoned Waters)",
+            "d": "Junte os 6 recipientes de lixo tóxico de cada área, monte a fogueira no local marcado e acenda. Dois dias de jogo depois, a água fica limpa."
+          },
+          {
+            "t": "Vá preparado",
+            "d": "Leve analgésicos ou infusão de osso. Coletar o lixo dentro da água acumula febre rápido."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "febre",
+      "intoxicacao-alimentar",
+      "erupcao-cutanea",
+      "quassia-amara",
+      "analgesicos",
+      "agua-potavel"
+    ]
+  },
+  {
+    "id": "morte",
+    "nome": "Morte: principais causas",
+    "nomeEn": "Death",
+    "categoria": "Doenças e condições",
+    "aliases": [
+      "morte",
+      "morri",
+      "morrendo",
+      "como nao morrer",
+      "vida baixa",
+      "death",
+      "dying"
+    ],
+    "perigo": 5,
+    "resumo": "Você morre quando a vida chega a zero. Saber as causas mais comuns e o tratamento de cada uma evita a maioria das mortes.",
+    "secoes": [
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Animais agressivos e nativos",
+            "d": "Lacerações de onça e puma, entre outros ataques."
+          },
+          {
+            "t": "Desidratação",
+            "d": "Com a hidratação zerada, a vida cai sem parar."
+          },
+          {
+            "t": "Veneno",
+            "d": "Doses altas de ferimento por veneno."
+          },
+          {
+            "t": "Infecção e laceração",
+            "d": "Feridas não tratadas."
+          },
+          {
+            "t": "Intoxicação alimentar",
+            "d": "Doses altas, como as da carne de sapo venenoso."
+          },
+          {
+            "t": "Afogamento e quedas",
+            "d": "Desmaiar na água ou cair de lugares altos."
+          },
+          {
+            "t": "Fome",
+            "d": "Inanição prolongada."
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Kit básico na mochila",
+            "d": "Curativo de cinzas (Ash Dressing), curativo de tabaco (Tobacco Dressing), agulha de osso (Bone Needle), analgésicos se tiver e água limpa num cantil.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Inspecione o corpo",
+            "d": "Abra a inspeção corporal sempre que o ícone aparecer."
+          },
+          {
+            "t": "Modo Green Hell",
+            "d": "Nessa dificuldade a morte é permanente e o save fica bloqueado.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "laceracao",
+      "ferimento-por-veneno",
+      "ferimento-infectado",
+      "desidratacao",
+      "intoxicacao-alimentar",
+      "fome"
+    ]
+  },
+  {
+    "id": "sanidade",
+    "nome": "Sanidade",
+    "nomeEn": "Sanity",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "sanidade",
+      "loucura",
+      "louco",
+      "mente",
+      "vozes",
+      "insanidade",
+      "sanity",
+      "mental"
+    ],
+    "perigo": 3,
+    "resumo": "Começa em 100% e cai aos poucos. Sanidade baixa traz vozes e, perto de zero, alucinações de nativos e itens.",
+    "secoes": [
+      {
+        "titulo": "Como aumentar",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Ficar perto do fogo",
+            "d": "A até 5 metros de qualquer fogo aceso, você ganha +2 de sanidade a cada 25 a 35 segundos, conforme a dificuldade.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Sopas e comida cozida",
+            "d": "Sopas de carne e carnes cozidas dão cerca de +5. A wiki recomenda sopa como a melhor forma de manter a sanidade.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Favo de mel (Honeycomb)",
+            "d": "Comer cru dá +10; o chá dá +5.",
+            "nota": "bom"
+          },
+          {
+            "t": "Dormir numa cama",
+            "d": "Camas restauram energia e aumentam a sanidade.",
+            "nota": "bom"
+          },
+          {
+            "t": "Comida industrializada",
+            "d": "Barra de chocolate, salgadinho, saco de castanhas, ração militar e suco de laranja dão +5; analgésicos dão +3.",
+            "nota": "bom"
+          },
+          {
+            "t": "Café instantâneo (Instant Coffee)",
+            "d": "Misture com água num recipiente: +5 de sanidade e +15 de energia.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que diminui",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Condições",
+            "d": "Vermes sob a pele, sanguessugas (-1 cada), parasitas, erupção, insônia e febre."
+          },
+          {
+            "t": "Tratamentos dolorosos",
+            "d": "Usar larvas numa infecção e formigas numa laceração."
+          },
+          {
+            "t": "Dormir no chão",
+            "d": "Dá uma pequena perda de sanidade."
+          },
+          {
+            "t": "Comidas ruins",
+            "d": "Carne crua (-5), comida estragada (-2 a -4), queimada (-2), carvão (-5), aranha, escorpião e centopeia (até -10), fezes (-10), psicotria (-10)."
+          },
+          {
+            "t": "Carne humana (Human Meat)",
+            "d": "De -35 a -40.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Carne de sapo venenoso (Dart Frog Meat)",
+            "d": "-100 de sanidade.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Morte do parceiro",
+            "d": "No multiplayer, a morte de um parceiro também baixa."
+          }
+        ]
+      },
+      {
+        "titulo": "Sintomas",
+        "tipo": "sintomas",
+        "itens": [
+          {
+            "t": "40 ou menos",
+            "d": "Vozes internas com insultos e desânimo."
+          },
+          {
+            "t": "20 ou menos",
+            "d": "Alucinações de nativos que atacam e causam ferimentos."
+          },
+          {
+            "t": "Zero",
+            "d": "Tela escura e avermelhada."
+          },
+          {
+            "t": "Ícone de sanidade",
+            "d": "Pisca em vermelho quando a sanidade cai e fica vermelho fixo quando está perigosamente baixa."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "alucinacoes",
+      "fogueira",
+      "sono-e-camas",
+      "favo-de-mel",
+      "vermes-sob-a-pele",
+      "sanguessugas",
+      "insonia"
+    ]
+  },
+  {
+    "id": "alucinacoes",
+    "nome": "Alucinações (sanidade baixa)",
+    "nomeEn": "Low Sanity / Hallucinations",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "alucinacao",
+      "alucinação",
+      "alucinacoes",
+      "vendo coisas",
+      "fantasmas",
+      "nativos fantasmas",
+      "vozes",
+      "hallucination",
+      "low sanity"
+    ],
+    "perigo": 3,
+    "resumo": "Com sanidade em 20 ou menos, aparecem nativos e itens falsos. Os nativos atacam e ferem de verdade, mas somem numa nuvem ao levar dano.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Ficar perto de fogo aceso",
+            "d": "A até 5 metros, +2 de sanidade a cada 25 a 35 segundos.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Comer comida cozida, sopas ou itens encontrados",
+            "d": "Sopas de carne, carne cozida e comida industrializada sobem a sanidade.",
+            "nota": "bom"
+          },
+          {
+            "t": "Eliminar a causa",
+            "d": "Tire vermes e sanguessugas, trate a erupção e durma para curar a insônia.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como lidar",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Nativos alucinados",
+            "d": "Somem ao levar dano. Basta jogar pedras pequenas (Small Stone) ou usar qualquer arma."
+          },
+          {
+            "t": "Ferimentos de alucinação",
+            "d": "Às vezes somem depois que a alucinação é derrotada."
+          },
+          {
+            "t": "Flechas",
+            "d": "Nativos alucinados que atiram flechas usam as do seu inventário."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "sanidade",
+      "fogueira",
+      "insonia",
+      "vermes-sob-a-pele",
+      "sanguessugas"
+    ]
+  },
+  {
+    "id": "macronutrientes",
+    "nome": "Macronutrientes (nutrição)",
+    "nomeEn": "Macro Elements",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "nutricao",
+      "nutrição",
+      "macronutrientes",
+      "dieta",
+      "relogio",
+      "relógio",
+      "nutrientes",
+      "macro elements",
+      "macroelements",
+      "vida maxima",
+      "condicao"
+    ],
+    "perigo": 3,
+    "resumo": "A fome é dividida em carboidratos, gorduras, proteínas e hidratação. Cada um vale até 25% da sua vida máxima.",
+    "secoes": [
+      {
+        "titulo": "Como funciona",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Vida máxima",
+            "d": "Cada macronutriente cheio vale 25% da vida máxima. Exemplo: hidratação e proteína cheias, carboidrato pela metade e gordura zerada dão 62,5% da vida máxima."
+          },
+          {
+            "t": "Velocidade de gasto",
+            "d": "Gordura e proteína esvaziam em cerca de 100 minutos e carboidratos em cerca de 75, na drenagem normal."
+          },
+          {
+            "t": "Ver no relógio",
+            "d": "Aperte F para ver o relógio (Smart Watch) e troque até o modo de macronutrientes."
+          },
+          {
+            "t": "Ícone de relógio no HUD",
+            "d": "Avisa que algum macronutriente está baixo."
+          }
+        ]
+      },
+      {
+        "titulo": "Fontes rápidas",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Carboidratos",
+            "d": "Frutas, palmito (Heart of Palm), raízes cozidas e mel.",
+            "nota": "bom"
+          },
+          {
+            "t": "Gorduras",
+            "d": "Castanhas, coco e carnes gordas (anta, queixada, capivara).",
+            "nota": "bom"
+          },
+          {
+            "t": "Proteínas",
+            "d": "Carnes e peixes cozidos.",
+            "nota": "bom"
+          },
+          {
+            "t": "Hidratação",
+            "d": "Água limpa, água de coco e sopas.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Stamina",
+            "d": "Nutrientes baixos fazem a stamina acabar mais rápido."
+          },
+          {
+            "t": "Água zerada mata",
+            "d": "Ficar sem carboidrato, gordura ou proteína só reduz a vida máxima. Sem hidratação, a vida cai até a morte.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Parasitas",
+            "d": "Aumentam o gasto de carboidratos, gorduras e proteínas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "carboidratos",
+      "gorduras",
+      "proteinas",
+      "desidratacao",
+      "fome",
+      "parasitas"
+    ]
+  },
+  {
+    "id": "carboidratos",
+    "nome": "Carboidratos",
+    "nomeEn": "Carbohydrates",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "carboidrato",
+      "carboidratos",
+      "carbo",
+      "carbs",
+      "carbohydrates",
+      "fruta",
+      "frutas"
+    ],
+    "perigo": 2,
+    "resumo": "Macronutriente que mais rápido acaba, em cerca de 75 minutos. Vem de frutas, raízes, cogumelos e mel.",
+    "secoes": [
+      {
+        "titulo": "Melhores fontes",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Malanga cozida (Malanga Bulb, cozida)",
+            "d": "50 de carboidrato e +5 de energia. Crua dá intoxicação.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Sopa de mandioca (Cassava Soup)",
+            "d": "50 de carboidrato e 10 de energia. Não coma mandioca crua.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Palmito (Heart of Palm)",
+            "d": "45 de carboidrato, já pode comer cru.",
+            "nota": "bom"
+          },
+          {
+            "t": "Banana (Banana)",
+            "d": "25 de carboidrato.",
+            "nota": "bom"
+          },
+          {
+            "t": "Favo de mel (Honeycomb)",
+            "d": "25 de carboidrato e +10 de sanidade.",
+            "nota": "bom"
+          },
+          {
+            "t": "Fruta da monstera (Monstera Deliciosa Fruit)",
+            "d": "25 de carboidrato, 15 de proteína, 10 de energia e +3 de sanidade.",
+            "nota": "bom"
+          },
+          {
+            "t": "Graviola (Guanabana Fruit)",
+            "d": "16 de carboidrato e 8 de água, além de tirar 2 parasitas.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Raízes cruas",
+            "d": "Mandioca e malanga cruas dão intoxicação.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Flor de monstera (Monstera Deliciosa Flower)",
+            "d": "Dá intoxicação. Espere ela virar fruta.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "macronutrientes",
+      "graviola",
+      "favo-de-mel",
+      "intoxicacao-alimentar"
+    ]
+  },
+  {
+    "id": "gorduras",
+    "nome": "Gorduras",
+    "nomeEn": "Fats",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "gordura",
+      "gorduras",
+      "fat",
+      "fats",
+      "castanha",
+      "castanhas",
+      "nozes"
+    ],
+    "perigo": 2,
+    "resumo": "Macronutriente que esvazia em cerca de 100 minutos. Vem principalmente de castanhas, coco e carnes gordas.",
+    "secoes": [
+      {
+        "titulo": "Melhores fontes",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Castanha-do-pará (Brazil Nut)",
+            "d": "35 de gordura e +2 de sanidade. É fácil de achar.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Carne de anta (Tapir Meat)",
+            "d": "Cozida: 24 de gordura e 80 de proteína. A sopa dá 26 de gordura e 90 de proteína.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Carne de capivara e de queixada (Capybara / Peccary Meat)",
+            "d": "Cozidas dão 20 e 16 de gordura, além de muita proteína.",
+            "nota": "bom"
+          },
+          {
+            "t": "Coco (Coconut)",
+            "d": "A polpa dá 10 de gordura.",
+            "nota": "bom"
+          },
+          {
+            "t": "Noz desconhecida (Unknown Nut)",
+            "d": "15 de gordura.",
+            "nota": "bom"
+          },
+          {
+            "t": "Comida encontrada",
+            "d": "Saco de castanhas (32), carne seca (26) e ração (20). Comida industrializada não renasce depois de comida.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Dicas",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Carnes gordas pesam",
+            "d": "Carnes gordas dão muito, mas pesam bastante na mochila."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "macronutrientes",
+      "proteinas"
+    ]
+  },
+  {
+    "id": "proteinas",
+    "nome": "Proteínas",
+    "nomeEn": "Protein",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "proteina",
+      "proteína",
+      "proteinas",
+      "carne",
+      "peixe",
+      "protein"
+    ],
+    "perigo": 2,
+    "resumo": "Macronutriente que esvazia em cerca de 100 minutos. Vem de carnes e peixes, que devem ser sempre cozidos.",
+    "secoes": [
+      {
+        "titulo": "Melhores fontes",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Sopas de carne",
+            "d": "Sopa de anta (90 de proteína), queixada (65) e capivara (72). Também dão hidratação, energia e +5 de sanidade.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Carne cozida",
+            "d": "Anta (80), capivara (68), queixada (60), jabuti (48) e tatu (44). Dão energia e +5 de sanidade.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Peixe cozido",
+            "d": "Aruanã (31), tucunaré (27) e piranha (22).",
+            "nota": "bom"
+          },
+          {
+            "t": "Infusão de osso (Bone Infusion)",
+            "d": "15 de proteína e 10 de gordura, além de curar febre e intoxicação.",
+            "nota": "bom"
+          },
+          {
+            "t": "Ovo (Egg)",
+            "d": "10 de proteína e 10 de gordura.",
+            "nota": "bom"
+          },
+          {
+            "t": "Larvas de mosca e larvas (Maggots / Larva)",
+            "d": "Pouca proteína e perda de sanidade.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Evite",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Carne crua",
+            "d": "Dá -5 de sanidade e chance de parasitas.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Carne queimada ou estragada",
+            "d": "Dá menos nutrientes e perde sanidade; a estragada também causa intoxicação.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Carne humana e de sapo venenoso",
+            "d": "Destroem a sanidade, e a de sapo dá +20 de intoxicação.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "macronutrientes",
+      "gorduras",
+      "parasitas",
+      "infusao-de-osso",
+      "comida-estragada"
+    ]
+  },
+  {
+    "id": "desidratacao",
+    "nome": "Desidratação",
+    "nomeEn": "Hydration / Dehydration",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "desidratacao",
+      "desidratação",
+      "sede",
+      "hidratacao",
+      "hidratação",
+      "agua",
+      "água",
+      "beber",
+      "thirst",
+      "hydration",
+      "dehydration"
+    ],
+    "perigo": 5,
+    "resumo": "A hidratação é o macronutriente mais crítico. Quando zera, a vida cai sem parar até a morte. Febre e vômito aceleram a perda.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Água limpa",
+            "d": "Água da chuva nas cascas de coco ou num coletor de água, água fervida ou filtrada.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Água de coco (Coconut Water)",
+            "d": "Abra o coco com machado e beba: +15 de hidratação, limpa.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Suco de laranja (Orange Juice)",
+            "d": "+30 de hidratação e +5 de sanidade. É um item encontrado.",
+            "nota": "bom"
+          },
+          {
+            "t": "Sopas e chás",
+            "d": "Toda sopa ou chá feito com água limpa também hidrata.",
+            "nota": "bom"
+          },
+          {
+            "t": "Água suja de rio ou lago",
+            "d": "Mata a sede, mas causa parasitas. Só beba em emergência e coma algo antiparasitário depois, como graviola.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Como purificar",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Ferver",
+            "d": "Coloque cascas de coco (Coconut Half Shell) no espaço ao lado do fogo e encha com água suja usando um cantil (bidon). A água ferve e fica potável."
+          },
+          {
+            "t": "Filtro de água (Water Filter)",
+            "d": "Ponha água suja no filtro e recolha a água limpa numa casca de coco ou de jabuti."
+          },
+          {
+            "t": "Coletor de água (Water Collector)",
+            "d": "Recolhe água limpa, rápido na chuva e devagar fora dela."
+          }
+        ]
+      },
+      {
+        "titulo": "Causas",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Tempo",
+            "d": "A hidratação cai naturalmente."
+          },
+          {
+            "t": "Febre e vômito",
+            "d": "Aceleram a perda de água."
+          },
+          {
+            "t": "Cogumelo desconhecido 7 (Unknown Mushroom 7)",
+            "d": "Tira 15 de hidratação, ou 40 se estiver seco."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Recipientes abertos",
+            "d": "Cascas de coco e de jabuti não levam água dentro da mochila. Use um cantil de coco (Coconut Bidon) ou um cantil (Bidon).",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Água envenenada (Spirits of Amazonia)",
+            "d": "Nunca pode ser bebida, nem fervida.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "agua-potavel",
+      "parasitas",
+      "febre",
+      "intoxicacao-alimentar",
+      "macronutrientes",
+      "agua-envenenada"
+    ]
+  },
+  {
+    "id": "fome",
+    "nome": "Fome (inanição)",
+    "nomeEn": "Starvation",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "fome",
+      "faminto",
+      "inanicao",
+      "inanição",
+      "comida",
+      "comer",
+      "starvation",
+      "hunger"
+    ],
+    "perigo": 3,
+    "resumo": "Zerar carboidratos, gorduras ou proteínas tira os 25% de vida máxima de cada um, faz Jake reclamar de fome e acelera o gasto de stamina.",
+    "secoes": [
+      {
+        "titulo": "Tratamentos",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Coma o que estiver faltando",
+            "d": "Veja no relógio (F) qual macronutriente está vazio e coma uma fonte dele.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Sopas",
+            "d": "Cozinhar em sopa é o jeito mais rápido de cozinhar e ainda hidrata.",
+            "nota": "bom"
+          },
+          {
+            "t": "Frutas e castanhas",
+            "d": "Banana, palmito e castanha-do-pará podem ser comidos crus e sem risco.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Como prevenir",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Dieta equilibrada",
+            "d": "Alterne carne cozida, frutas ou raízes e castanhas."
+          },
+          {
+            "t": "Trate parasitas",
+            "d": "Parasitas aceleram a fome."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "macronutrientes",
+      "carboidratos",
+      "gorduras",
+      "proteinas",
+      "parasitas"
+    ]
+  },
+  {
+    "id": "energia",
+    "nome": "Energia",
+    "nomeEn": "Energy",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "energia",
+      "cansado",
+      "cansaco",
+      "cansaço",
+      "exausto",
+      "energy",
+      "stamina",
+      "folego",
+      "fôlego"
+    ],
+    "perigo": 2,
+    "resumo": "Barra grossa que cai com o tempo, mais rápido com a vida máxima baixa ou com doenças. Quando zera, você desmaia por algumas horas.",
+    "secoes": [
+      {
+        "titulo": "Como recuperar",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Dormir numa cama",
+            "d": "É a principal forma de recuperar energia.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Comida que dá energia",
+            "d": "Carnes cozidas (até +15), sopa de leptonia azul (+15), sopas de carne e café instantâneo (+15).",
+            "nota": "bom"
+          },
+          {
+            "t": "Leptonia azul (Indigo Blue Leptonia)",
+            "d": "Crua dá +10 de energia e ainda tira parasitas.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "O que drena",
+        "tipo": "causas",
+        "itens": [
+          {
+            "t": "Febre e insônia",
+            "d": "Fazem a energia cair muito mais rápido."
+          },
+          {
+            "t": "Vida máxima baixa",
+            "d": "Com a nutrição baixa, a energia cai mais rápido."
+          },
+          {
+            "t": "Trabalho pesado",
+            "d": "Cortar árvores, por exemplo."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Não fuja do sono",
+            "d": "Usar comida para evitar dormir causa insônia.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "desmaio",
+      "insonia",
+      "sono-e-camas",
+      "febre"
+    ]
+  },
+  {
+    "id": "sono-e-camas",
+    "nome": "Sono e camas",
+    "nomeEn": "Sleep / Beds",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "dormir",
+      "sono",
+      "cama",
+      "camas",
+      "rede",
+      "abrigo",
+      "descansar",
+      "sleep",
+      "bed",
+      "log bed"
+    ],
+    "perigo": 1,
+    "resumo": "Dormir restaura energia, aumenta a sanidade e avança 8 horas de jogo. Também ajuda a vencer febre e intoxicação leves.",
+    "secoes": [
+      {
+        "titulo": "Melhores opções",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Cama de troncos ou de bambu (Log Bed / Bamboo Log Bed)",
+            "d": "Cama elevada que reduz o risco de vermes. A planta fica na caverna do avião pequeno (40W 24S).",
+            "nota": "melhor"
+          },
+          {
+            "t": "Abrigos (Hut Shelter / Medium Bamboo Shelter)",
+            "d": "Servem para dormir e para salvar o jogo.",
+            "nota": "bom"
+          },
+          {
+            "t": "Cama de folhas (Leaf Bed / Banana Leaf Bed)",
+            "d": "Ponto de sono simples, com 10 folhas de palmeira ou 10 de bananeira.",
+            "nota": "bom"
+          },
+          {
+            "t": "Redes, sacos de dormir e bancos de carro",
+            "d": "Ficam espalhados pelo mapa e não podem ser construídos.",
+            "nota": "bom"
+          },
+          {
+            "t": "Dormir no chão",
+            "d": "Tecla C, depois o ícone de dormir. É desconfortável, tira um pouco de sanidade e aumenta muito o risco de vermes.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Dicas",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Fogueira perto da cama",
+            "d": "Reduz o risco de vermes e o calor do fogo dá sanidade."
+          },
+          {
+            "t": "Doente?",
+            "d": "Dormir acelera a cura de febre e intoxicação leves, mas confira a hidratação antes."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "insonia",
+      "vermes-sob-a-pele",
+      "sanidade",
+      "energia",
+      "fogueira"
+    ]
+  },
+  {
+    "id": "comida-estragada",
+    "nome": "Comida estragada",
+    "nomeEn": "Spoiled food",
+    "categoria": "Nutrição e sanidade",
+    "aliases": [
+      "estragado",
+      "estragada",
+      "podre",
+      "comida podre",
+      "carne podre",
+      "spoiled",
+      "rotten"
+    ],
+    "perigo": 3,
+    "resumo": "Todo alimento perecível estraga com o tempo. Comer estragado causa intoxicação alimentar e tira sanidade.",
+    "secoes": [
+      {
+        "titulo": "Riscos",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Intoxicação",
+            "d": "Quase toda comida estragada dá +3 de intoxicação alimentar.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Sanidade",
+            "d": "Carnes estragadas dão -4 e frutas estragadas -2.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Bons usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Carne estragada (Spoiled Meat)",
+            "d": "Use a opção de colher (harvest) para tirar larvas de mosca (Maggots), que curam infecção.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Frutas estragadas",
+            "d": "Podem ser colhidas para tirar larvas ou usadas como fertilizante.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Como evitar",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Conservar",
+            "d": "Carne defumada dura 4 dias e carne seca no secador dura mais de 5 dias, contra 2 da carne cozida."
+          },
+          {
+            "t": "Dica",
+            "d": "Castanhas, mel e cogumelos secos duram bastante."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "intoxicacao-alimentar",
+      "larvas-de-mosca",
+      "sanidade"
+    ]
+  },
+  {
+    "id": "bandagem-de-folha",
+    "nome": "Bandagem de folha",
+    "nomeEn": "Leaf Bandage",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "bandagem",
+      "bandagem de folha",
+      "curativo simples",
+      "atadura",
+      "leaf bandage",
+      "dressing",
+      "curativo de folha"
+    ],
+    "perigo": 0,
+    "resumo": "Curativo básico que estanca sangramento e serve de base para todos os outros curativos. Sozinho, cura devagar e deixa infeccionar com mais facilidade.",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 folha de molinéria (Molineria Leaf)",
+            "d": "Abra a mochila (Tab), vá no ícone de criação e coloque a folha sobre a pedra.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Arranhões e escoriações",
+            "d": "Funciona, com uma chance pequena de infecção.",
+            "nota": "bom"
+          },
+          {
+            "t": "Buraco de verme",
+            "d": "Feche o furo depois de tirar o verme.",
+            "nota": "bom"
+          },
+          {
+            "t": "Laceração",
+            "d": "Para o sangramento, mas o risco de infecção é alto.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Vira curativos melhores",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "+ cinzas (Ash)",
+            "d": "Curativo de cinzas (Ash Dressing)."
+          },
+          {
+            "t": "+ favo de mel (Honeycomb)",
+            "d": "Curativo de mel (Honey Dressing)."
+          },
+          {
+            "t": "+ folha de tabaco (Tobacco Leaf)",
+            "d": "Curativo de tabaco (Tobacco Dressing)."
+          },
+          {
+            "t": "+ folha de hosta (Plantain Lily Leaf)",
+            "d": "Curativo de lírio (Lily Dressing)."
+          },
+          {
+            "t": "+ cinza de caranguejeira-golias (Goliath Birdeater Ash)",
+            "d": "Curativo Golias (Goliath Dressing)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "molineria",
+      "curativo-de-cinzas",
+      "curativo-de-mel",
+      "curativo-de-tabaco",
+      "curativo-de-lirio",
+      "curativo-golias"
+    ]
+  },
+  {
+    "id": "curativo-de-cinzas",
+    "nome": "Curativo de cinzas",
+    "nomeEn": "Ash Dressing",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "curativo de cinzas",
+      "curativo de cinza",
+      "bandagem de cinzas",
+      "cinza",
+      "ash dressing",
+      "antisseptico",
+      "antisséptico"
+    ],
+    "perigo": 0,
+    "resumo": "Curativo desinfetante e barato: evita infecção e acelera a cura de lacerações. É o curativo de uso geral mais prático.",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 bandagem de folha (Leaf Bandage) + 1 cinza (Ash)",
+            "d": "Combine na tela de criação da mochila."
+          }
+        ]
+      },
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Laceração",
+            "d": "Evita infecção e reduz o tempo de cura.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Arranhões e escoriações",
+            "d": "Desinfeta; a cura é lenta.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Depois das larvas numa infecção",
+            "d": "Feche a ferida já limpa logo depois.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Buraco de verme",
+            "d": "Previne infecção depois de tirar o verme.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde conseguir a cinza",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Fogueira apagada",
+            "d": "Fogueiras que queimaram até o fim deixam 1 monte de cinzas."
+          },
+          {
+            "t": "Carvão (Charcoal)",
+            "d": "Colha o carvão (harvest) para tirar cinza."
+          },
+          {
+            "t": "Forno de carvão de barro (Mud Charcoal Furnace)",
+            "d": "Rende até 3 montes de cinzas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "bandagem-de-folha",
+      "cinzas",
+      "laceracao",
+      "ferimento-infectado",
+      "arranhoes-e-escoriacoes",
+      "curativo-golias"
+    ]
+  },
+  {
+    "id": "curativo-de-mel",
+    "nome": "Curativo de mel",
+    "nomeEn": "Honey Dressing",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "curativo de mel",
+      "bandagem de mel",
+      "mel",
+      "honey dressing",
+      "honey"
+    ],
+    "perigo": 0,
+    "resumo": "Curativo desinfetante, antisséptico e anti-histamínico. Bom para erupção, infecção e laceração.",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 bandagem de folha (Leaf Bandage) + 1 favo de mel (Honeycomb)",
+            "d": "Combine na tela de criação da mochila."
+          }
+        ]
+      },
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Erupção cutânea",
+            "d": "O efeito anti-histamínico acelera a cura.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Ferimento infectado, depois das larvas",
+            "d": "Fecha a ferida limpa.",
+            "nota": "bom"
+          },
+          {
+            "t": "Arranhões e buraco de verme",
+            "d": "Desinfeta.",
+            "nota": "bom"
+          },
+          {
+            "t": "Laceração",
+            "d": "Funciona, mas a wiki registra que, desde a versão 2.9.1, ainda pode deixar infeccionar. Prefira o curativo de cinzas ou formigas.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde conseguir o mel",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Colmeias e ninhos selvagens",
+            "d": "Derrube com uma pedra ou flecha e recolha o favo de mel. Use uma tocha para não ser picado."
+          },
+          {
+            "t": "Colmeia própria (Beehive)",
+            "d": "Com uma abelha-rainha (Queen Bee) dentro, produz mel a cada 4 horas. Recolha segurando uma tocha."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "bandagem-de-folha",
+      "favo-de-mel",
+      "erupcao-cutanea",
+      "ferimento-infectado",
+      "curativo-de-cinzas"
+    ]
+  },
+  {
+    "id": "curativo-de-tabaco",
+    "nome": "Curativo de tabaco",
+    "nomeEn": "Tobacco Dressing",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "curativo de tabaco",
+      "bandagem de tabaco",
+      "antiveneno",
+      "antídoto",
+      "antidoto",
+      "soro",
+      "tobacco dressing"
+    ],
+    "perigo": 0,
+    "resumo": "Curativo antiveneno, o mais eficaz contra mordidas e picadas venenosas: -4 de veneno, que sai aos poucos.",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 bandagem de folha (Leaf Bandage) + 1 folha de tabaco (Tobacco Leaf)",
+            "d": "Combine na tela de criação da mochila."
+          }
+        ]
+      },
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Ferimento por veneno",
+            "d": "Aplique sobre as marcas da picada pela inspeção corporal. Serve para cascavel, aranhas, escorpião e arraia.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Só para veneno",
+            "d": "Ao pegar o curativo de tabaco para uma escoriação, o círculo de aplicação não aparece.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Febre à parte",
+            "d": "Trate a febre que vem junto com quássia ou analgésicos."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "tabaco",
+      "bandagem-de-folha",
+      "ferimento-por-veneno",
+      "febre"
+    ]
+  },
+  {
+    "id": "curativo-de-lirio",
+    "nome": "Curativo de lírio",
+    "nomeEn": "Lily Dressing",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "curativo de lirio",
+      "curativo de lírio",
+      "bandagem de lirio",
+      "lily dressing",
+      "anti-histaminico",
+      "antialergico"
+    ],
+    "perigo": 0,
+    "resumo": "Curativo anti-histamínico e antitoxina: ótimo para erupções de vespa e formiga, e também tira 4 de veneno.",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 bandagem de folha (Leaf Bandage) + 1 folha de hosta (Plantain Lily Leaf)",
+            "d": "Combine na tela de criação da mochila."
+          }
+        ]
+      },
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Erupção cutânea",
+            "d": "Aplique na área irritada pela inspeção corporal.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Ferimento por veneno",
+            "d": "-4 de veneno, que sai aos poucos.",
+            "nota": "bom"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "hosta",
+      "bandagem-de-folha",
+      "erupcao-cutanea",
+      "ferimento-por-veneno"
+    ]
+  },
+  {
+    "id": "curativo-golias",
+    "nome": "Curativo Golias",
+    "nomeEn": "Goliath Dressing",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "curativo golias",
+      "curativo de aranha",
+      "goliath dressing",
+      "golias"
+    ],
+    "perigo": 0,
+    "resumo": "Funciona como uma bandagem normal que também evita infecção, igual ao curativo de cinzas, mas dá muito mais trabalho.",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 bandagem de folha (Leaf Bandage) + 1 cinza de caranguejeira-golias (Goliath Birdeater Ash)",
+            "d": "Combine na tela de criação da mochila."
+          }
+        ]
+      },
+      {
+        "titulo": "Como obter a cinza",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Passo a passo",
+            "d": "Mate e pegue uma caranguejeira-golias (Goliath Birdeater Spider), deixe-a no fogo até queimar e colha a aranha queimada."
+          }
+        ]
+      },
+      {
+        "titulo": "Dica",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Prefira o curativo de cinzas",
+            "d": "O efeito é o mesmo e a cinza de fogueira é muito mais fácil de conseguir.",
+            "nota": "bom"
+          },
+          {
+            "t": "Não coma a cinza",
+            "d": "Comer a cinza de aranha dá intoxicação e -5 de sanidade.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "curativo-de-cinzas",
+      "bandagem-de-folha",
+      "laceracao",
+      "caranguejeira-golias"
+    ]
+  },
+  {
+    "id": "larvas-de-mosca",
+    "nome": "Larvas de mosca",
+    "nomeEn": "Maggots",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "larvas",
+      "larva de mosca",
+      "larvas de mosca",
+      "bicheira",
+      "vermes de carniça",
+      "maggot",
+      "maggots"
+    ],
+    "perigo": 0,
+    "resumo": "A única cura para ferimento infectado: comem o tecido morto e deixam a ferida limpa.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Ferimento infectado",
+            "d": "Na inspeção corporal, arraste as larvas até a ferida infectada. Depois de um tempo a infecção some; então aplique um curativo de cinzas ou de mel. Dá uma pequena perda de sanidade.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Cadáveres em decomposição",
+            "d": "Aproxime-se e aperte E para pegar."
+          },
+          {
+            "t": "Carne estragada (Spoiled Meat)",
+            "d": "Use a opção de colher (harvest) na carne estragada."
+          }
+        ]
+      },
+      {
+        "titulo": "Outros usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Isca",
+            "d": "Servem de isca em armadilhas de peixe para acará-bandeira (Angelfish) e acará-disco (Discus Fish)."
+          },
+          {
+            "t": "Comer",
+            "d": "Dão pouca proteína: cruas -5 de sanidade, cozidas ou em sopa -2. Não vale a pena.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "ferimento-infectado",
+      "comida-estragada",
+      "curativo-de-cinzas",
+      "curativo-de-mel"
+    ]
+  },
+  {
+    "id": "formigas",
+    "nome": "Formigas (pontos)",
+    "nomeEn": "Ants",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "formiga",
+      "formigas",
+      "formiga bala",
+      "tocandira",
+      "pontos",
+      "sutura",
+      "costurar ferida",
+      "ants",
+      "bullet ant",
+      "stitches"
+    ],
+    "perigo": 1,
+    "resumo": "Usadas como pontos para fechar lacerações: é o tratamento mais rápido e eficaz para corte profundo.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Laceração",
+            "d": "Na inspeção corporal, arraste as formigas da mochila até o corte. Dói e baixa a sanidade por um tempo.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Formigueiros na floresta",
+            "d": "Chegue devagar e aperte E para coletar. Elas vão para a mochila."
+          },
+          {
+            "t": "Use uma tocha",
+            "d": "Segurar uma tocha acesa impede que as formigas ataquem.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Não fique parado no formigueiro",
+            "d": "As formigas causam erupção, e ficar muito tempo sendo atacado pode matar.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Não são comestíveis",
+            "d": "Formigas não podem ser comidas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "laceracao",
+      "erupcao-cutanea",
+      "sanidade",
+      "tocha"
+    ]
+  },
+  {
+    "id": "agulha-de-osso",
+    "nome": "Agulha de osso",
+    "nomeEn": "Bone Needle",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "agulha",
+      "agulha de osso",
+      "bone needle",
+      "tirar verme",
+      "tirar berne"
+    ],
+    "perigo": 0,
+    "resumo": "Ferramenta principal para arrancar vermes da pele. Também vira anzol de osso.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Vermes sob a pele",
+            "d": "Na inspeção corporal, arraste a agulha até o círculo sobre o verme.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 osso (Bone) → 2 agulhas de osso",
+            "d": "Na mochila, use a opção de colher (harvest) no osso."
+          }
+        ]
+      },
+      {
+        "titulo": "Onde conseguir ossos",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Animais",
+            "d": "Esfolar capivara, queixada, anta e outros."
+          },
+          {
+            "t": "Nativos mortos",
+            "d": "Saquear o corpo."
+          },
+          {
+            "t": "No chão",
+            "d": "Em alguns lugares, como a Aldeia Tribal Abandonada (Abandoned Tribal Village)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "vermes-sob-a-pele",
+      "espinha-de-peixe",
+      "ferrao-de-arraia",
+      "infusao-de-osso"
+    ]
+  },
+  {
+    "id": "espinha-de-peixe",
+    "nome": "Espinha de peixe",
+    "nomeEn": "Fish Bone",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "espinha",
+      "espinha de peixe",
+      "fish bone",
+      "tirar verme"
+    ],
+    "perigo": 0,
+    "resumo": "Alternativa à agulha de osso para arrancar vermes da pele.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Vermes sob a pele",
+            "d": "Na inspeção corporal, arraste a espinha até o círculo sobre o verme.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Anzol",
+            "d": "Também serve para fazer anzol (Fish Hook)."
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Peixes grandes",
+            "d": "Aruanã (Arowana), tucunaré (Peacock Bass) e piranha-vermelha (Red-Bellied Piranha) dão 4 espinhas cada."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "vermes-sob-a-pele",
+      "agulha-de-osso"
+    ]
+  },
+  {
+    "id": "ferrao-de-arraia",
+    "nome": "Ferrão de arraia",
+    "nomeEn": "Stingray Sting",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "ferrao",
+      "ferrão",
+      "ferrao de arraia",
+      "stingray sting"
+    ],
+    "perigo": 0,
+    "resumo": "Obtido ao colher (harvest) uma arraia. Também serve para tirar vermes da pele.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Vermes sob a pele",
+            "d": "Use pela inspeção corporal, como a agulha de osso.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Arraia (River Stingray)",
+            "d": "Mate com lança ou flecha em rio raso e colha o corpo. Cuidado com a ferroada venenosa."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "vermes-sob-a-pele",
+      "agulha-de-osso",
+      "arraia"
+    ]
+  },
+  {
+    "id": "infusao-de-osso",
+    "nome": "Infusão de osso",
+    "nomeEn": "Bone Infusion (Bone Brew)",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "infusao de osso",
+      "caldo de osso",
+      "sopa de osso",
+      "cha de osso",
+      "osso",
+      "bone brew",
+      "bone soup",
+      "bone infusion"
+    ],
+    "perigo": 0,
+    "resumo": "Caldo de osso que trata febre e intoxicação ao mesmo tempo (-3 de cada) e ainda alimenta.",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 osso (Bone) + água limpa",
+            "d": "Encha um recipiente (casca de coco, panela ou casco de jabuti) com água limpa, ponha sobre o fogo e coloque o osso."
+          }
+        ]
+      },
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Febre",
+            "d": "-3 de febre.",
+            "nota": "bom"
+          },
+          {
+            "t": "Intoxicação alimentar",
+            "d": "-3 de intoxicação.",
+            "nota": "bom"
+          },
+          {
+            "t": "Nutrição",
+            "d": "15 de proteína, 10 de gordura, hidratação e +5 de energia."
+          }
+        ]
+      },
+      {
+        "titulo": "Dica",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Use o osso depois",
+            "d": "Também dá para colher o osso para fazer 2 agulhas de osso (Bone Needle), mas aí ele não vai para a sopa."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "febre",
+      "intoxicacao-alimentar",
+      "agulha-de-osso",
+      "agua-envenenada"
+    ]
+  },
+  {
+    "id": "carvao",
+    "nome": "Carvão",
+    "nomeEn": "Charcoal",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "carvao",
+      "carvão",
+      "charcoal",
+      "carvao ativado"
+    ],
+    "perigo": 0,
+    "resumo": "Combustível que também serve de remédio de emergência para intoxicação alimentar, com perda de sanidade.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Intoxicação alimentar",
+            "d": "Coma pela mochila: -1 de intoxicação e -5 de sanidade.",
+            "nota": "emergencial"
+          },
+          {
+            "t": "Cinzas para curativo",
+            "d": "Colha o carvão (harvest) para tirar cinza (Ash) e fazer o curativo de cinzas.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Fogueiras apagadas",
+            "d": "Recolha de fogueiras (Campfire) e fogos pequenos (Small Fire) que queimaram até o fim."
+          },
+          {
+            "t": "Forno de carvão de barro (Mud Charcoal Furnace)",
+            "d": "Produz muito mais carvão."
+          }
+        ]
+      },
+      {
+        "titulo": "Outros usos",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Combustível e filtros",
+            "d": "Alimenta fogueiras, é o único combustível da forja de barro e entra na construção de filtros de água."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "intoxicacao-alimentar",
+      "cinzas",
+      "curativo-de-cinzas",
+      "fogueira"
+    ]
+  },
+  {
+    "id": "cinzas",
+    "nome": "Cinzas",
+    "nomeEn": "Ash",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "cinza",
+      "cinzas",
+      "ash",
+      "campfire ash"
+    ],
+    "perigo": 0,
+    "resumo": "Material da fogueira apagada usado no curativo de cinzas e em tijolos de barro.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de cinzas (Ash Dressing)",
+            "d": "Combine 1 bandagem de folha (Leaf Bandage) e 1 cinza para criar o curativo antisséptico.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Fogueira apagada",
+            "d": "Cada fogueira que queimou até o fim deixa 1 monte de cinzas."
+          },
+          {
+            "t": "Forno de carvão de barro",
+            "d": "Deixa até 3 montes."
+          },
+          {
+            "t": "Carvão (Charcoal)",
+            "d": "Colha o carvão para tirar cinza."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "curativo-de-cinzas",
+      "carvao",
+      "fogueira"
+    ]
+  },
+  {
+    "id": "favo-de-mel",
+    "nome": "Favo de mel",
+    "nomeEn": "Honeycomb",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "favo",
+      "favo de mel",
+      "mel",
+      "colmeia",
+      "abelha",
+      "honeycomb",
+      "honey",
+      "beehive"
+    ],
+    "perigo": 1,
+    "resumo": "Dá carboidratos e muita sanidade e é o ingrediente do curativo de mel.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de mel (Honey Dressing)",
+            "d": "Combine com 1 bandagem de folha (Leaf Bandage).",
+            "nota": "melhor"
+          },
+          {
+            "t": "Comer",
+            "d": "25 de carboidrato e +10 de sanidade.",
+            "nota": "bom"
+          },
+          {
+            "t": "Chá de mel (Honeycomb Brew)",
+            "d": "20 de carboidrato, hidratação e +5 de sanidade.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Colmeias e ninhos selvagens",
+            "d": "Derrube-os com uma pedra ou flecha. Os ninhos de vespa (Brazilian Wasp) também soltam favo."
+          },
+          {
+            "t": "Colmeia (Beehive)",
+            "d": "Construa e coloque uma abelha-rainha (Queen Bee): produz a cada 4 horas."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Picadas",
+            "d": "Vespas e abelhas causam erupção. Chegue com tocha acesa, na chuva ou de armadura nos braços.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "curativo-de-mel",
+      "erupcao-cutanea",
+      "sanidade",
+      "carboidratos",
+      "tocha"
+    ]
+  },
+  {
+    "id": "ninfeia",
+    "nome": "Ninfeia (flor de lírio-d'água)",
+    "nomeEn": "Water Lily",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "ninfeia",
+      "ninféia",
+      "nenufar",
+      "nenúfar",
+      "lirio d agua",
+      "lírio-d'água",
+      "vitoria regia",
+      "flor rosa",
+      "water lily",
+      "lily flower"
+    ],
+    "perigo": 0,
+    "resumo": "Flor rosa que flutua em lagos. É o melhor remédio para intoxicação alimentar, principalmente em chá.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Chá de ninfeia (Water Lily Flower Brew)",
+            "d": "Ferva em água limpa e beba: -5 de intoxicação.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Crua",
+            "d": "Coma: -2 de intoxicação e 5 de carboidrato.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Lagos e beira de rios",
+            "d": "Folhas redondas e uma flor rosa grande na superfície da água. Aperte E perto da planta para pegar a flor."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "intoxicacao-alimentar",
+      "albahaca",
+      "infusao-de-osso"
+    ]
+  },
+  {
+    "id": "albahaca",
+    "nome": "Albahaca (erva verde e vermelha)",
+    "nomeEn": "Albahaca / Unknown Herb Plant 2",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "albahaca",
+      "erva vermelha",
+      "erva desconhecida",
+      "red herb",
+      "unknown herb",
+      "unknown herb a",
+      "unknown herb b",
+      "manjericao"
+    ],
+    "perigo": 1,
+    "resumo": "Planta de folhas grandes verdes que ficam vermelhas perto do caule, com uma haste de flor vermelha. A folha cura intoxicação e a flor causa intoxicação.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Chá de folha (Unknown Herb A Brew)",
+            "d": "Ferva a folha verde em água limpa e beba: -3 de intoxicação.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Folha crua (Unknown Herb A)",
+            "d": "Coma: -2 de intoxicação.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Corte a planta",
+            "d": "Corte com qualquer ferramenta: ela solta as folhas verdes (Unknown Herb A) e a haste de flor vermelha (Unknown Herb B)."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Não coma a flor (Unknown Herb B)",
+            "d": "Dá +1 de intoxicação. Use a flor seca só para plantar.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "intoxicacao-alimentar",
+      "ninfeia"
+    ]
+  },
+  {
+    "id": "quassia-amara",
+    "nome": "Quássia (Quassia amara)",
+    "nomeEn": "Quassia Amara",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "quassia",
+      "quássia",
+      "quassia amara",
+      "flor vermelha",
+      "flor desconhecida",
+      "cha de febre",
+      "unknown flower",
+      "quassia amara flower"
+    ],
+    "perigo": 0,
+    "resumo": "Arbusto grande de florzinhas vermelhas. A infusão da flor é o remédio mais forte contra febre (-15).",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "Infusão de quássia (Quassia Amara Infusion)",
+            "d": "Ponha 1 flor de quássia (Quassia Amara Flower) num recipiente com água limpa sobre o fogo e beba quando ferver.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Febre",
+            "d": "-15 de febre, praticamente zera qualquer febre.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Pela floresta",
+            "d": "Corte o arbusto com qualquer ferramenta para ganhar 2 flores."
+          },
+          {
+            "t": "Cultivo",
+            "d": "Deixe a flor secar (12 horas na mochila ou no secador) e plante numa jardineira grande (Large Planting Box)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "febre",
+      "analgesicos",
+      "infusao-de-osso"
+    ]
+  },
+  {
+    "id": "hosta",
+    "nome": "Hosta (lírio-banana)",
+    "nomeEn": "Plantain Lily",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "hosta",
+      "lirio",
+      "lírio",
+      "folha de lirio",
+      "lirio banana",
+      "funkia",
+      "plantain lily",
+      "plantain lily leaf",
+      "lily leaf",
+      "erva antiveneno"
+    ],
+    "perigo": 0,
+    "resumo": "Planta de folhas em forma de coração com borda branca e três flores roxas. A folha é antiveneno e é a base do curativo de lírio.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Chá de hosta (Plantain Lily Leaf Brew)",
+            "d": "Ferva a folha em água limpa e beba: -4 de veneno.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Curativo de lírio (Lily Dressing)",
+            "d": "1 bandagem de folha + 1 folha de hosta. Serve para erupção e tira 4 de veneno.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Folha crua",
+            "d": "Coma: -2 de veneno e 2 de carboidrato.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Pela floresta",
+            "d": "Corte a planta para ganhar 1 folha e 1 flor."
+          },
+          {
+            "t": "Cultivo",
+            "d": "Seque a flor e plante numa jardineira pequena (Small Planting Box)."
+          }
+        ]
+      },
+      {
+        "titulo": "Dica",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "A folha é pesada",
+            "d": "Pesa 1,2 kg e ocupa muito espaço. Guarde o estoque num baú."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "ferimento-por-veneno",
+      "curativo-de-lirio",
+      "erupcao-cutanea",
+      "tabaco"
+    ]
+  },
+  {
+    "id": "tabaco",
+    "nome": "Tabaco",
+    "nomeEn": "Tobacco Plant / Tobacco Leaf",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "tabaco",
+      "fumo",
+      "folha de tabaco",
+      "cha de tabaco",
+      "tobacco",
+      "tobacco leaf",
+      "tobacco brew",
+      "nicotiana"
+    ],
+    "perigo": 0,
+    "resumo": "Planta de florzinhas rosas. A folha é antiveneno, em chá ou no curativo de tabaco.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Curativo de tabaco (Tobacco Dressing)",
+            "d": "1 bandagem de folha (Leaf Bandage) + 1 folha de tabaco (Tobacco Leaf). É o melhor curativo contra veneno.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Chá de tabaco (Tobacco Brew)",
+            "d": "Ferva a folha em água limpa e beba: -4 de veneno.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Pela floresta",
+            "d": "Corte a planta para ganhar 3 folhas e 1 flor."
+          },
+          {
+            "t": "Cultivo",
+            "d": "Seque a flor de tabaco (12 horas) e plante numa jardineira pequena (Small Planting Box)."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "curativo-de-tabaco",
+      "ferimento-por-veneno",
+      "hosta"
+    ]
+  },
+  {
+    "id": "molineria",
+    "nome": "Molinéria",
+    "nomeEn": "Molineria",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "molineria",
+      "molinéria",
+      "folha de molineria",
+      "flor amarela",
+      "molineria leaf",
+      "molineria leaves"
+    ],
+    "perigo": 0,
+    "resumo": "Planta de folhas longas e chatas com flores amarelas em forma de estrela. A folha é a matéria-prima da bandagem de folha.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Bandagem de folha (Leaf Bandage)",
+            "d": "1 folha de molinéria (Molineria Leaf) = 1 bandagem, a base de todos os curativos.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Fibra e flor",
+            "d": "Colha a folha para tirar fibra (isca para fogo) e uma flor para cultivo."
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Pela floresta",
+            "d": "É comum. Corte a planta para ganhar 3 folhas."
+          },
+          {
+            "t": "Cultivo",
+            "d": "Seque a flor e plante numa jardineira pequena."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Não coma nem faça chá",
+            "d": "A folha não é comestível crua, e o chá dá +3 de intoxicação.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "bandagem-de-folha",
+      "intoxicacao-alimentar"
+    ]
+  },
+  {
+    "id": "graviola",
+    "nome": "Graviola",
+    "nomeEn": "Guanabana Fruit (Soursop)",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "graviola",
+      "guanabana",
+      "guanábana",
+      "soursop",
+      "fruta verde",
+      "fruta desconhecida",
+      "antiparasitario",
+      "vermifugo"
+    ],
+    "perigo": 0,
+    "resumo": "Fruta verde que é o antiparasitário mais prático do jogo, e ainda dá carboidrato e água.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Chá de graviola (Guanabana Fruit Brew)",
+            "d": "Ferva em água limpa e beba: -3 de parasitas e 15 de carboidrato.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Crua",
+            "d": "Coma: -2 de parasitas, 16 de carboidrato e 8 de hidratação.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Pé de graviola (Soursop Plant)",
+            "d": "Planta de folhas grandes com 3 frutas verdes, comum no chão da floresta."
+          },
+          {
+            "t": "Cultivo",
+            "d": "Colha (harvest) a fruta fresca para tirar sementes e plante numa jardineira."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Estraga em 16 horas",
+            "d": "Estragada, dá +3 de intoxicação e -2 de sanidade.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "parasitas",
+      "carboidratos",
+      "leptonia-azul",
+      "copa-hongo"
+    ]
+  },
+  {
+    "id": "leptonia-azul",
+    "nome": "Leptonia azul (cogumelo azul)",
+    "nomeEn": "Indigo Blue Leptonia",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "leptonia",
+      "leptonia azul",
+      "cogumelo azul",
+      "blue mushroom",
+      "indigo blue leptonia",
+      "unknown mushroom 3"
+    ],
+    "perigo": 0,
+    "resumo": "Cogumelo azul-claro que cresce na base das castanheiras. Tira parasitas e dá energia.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Cru",
+            "d": "-2 de parasitas e +10 de energia.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Sopa de cogumelo (Mushroom Soup 3)",
+            "d": "-2 de parasitas, +15 de energia e hidratação.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Castanheira (Brazil Nut Tree)",
+            "d": "Na parte baixa do tronco e nas raízes expostas."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Estragado",
+            "d": "Dá +3 de intoxicação.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "parasitas",
+      "energia",
+      "graviola",
+      "cogumelos"
+    ]
+  },
+  {
+    "id": "copa-hongo",
+    "nome": "Copa hongo (cogumelo laranja em copo)",
+    "nomeEn": "Copa Hongo / Unknown Mushroom 1",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "copa hongo",
+      "cogumelo laranja",
+      "cogumelo vermelho",
+      "cogumelo copo",
+      "red mushroom",
+      "unknown mushroom 1"
+    ],
+    "perigo": 0,
+    "resumo": "Fungo pequeno, laranja e em forma de copo, que cresce em troncos caídos. É antiparasitário.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Sopa de cogumelo (Mushroom Soup 1)",
+            "d": "Ferva em água limpa: -2 de parasitas.",
+            "nota": "bom"
+          },
+          {
+            "t": "Cru",
+            "d": "-1 de parasita e 5 de carboidrato.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Troncos caídos",
+            "d": "Em grupos de 2 a 5 cogumelos."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Estragado",
+            "d": "Dá +3 de intoxicação.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "parasitas",
+      "graviola",
+      "leptonia-azul",
+      "cogumelos"
+    ]
+  },
+  {
+    "id": "cogumelo-desconhecido-7",
+    "nome": "Cogumelo desconhecido das cavernas",
+    "nomeEn": "Unknown Mushroom 7",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "cogumelo da caverna",
+      "cogumelo branco e vermelho",
+      "unknown mushroom 7",
+      "marasmius",
+      "cogumelo febre"
+    ],
+    "perigo": 1,
+    "resumo": "Cogumelo pequeno, branco e vermelho, que nasce em raízes dentro de cavernas. Tira um pouco de febre, mas desidrata.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Fresco",
+            "d": "-1 de febre, mas tira 15 de hidratação.",
+            "nota": "emergencial"
+          },
+          {
+            "t": "Seco",
+            "d": "-1 de febre, mas tira 40 de hidratação.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Cavernas",
+            "d": "Em raízes expostas dentro de cavernas. Chegou no jogo com a atualização Spirits of Amazonia."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Seca em 5 horas",
+            "d": "Depois de colhido, seca em 5 horas e o efeito desidratante aumenta muito.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Beba água junto",
+            "d": "Use só se tiver água limpa à mão.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "febre",
+      "desidratacao",
+      "cogumelos"
+    ]
+  },
+  {
+    "id": "cogumelos",
+    "nome": "Cogumelos: quais são seguros",
+    "nomeEn": "Mushrooms",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "cogumelo",
+      "cogumelos",
+      "fungo",
+      "fungos",
+      "cogumelo venenoso",
+      "mushroom",
+      "mushrooms",
+      "veiled lady",
+      "veu",
+      "unknown mushroom"
+    ],
+    "perigo": 2,
+    "resumo": "Alguns cogumelos curam, outros intoxicam. Todos os cogumelos estragados dão intoxicação.",
+    "secoes": [
+      {
+        "titulo": "Seguros e úteis",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Leptonia azul (Indigo Blue Leptonia)",
+            "d": "Tira parasitas e dá energia.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Copa hongo (Unknown Mushroom 1)",
+            "d": "Laranja, em copo: tira parasitas.",
+            "nota": "bom"
+          },
+          {
+            "t": "Unknown Mushroom 4 (Gerronema)",
+            "d": "Brilha no escuro em troncos caídos. Dá carboidrato e um pouco de energia.",
+            "nota": "bom"
+          },
+          {
+            "t": "Unknown Mushroom 5",
+            "d": "Amarelo, em troncos mortos: 5 de carboidrato e +1 de sanidade.",
+            "nota": "bom"
+          },
+          {
+            "t": "Unknown Mushroom 7",
+            "d": "Das cavernas: tira febre, mas desidrata.",
+            "nota": "emergencial"
+          }
+        ]
+      },
+      {
+        "titulo": "Perigosos",
+        "tipo": "evitar",
+        "itens": [
+          {
+            "t": "Cogumelo véu (Unknown Mushroom 2 / Veiled lady)",
+            "d": "Branco e marrom, com véu rendado. Cru dá +3 de intoxicação; é seguro em sopa ou seco.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Unknown Mushroom 6",
+            "d": "Dá intoxicação cru ou em sopa. Não coma.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Qualquer cogumelo estragado",
+            "d": "Dá de +2 a +4 de intoxicação.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "leptonia-azul",
+      "copa-hongo",
+      "cogumelo-desconhecido-7",
+      "intoxicacao-alimentar",
+      "parasitas"
+    ]
+  },
+  {
+    "id": "analgesicos",
+    "nome": "Analgésicos",
+    "nomeEn": "Painkillers",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "analgesico",
+      "analgésico",
+      "analgesicos",
+      "remedio",
+      "remédio",
+      "comprimido",
+      "pilula",
+      "tubo de remedio",
+      "painkillers",
+      "painkiller"
+    ],
+    "perigo": 0,
+    "resumo": "Remédio industrializado que tira veneno e febre ao mesmo tempo. É leve, não estraga e não some do mapa.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Ferimento por veneno",
+            "d": "-4 de veneno.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Febre",
+            "d": "-5 de febre.",
+            "nota": "melhor"
+          },
+          {
+            "t": "Sanidade",
+            "d": "+3 de sanidade.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Locais fixos",
+            "d": "Não podem ser fabricados. Ficam na Fábrica de Drogas (Drug Facility), no Jipe Capotado (Overturned Jeep), na Mina de Ouro Ilegal (Illegal Gold Mine), na Ilha da Anaconda (Anaconda Island) e no Aeroporto (Airport)."
+          }
+        ]
+      },
+      {
+        "titulo": "Dica",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Guarde para emergências",
+            "d": "É o único remédio contra febre fácil de carregar e que nunca estraga. Bom para levar em viagens longas."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "ferimento-por-veneno",
+      "febre",
+      "quassia-amara",
+      "curativo-de-tabaco"
+    ]
+  },
+  {
+    "id": "psicotria",
+    "nome": "Psicotria (bagas vermelhas)",
+    "nomeEn": "Psychotria Viridis",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "psicotria",
+      "psychotria",
+      "bagas",
+      "bagas vermelhas",
+      "frutinha vermelha",
+      "psychotria berries",
+      "chacruna"
+    ],
+    "perigo": 2,
+    "resumo": "Planta alucinógena de folhas ovais e frutos vermelhos. Comer intoxica e derruba a sanidade; o uso real é na ayahuasca do modo história.",
+    "secoes": [
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Bagas (Psychotria Berries)",
+            "d": "+4 de intoxicação e -5 de sanidade.",
+            "nota": "cuidado"
+          },
+          {
+            "t": "Folhas e chá",
+            "d": "Comer as folhas ou tomar o chá dá -10 de sanidade e +4 de intoxicação.",
+            "nota": "cuidado"
+          }
+        ]
+      },
+      {
+        "titulo": "Para que serve",
+        "tipo": "dicas",
+        "itens": [
+          {
+            "t": "Ayahuasca (modo história)",
+            "d": "É um dos dois ingredientes da ayahuasca."
+          },
+          {
+            "t": "Cultivo",
+            "d": "Seque as bagas (12 horas) para plantar."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "ayahuasca",
+      "intoxicacao-alimentar",
+      "sanidade"
+    ]
+  },
+  {
+    "id": "ayahuasca",
+    "nome": "Ayahuasca",
+    "nomeEn": "Ayahuasca Brew",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "ayahuasca",
+      "ritual",
+      "visao",
+      "visão",
+      "cura total",
+      "ayahuasca brew"
+    ],
+    "perigo": 0,
+    "resumo": "Bebida ritual do modo história que leva às visões de Jake. Ao voltar da visão, você está com vida e nutrientes cheios e sem nenhuma ferida ou doença.",
+    "secoes": [
+      {
+        "titulo": "Receita",
+        "tipo": "receita",
+        "itens": [
+          {
+            "t": "1 cipó banisteriopsis (Banisteriopsis Vine) + 1 psicotria (Psychotria)",
+            "d": "Acenda um fogo pequeno (Small Fire) sob o caldeirão da tigela ritual (Ritual Bowl) e aperte E para pôr os ingredientes."
+          }
+        ]
+      },
+      {
+        "titulo": "Efeito",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Cura completa",
+            "d": "Depois da visão, Jake volta com vida cheia, todos os ferimentos e doenças curados e nutrientes no máximo.",
+            "nota": "melhor"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde obter",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Cipó banisteriopsis",
+            "d": "Cresce no tronco da castanheira (Brazil Nut Tree)."
+          },
+          {
+            "t": "Receita",
+            "d": "Você aprende a receita ao achar as páginas queimadas (Burned Pages) na Aldeia Tribal Abandonada. Só existe no modo história."
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "psicotria"
+    ]
+  },
+  {
+    "id": "cafe-instantaneo",
+    "nome": "Café instantâneo",
+    "nomeEn": "Instant Coffee",
+    "categoria": "Plantas e remédios",
+    "aliases": [
+      "cafe",
+      "café",
+      "cafe instantaneo",
+      "coffee",
+      "instant coffee"
+    ],
+    "perigo": 0,
+    "resumo": "Item encontrado que, misturado com água num recipiente, dá energia e sanidade.",
+    "secoes": [
+      {
+        "titulo": "Para que serve",
+        "tipo": "tratamento",
+        "itens": [
+          {
+            "t": "Energia e sanidade",
+            "d": "Misture com água numa casca de coco ou tigela: +15 de energia e +5 de sanidade.",
+            "nota": "bom"
+          }
+        ]
+      },
+      {
+        "titulo": "Onde encontrar",
+        "tipo": "obter",
+        "itens": [
+          {
+            "t": "Construções grandes",
+            "d": "Acampamento Ômega (Omega Camp), Aeroporto (Airport) e a caverna do avião caído (Plane Crash Cave)."
+          }
+        ]
+      },
+      {
+        "titulo": "Atenção",
+        "tipo": "alerta",
+        "itens": [
+          {
+            "t": "Insônia",
+            "d": "Usar itens de energia para evitar dormir causa insônia.",
+            "nota": "cuidado"
+          }
+        ]
+      }
+    ],
+    "relacionados": [
+      "energia",
+      "sanidade",
+      "insonia"
+    ]
+  }
+]
