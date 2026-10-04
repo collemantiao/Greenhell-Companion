@@ -151,6 +151,24 @@ namespace GreenHellCompanion
             GUI.DrawTexture(new Rect(r.xMax - 1, r.y, 1, r.height), l);
         }
 
+        /// <summary>Desenha um Sprite do jogo (pode estar num atlas) tingido com a cor.</summary>
+        public static void DesenharSprite(Sprite s, Rect r, Color cor)
+        {
+            if (s == null || s.texture == null) return;
+            var t = s.texture;
+            Rect uv;
+            try
+            {
+                var tr = s.textureRect;
+                uv = new Rect(tr.x / t.width, tr.y / t.height, tr.width / t.width, tr.height / t.height);
+            }
+            catch { uv = new Rect(0, 0, 1, 1); }
+            var antes = GUI.color;
+            GUI.color = cor;
+            GUI.DrawTextureWithTexCoords(r, t, uv, true);
+            GUI.color = antes;
+        }
+
         public static string C(string hex, string txt) => $"<color={hex}>{txt}</color>";
         public static string Esc(string s) => s?.Replace("<", "‹").Replace(">", "›") ?? "";
     }

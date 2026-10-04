@@ -52,7 +52,7 @@ ptbr.SelectDirDesc=Onde o Green Hell está instalado?
 ptbr.SelectDirLabel3=Escolha a pasta do Green Hell, a que contém o arquivo GH.exe.
 ptbr.SelectDirBrowseLabel=Se a pasta abaixo não for a do jogo, clique em Procurar. Na Steam, ela fica em steamapps\common\Green Hell.
 ptbr.FinishedHeadingLabel=Pronto!
-ptbr.FinishedLabelNoIcons=O [name] foi instalado. Abra o Green Hell e use as teclas:%n%nF1   Guia%nF2   Marcar um ponto%nF3   Lista de marcadores%nF4   Configurações%n%nOs avisos de saúde e a ajuda de construção aparecem sozinhos.
+ptbr.FinishedLabelNoIcons=O [name] foi instalado. Abra o Green Hell e use as teclas:%n%nF1   Guia%nF2   Marcar um ponto%nF3   Lista de marcadores%nF4   Configurações%nF5   Construção%n%nOs avisos de saúde e a ajuda de construção aparecem sozinhos.
 
 [Files]
 ; BepInEx 5 (carregador de mods). Só é copiado se o jogo ainda não tiver; nunca é removido na desinstalação,

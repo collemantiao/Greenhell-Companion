@@ -124,23 +124,6 @@ namespace GreenHellCompanion
             }
         }
 
-        static void DesenharSprite(Sprite s, Rect r, Color cor)
-        {
-            if (s == null || s.texture == null) return;
-            var t = s.texture;
-            Rect uv;
-            try
-            {
-                var tr = s.textureRect;
-                uv = new Rect(tr.x / t.width, tr.y / t.height, tr.width / t.width, tr.height / t.height);
-            }
-            catch { uv = new Rect(0, 0, 1, 1); }
-            var antes = GUI.color;
-            GUI.color = cor;
-            GUI.DrawTextureWithTexCoords(r, t, uv, true);
-            GUI.color = antes;
-        }
-
         // ---------- Desenho ----------
         public void Desenhar()
         {

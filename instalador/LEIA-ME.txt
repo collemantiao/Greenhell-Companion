@@ -41,6 +41,7 @@ F1   Guia (fichas de animais, doenças, ferimentos, itens)
 F2   Marca o ponto para onde você está olhando
 F3   Lista de marcadores
 F4   Configurações: tamanho do texto, transparência dos cartões e das ilustrações
+F5   Menu de construção e criação (receitas, quanto você tem e o que falta)
 Esc  Fecha a janela do mod
 
 Os avisos de saúde e a ajuda de construção aparecem sozinhos.

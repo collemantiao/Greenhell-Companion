@@ -12,7 +12,7 @@ namespace GreenHellCompanion
         public const string Id = "br.felipe.greenhellcompanion";
 
         public static Plugin Instancia { get; private set; }
-        public static ConfigEntry<KeyboardShortcut> TeclaGuia, TeclaMarcar, TeclaMarcadores, TeclaConfig;
+        public static ConfigEntry<KeyboardShortcut> TeclaGuia, TeclaMarcar, TeclaMarcadores, TeclaConfig, TeclaConstrucao;
         public static ConfigEntry<float> Escala, Opacidade, OpacidadeImagem;
         public static ConfigEntry<float> SegundosAlerta;
         public static ConfigEntry<bool> AvisosSaude, AjudaConstrucao, TodosMarcadoresNoMundo, MostrarMacros;
@@ -22,6 +22,7 @@ namespace GreenHellCompanion
         Macros macros;
         Marcadores marcadores;
         JanelaGuia guia;
+        JanelaConstrucao menuConstrucao;
         public static JanelaConfig Configuracoes { get; private set; }
 
         void Awake()
@@ -30,6 +31,7 @@ namespace GreenHellCompanion
             TeclaGuia = Config.Bind("Teclas", "Guia", new KeyboardShortcut(KeyCode.F1), "Abre/fecha o guia.");
             TeclaMarcar = Config.Bind("Teclas", "Marcar", new KeyboardShortcut(KeyCode.F2), "Marca o ponto para onde você está olhando.");
             TeclaMarcadores = Config.Bind("Teclas", "Marcadores", new KeyboardShortcut(KeyCode.F3), "Abre/fecha a lista de marcadores.");
+            TeclaConstrucao = Config.Bind("Teclas", "Construcao", new KeyboardShortcut(KeyCode.F5), "Abre/fecha o menu de construção e criação.");
             TeclaConfig = Config.Bind("Teclas", "Configuracoes", new KeyboardShortcut(KeyCode.F4), "Abre/fecha as configurações.");
             Escala = Config.Bind("Tela", "Escala", 1.0f, new ConfigDescription("Tamanho dos textos e painéis.", new AcceptableValueRange<float>(0.6f, 1.6f)));
             Opacidade = Config.Bind("Tela", "OpacidadeCartoes", 0.84f, new ConfigDescription("Opacidade do fundo dos avisos e painéis (0,2 a 1).", new AcceptableValueRange<float>(0.2f, 1f)));
@@ -52,6 +54,7 @@ namespace GreenHellCompanion
             macros = new Macros();
             marcadores = new Marcadores(Path.Combine(Paths.ConfigPath, "GreenHellCompanion"));
             guia = new JanelaGuia();
+            menuConstrucao = new JanelaConstrucao();
             Configuracoes = new JanelaConfig();
 
             new Harmony(Id).PatchAll(typeof(Plugin).Assembly);
@@ -75,6 +78,9 @@ namespace GreenHellCompanion
             if (TeclaGuia.Value.IsDown()) guia.Alternar(saude.FichaRecente());
             else if (TeclaMarcadores.Value.IsDown()) marcadores.AlternarLista();
             else if (TeclaConfig.Value.IsDown()) Configuracoes.Alternar();
+            else if (TeclaConstrucao.Value.IsDown()) menuConstrucao.Alternar();
+
+            if (JanelaConstrucao.Posicionar != null && Janela.Aberta == null) Proteger(JanelaConstrucao.ExecutarPendente, "posicionar construcao");
             else if (TeclaMarcar.Value.IsDown() && Janela.Aberta == null && Jogo.PodeUsarHud()) marcadores.MarcarOlhando();
             else if (Input.GetKeyDown(KeyCode.Escape) && Janela.Aberta != null) Janela.Fechar();
 
