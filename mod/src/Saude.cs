@@ -413,13 +413,13 @@ namespace GreenHellCompanion
         public static float Largura => Mathf.Max(Screen.width * 0.22f, Px(300));
         public static float X => 25 * Screen.height / 1080f;                      // alinhado à HUD do jogo
         /// <summary>Base da pilha: um pouco acima da linha de cima dos macroelementos (HUD em 1080p: y ≈ 949).</summary>
-        public static float Base => (Plugin.MostrarMacros.Value ? 842f : 980f) * Screen.height / 1080f;
+        public static float Base => (Plugin.MostrarMacros.Value ? 826f : 980f) * Screen.height / 1080f;
         static float Topo => Screen.height * 0.30f;
 
         public void Desenhar()
         {
             if (ativos.Count == 0) return;
-            float largura = Largura, x = X, gap = Px(8);
+            float x = X, gap = Px(8);
             float limite = Time.time - Plugin.SegundosAlerta.Value;
 
             // mais novo primeiro; os que não couberem entre a base e o topo viram linha em "Condições ativas"
@@ -429,7 +429,7 @@ namespace GreenHellCompanion
             while (true)
             {
                 resumo = Resumo(ativos.Values.Except(completos).OrderBy(a => a.chave).ToList());
-                float total = blocos.Sum(b => b.Altura(largura) + gap) + (resumo != null ? resumo.Altura(largura) + gap : 0);
+                float total = blocos.Sum(b => b.Altura(b.LarguraIdeal(Largura)) + gap) + (resumo != null ? resumo.Altura(resumo.LarguraIdeal(Largura)) + gap : 0);
                 if (total <= Base - Topo || completos.Count == 0) break;
                 completos.RemoveAt(completos.Count - 1);
                 blocos.RemoveAt(blocos.Count - 1);
@@ -439,14 +439,16 @@ namespace GreenHellCompanion
             float y = Base;
             if (resumo != null)
             {
-                float h = resumo.Altura(largura);
+                float lr = resumo.LarguraIdeal(Largura);
+                float h = resumo.Altura(lr);
                 y -= h;
-                resumo.Desenhar(new Rect(x, y, largura, h), Painel);
+                resumo.Desenhar(new Rect(x, y, lr, h), Painel);
                 y -= gap;
             }
             for (int i = 0; i < blocos.Count; i++)
             {
                 var b = blocos[i];
+                float largura = b.LarguraIdeal(Largura);
                 float h = b.Altura(largura);
                 y -= h;
                 // aviso novo entra deslizando da esquerda com fade (0,3 s)

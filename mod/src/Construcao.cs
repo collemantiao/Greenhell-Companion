@@ -110,7 +110,6 @@ namespace GreenHellCompanion
         public float Desenhar(float y)
         {
             if (ghost == null || materiais.Count == 0) return y;
-            float largura = Mathf.Max(Screen.width * 0.22f, Px(300));
             var b = new Bloco { Lado = Tema.Lado.Direita };
             b.Add(Rotulo, "CONSTRUÇÃO · " + situacao.ToUpperInvariant());
             string nome = ghost.m_ResultItemID != ItemID.None ? Jogo.NomeItem(ghost.m_ResultItemID) : "Construção";
@@ -130,6 +129,7 @@ namespace GreenHellCompanion
             }
             b.Add(Texto, faltando.Count == 0 ? C(Ok, "Você tem tudo para terminar.") : "Faltam " + string.Join(", ", faltando), 0, 8);
 
+            float largura = b.LarguraIdeal(Mathf.Max(Screen.width * 0.22f, Px(300)));
             float h = b.Altura(largura);
             float x = Screen.width - largura - Screen.width * 0.016f;
             float e = Entrada(apareceuEm, 0.22f);

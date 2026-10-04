@@ -67,7 +67,7 @@ namespace GreenHellCompanion
 
             Texture t = pincelJogo != null ? pincelJogo : PincelProprio();
             // área maior que o texto: a pincelada sobra para cima/baixo e se desfaz para o lado de dentro da tela
-            float extraV = r.height * 0.18f + 8, extraH = r.width * 0.35f;
+            float extraV = r.height * 0.08f + 4, extraH = Mathf.Min(r.width * 0.18f, 60f);
             var area = new Rect(r.x - 10, r.y - extraV, r.width + 20, r.height + extraV * 2);
             switch (lado)
             {

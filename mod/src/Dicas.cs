@@ -311,7 +311,7 @@ namespace GreenHellCompanion
             for (int i = 0; i < mostrando.linhas.Count; i++) b.Add(Texto, mostrando.linhas[i], 0, i == 0 ? 6 : 3);
             if (mostrando.fichaId != null) b.Add(Pequeno, $"Ficha completa: {C(Tinta, Plugin.TeclaGuia.Value.MainKey.ToString())}", 0, 6);
 
-            float largura = Mathf.Max(Screen.width * 0.22f, Px(300));
+            float largura = b.LarguraIdeal(Mathf.Max(Screen.width * 0.22f, Px(300)));
             float h = b.Altura(largura);
             float x = Screen.width - largura - Screen.width * 0.016f;
             // entra com fade/deslize; ao desviar o olhar, some com fade

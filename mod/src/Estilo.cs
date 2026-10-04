@@ -219,6 +219,16 @@ namespace GreenHellCompanion
         public Bloco Barra(float frac, string cor)
         { linhas.Add(new L { barra = true, frac = Mathf.Clamp01(frac), corBarra = cor, esp = 2 }); return this; }
 
+        /// <summary>Largura que o conteúdo pede (sem quebrar linha), entre um mínimo e o máximo dado.</summary>
+        public float LarguraIdeal(float maximo)
+        {
+            float pad = Estilo.Px(10), faixa = Faixa != null && !Plugin.CartoesPincel.Value ? Estilo.Px(5) : 0, w = 0;
+            foreach (var l in linhas)
+                if (!l.barra) w = Mathf.Max(w, l.s.CalcSize(new GUIContent(l.t)).x + Estilo.Px(l.rec));
+            if (Imagem != null) w += Estilo.Px(40);   // espaço para a silhueta não cobrir o texto
+            return Mathf.Clamp(w + pad * 2 + faixa + 2, Estilo.Px(200), maximo);
+        }
+
         public float Altura(float largura)
         {
             float pad = Estilo.Px(10), h = pad * 2;
