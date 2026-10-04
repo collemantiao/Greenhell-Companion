@@ -179,6 +179,14 @@ namespace GreenHellCompanion
             return seta;
         }
 
+        /// <summary>Losango nos marcadores normais; caveira no marcador da última morte (loot).</summary>
+        static void Icone(Marcador m, Vector2 centro, float lado, Color cor)
+        {
+            if (!m.morte) { Losango(centro, lado, cor); return; }
+            float t = lado * 1.7f;
+            Simbolos.Desenhar(Simbolos.Caveira(), new Rect(centro.x - t / 2, centro.y - t / 2, t, t), cor);
+        }
+
         static void Losango(Vector2 centro, float lado, Color cor)
         {
             var m = GUI.matrix;
@@ -204,7 +212,7 @@ namespace GreenHellCompanion
             float w = tam.x + icone + pad * 3;
             var r = new Rect((Screen.width - w) / 2, Screen.height * 0.022f, w, h);
             Caixa(r, Painel);
-            Losango(new Vector2(r.x + pad + icone / 2, r.center.y), icone * 0.7f, ativo.Cor);
+            Icone(ativo, new Vector2(r.x + pad + icone / 2, r.center.y), icone * 0.7f, ativo.Cor);
             GUI.Label(new Rect(r.x + pad * 2 + icone, r.y + Px(6), tam.x, tam.y), cont, Texto);
 
             // seta relativa, logo antes da direção cardeal
@@ -224,8 +232,8 @@ namespace GreenHellCompanion
             var p = Jogo.PontoTela(m.Pos + Vector3.up * 1.5f);
             if (p.z <= 0) return;
             var c = new Vector2(p.x, Screen.height - p.y);
-            float lado = Px(11);
-            Losango(c, lado, m.Cor);
+            float lado = m.morte ? Px(16) : Px(11);
+            Icone(m, c, lado, m.Cor);
             string simples = $"<b>{Esc(m.nome)}</b>\n{TextoDistancia(Distancia(m.Pos))}";
             if (estiloMundo == null || estiloMundo.fontSize != Pequeno.fontSize)
             {
@@ -316,7 +324,7 @@ namespace GreenHellCompanion
                 {
                     var lr = new Rect(0, ly, conteudo.width, linha);
                     CaixaArredondada(lr, m.ativo ? new Color32(232, 169, 60, 30) : new Color32(255, 255, 255, 8), RaioLinha);
-                    Losango(new Vector2(lr.x + Px(16), lr.y + Px(18)), Px(9), m.ativo || m.morte ? m.Cor : Cor(Apagado));
+                    Icone(m, new Vector2(lr.x + Px(16), lr.y + Px(18)), Px(9), m.ativo || m.morte ? m.Cor : Cor(Apagado));
                     float tx = lr.x + Px(30), bw = Px(84), bx = lr.xMax - Px(8) - bw * 3 - Px(8);
 
                     if (renomeando == m)
