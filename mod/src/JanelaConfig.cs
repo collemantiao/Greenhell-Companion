@@ -18,7 +18,7 @@ namespace GreenHellCompanion
         {
             if (EscPressionado()) { Fechar(); return; }
             float pad = Px(16), w = Mathf.Max(Screen.width * 0.24f, Px(330));
-            float alt = Px(526);
+            float alt = Px(568);
             var r = new Rect((Screen.width - w) / 2, (Screen.height - alt) / 2, w, alt);
             CaixaArredondada(r, PainelForte, RaioJanela);
             float x = r.x + pad, iw = w - pad * 2, y = r.y + pad;
@@ -48,6 +48,12 @@ namespace GreenHellCompanion
                 Plugin.OpacidadeImagem.Value = (float)Plugin.OpacidadeImagem.DefaultValue;
             }
             if (GUI.Button(new Rect(x + bw + Px(8), y, bw, Px(30)), C(Destaque, "<b>Fechar</b>"), Botao)) { Fechar(); return; }
+
+            // crédito do criador
+            y += Px(44);
+            GUI.DrawTexture(new Rect(x, y - Px(8), iw, 1), Tex(Linha));
+            string versao = Plugin.Instancia.Info.Metadata.Version.ToString();
+            GUI.Label(new Rect(x, y, iw, Px(18)), $"Green Hell Companion {versao}  ·  criado por {C(Destaque, "<b>@tiaozadas</b>")}", new GUIStyle(Pequeno) { alignment = TextAnchor.MiddleCenter });
 
             Exemplo();
         }
