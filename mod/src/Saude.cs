@@ -413,7 +413,7 @@ namespace GreenHellCompanion
         public static float Largura => Mathf.Max(Screen.width * 0.22f, Px(300));
         public static float X => 25 * Screen.height / 1080f;                      // alinhado à HUD do jogo
         /// <summary>Base da pilha: um pouco acima da linha de cima dos macroelementos (HUD em 1080p: y ≈ 949).</summary>
-        public static float Base => (Plugin.MostrarMacros.Value ? 930f : 980f) * Screen.height / 1080f;
+        public static float Base => (Plugin.MostrarMacros.Value ? 872f : 980f) * Screen.height / 1080f;
         static float Topo => Screen.height * 0.30f;
 
         public void Desenhar()

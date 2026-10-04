@@ -5,8 +5,8 @@ namespace GreenHellCompanion
 {
     /// <summary>
     /// Macroelementos no estilo da HUD do jogo: ícone num círculo + barra fina, sem cartão de fundo,
-    /// em duas linhas logo acima da vida e da energia. Mesma ordem do relógio:
-    /// proteína | gordura (em cima) e carboidrato | água (embaixo). Cores e ícones do próprio jogo.
+    /// uma barra por linha, logo acima da vida e da energia: proteína, gordura, carboidrato e água
+    /// (de cima para baixo). Cores e ícones do próprio jogo.
     /// </summary>
     public class Macros
     {
@@ -90,13 +90,13 @@ namespace GreenHellCompanion
 
         // Medidas da HUD do jogo em 1080p (ela escala com a altura da tela):
         // ícones pequenos centrados em x ≈ 80, barras de x ≈ 95 até 330, linhas a cada 27 px, vida em y ≈ 1003.
-        const float IconeX = 70, Fim = 330, Coluna = 10, LinhaVida = 1003, Passo = 27, TamIcone = 20, Espessura = 4;
+        const float IconeX = 70, Fim = 330, LinhaVida = 1003, Passo = 27, TamIcone = 20, Espessura = 4;
 
         public void Desenhar()
         {
             if (!Plugin.MostrarMacros.Value) return;
             float h = Screen.height / 1080f;
-            float larguraColuna = (Fim - IconeX - Coluna) / 2f;
+            float larguraColuna = Fim - IconeX;
             float pulso = 0.55f + 0.45f * Mathf.Abs(Mathf.Sin(Time.time * 3f));
             var vermelho = Cor(Perigo);
             var sombra = new Color(0, 0, 0, 0.45f);
@@ -106,9 +106,8 @@ namespace GreenHellCompanion
             {
                 if (fracVisivel[i] < 0) fracVisivel[i] = frac[i];
                 else if (repintar) fracVisivel[i] = Suavizar(fracVisivel[i], frac[i], 4f);
-                int coluna = i % 2, linha = i / 2;                       // proteína/gordura em cima, carbo/água embaixo
-                float x0 = (IconeX + coluna * (larguraColuna + Coluna)) * h;
-                float cy = (LinhaVida - Passo * (2 - linha)) * h;        // duas linhas acima da vida
+                float x0 = IconeX * h;
+                float cy = (LinhaVida - Passo * (4 - i)) * h;            // quatro linhas acima da vida, uma por macroelemento
                 float ic = TamIcone * h;
 
                 var cor = CorDe(i);
